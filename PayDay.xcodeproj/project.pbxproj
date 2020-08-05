@@ -16,9 +16,11 @@
 		8752F0BD24DAAC4A007041EE /* PayDayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F0BC24DAAC4A007041EE /* PayDayTests.swift */; };
 		8752F0FA24DAB04E007041EE /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8752F0F124DAB04E007041EE /* Core.framework */; };
 		8752F10124DAB04E007041EE /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F10024DAB04E007041EE /* CoreTests.swift */; };
-		8752F10324DAB04F007041EE /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 8752F0F324DAB04E007041EE /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8752F10624DAB04F007041EE /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8752F0F124DAB04E007041EE /* Core.framework */; };
 		8752F10724DAB04F007041EE /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8752F0F124DAB04E007041EE /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8752F11324DAB11A007041EE /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 8752F11124DAB11A007041EE /* Core.h */; };
+		8752F11424DAB11A007041EE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8752F11224DAB11A007041EE /* Info.plist */; };
+		8752F11724DAB154007041EE /* CoreOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F11624DAB154007041EE /* CoreOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,11 +81,12 @@
 		8752F0BC24DAAC4A007041EE /* PayDayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayDayTests.swift; sourceTree = "<group>"; };
 		8752F0BE24DAAC4A007041EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8752F0F124DAB04E007041EE /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8752F0F324DAB04E007041EE /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
-		8752F0F424DAB04E007041EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8752F0F924DAB04E007041EE /* CoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8752F10024DAB04E007041EE /* CoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTests.swift; sourceTree = "<group>"; };
 		8752F10224DAB04F007041EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8752F11124DAB11A007041EE /* Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
+		8752F11224DAB11A007041EE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8752F11624DAB154007041EE /* CoreOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,8 +171,8 @@
 		8752F0F224DAB04E007041EE /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				8752F0F324DAB04E007041EE /* Core.h */,
-				8752F0F424DAB04E007041EE /* Info.plist */,
+				8752F11524DAB125007041EE /* Classes */,
+				8752F11024DAB11A007041EE /* SupportingFiles */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -183,6 +186,23 @@
 			path = CoreTests;
 			sourceTree = "<group>";
 		};
+		8752F11024DAB11A007041EE /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				8752F11124DAB11A007041EE /* Core.h */,
+				8752F11224DAB11A007041EE /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		8752F11524DAB125007041EE /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8752F11624DAB154007041EE /* CoreOperation.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -190,7 +210,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8752F10324DAB04F007041EE /* Core.h in Headers */,
+				8752F11324DAB11A007041EE /* Core.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +310,7 @@
 					};
 					8752F0F024DAB04E007041EE = {
 						CreatedOnToolsVersion = 11.2.1;
+						LastSwiftMigration = 1120;
 					};
 					8752F0F824DAB04E007041EE = {
 						CreatedOnToolsVersion = 11.2.1;
@@ -340,6 +361,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8752F11424DAB11A007041EE /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +397,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8752F11724DAB154007041EE /* CoreOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,6 +571,7 @@
 		8752F0C224DAAC4A007041EE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PayDay/Info.plist;
@@ -566,6 +590,7 @@
 		8752F0C324DAAC4A007041EE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PayDay/Info.plist;
@@ -626,6 +651,7 @@
 		8752F10924DAB04F007041EE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -642,6 +668,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = test.Core;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -652,6 +679,7 @@
 		8752F10A24DAB04F007041EE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
