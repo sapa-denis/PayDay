@@ -14,6 +14,11 @@ protocol LoginView: AnyObject {
 
 final class LoginViewController: UIViewController {
     
+    // MARK: - Outlets
+    @IBOutlet private weak var emailTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var loginButton: UIButton!
+    
     // MARK: - Properties
     var presenter: LoginPresenter!
 
@@ -21,6 +26,14 @@ final class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+}
+
+// MARK: - Actions
+extension LoginViewController {
+    
+    @IBAction private func onLoginButtonTouchUp(_ sender: UIButton) {
+        
     }
 }
 

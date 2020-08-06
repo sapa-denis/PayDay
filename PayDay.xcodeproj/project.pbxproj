@@ -34,6 +34,8 @@
 		8752F15D24DBFB86007041EE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F15C24DBFB86007041EE /* LoginViewController.swift */; };
 		8752F15F24DBFD07007041EE /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F15E24DBFD07007041EE /* LoginPresenter.swift */; };
 		8752F16124DBFE67007041EE /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8752F16024DBFE67007041EE /* Login.storyboard */; };
+		8752F16424DC11E6007041EE /* OperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F16324DC11E6007041EE /* OperationQueue.swift */; };
+		8752F16624DC13A9007041EE /* URLSession+Additional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F16524DC13A9007041EE /* URLSession+Additional.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +155,8 @@
 		8752F15C24DBFB86007041EE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8752F15E24DBFD07007041EE /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		8752F16024DBFE67007041EE /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		8752F16324DC11E6007041EE /* OperationQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationQueue.swift; sourceTree = "<group>"; };
+		8752F16524DC13A9007041EE /* URLSession+Additional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Additional.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				8752F11524DAB125007041EE /* Classes */,
+				8752F16224DC11BD007041EE /* Extensions */,
 				8752F11024DAB11A007041EE /* SupportingFiles */,
 			);
 			path = Core;
@@ -295,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				8752F11E24DAB9B0007041EE /* URLSession+Request.swift */,
+				8752F16524DC13A9007041EE /* URLSession+Additional.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -386,6 +392,14 @@
 				8752F16024DBFE67007041EE /* Login.storyboard */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		8752F16224DC11BD007041EE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8752F16324DC11E6007041EE /* OperationQueue.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -658,6 +672,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8752F11724DAB154007041EE /* CoreOperation.swift in Sources */,
+				8752F16424DC11E6007041EE /* OperationQueue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,6 +692,7 @@
 				8752F14B24DABFC6007041EE /* NetworkOperation.swift in Sources */,
 				8752F14C24DABFCC007041EE /* URLSession+Request.swift in Sources */,
 				8752F14A24DABF95007041EE /* Constants.swift in Sources */,
+				8752F16624DC13A9007041EE /* URLSession+Additional.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
