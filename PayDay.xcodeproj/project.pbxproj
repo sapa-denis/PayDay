@@ -18,9 +18,18 @@
 		8752F10124DAB04E007041EE /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F10024DAB04E007041EE /* CoreTests.swift */; };
 		8752F10624DAB04F007041EE /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8752F0F124DAB04E007041EE /* Core.framework */; };
 		8752F10724DAB04F007041EE /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8752F0F124DAB04E007041EE /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8752F11324DAB11A007041EE /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 8752F11124DAB11A007041EE /* Core.h */; };
-		8752F11424DAB11A007041EE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8752F11224DAB11A007041EE /* Info.plist */; };
 		8752F11724DAB154007041EE /* CoreOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F11624DAB154007041EE /* CoreOperation.swift */; };
+		8752F11A24DAB5EE007041EE /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 8752F11124DAB11A007041EE /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8752F12E24DABC32007041EE /* Network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8752F12524DABC32007041EE /* Network.framework */; };
+		8752F13524DABC32007041EE /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F13424DABC32007041EE /* NetworkTests.swift */; };
+		8752F13724DABC32007041EE /* Network.h in Headers */ = {isa = PBXBuildFile; fileRef = 8752F12724DABC32007041EE /* Network.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8752F13A24DABC32007041EE /* Network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8752F12524DABC32007041EE /* Network.framework */; };
+		8752F13B24DABC32007041EE /* Network.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8752F12524DABC32007041EE /* Network.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8752F14824DABEF7007041EE /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F14724DABEF7007041EE /* NetworkError.swift */; };
+		8752F14A24DABF95007041EE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F14924DABF95007041EE /* Constants.swift */; };
+		8752F14B24DABFC6007041EE /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F11824DAB4DD007041EE /* NetworkOperation.swift */; };
+		8752F14C24DABFCC007041EE /* URLSession+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F11E24DAB9B0007041EE /* URLSession+Request.swift */; };
+		8752F15024DBE85D007041EE /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8752F0F124DAB04E007041EE /* Core.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +61,34 @@
 			remoteGlobalIDString = 8752F0F024DAB04E007041EE;
 			remoteInfo = Core;
 		};
+		8752F12F24DABC32007041EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8752F09724DAAC48007041EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8752F12424DABC32007041EE;
+			remoteInfo = Network;
+		};
+		8752F13124DABC32007041EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8752F09724DAAC48007041EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8752F09E24DAAC48007041EE;
+			remoteInfo = PayDay;
+		};
+		8752F13824DABC32007041EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8752F09724DAAC48007041EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8752F12424DABC32007041EE;
+			remoteInfo = Network;
+		};
+		8752F15224DBE85D007041EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8752F09724DAAC48007041EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8752F0F024DAB04E007041EE;
+			remoteInfo = Core;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -62,6 +99,17 @@
 			dstSubfolderSpec = 10;
 			files = (
 				8752F10724DAB04F007041EE /* Core.framework in Embed Frameworks */,
+				8752F13B24DABC32007041EE /* Network.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8752F15424DBE85D007041EE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,6 +135,16 @@
 		8752F11124DAB11A007041EE /* Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
 		8752F11224DAB11A007041EE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8752F11624DAB154007041EE /* CoreOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreOperation.swift; sourceTree = "<group>"; };
+		8752F11824DAB4DD007041EE /* NetworkOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkOperation.swift; sourceTree = "<group>"; };
+		8752F11E24DAB9B0007041EE /* URLSession+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Request.swift"; sourceTree = "<group>"; };
+		8752F12524DABC32007041EE /* Network.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Network.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8752F12724DABC32007041EE /* Network.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Network.h; sourceTree = "<group>"; };
+		8752F12824DABC32007041EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8752F12D24DABC32007041EE /* NetworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8752F13424DABC32007041EE /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
+		8752F13624DABC32007041EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8752F14724DABEF7007041EE /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		8752F14924DABF95007041EE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8752F10624DAB04F007041EE /* Core.framework in Frameworks */,
+				8752F13A24DABC32007041EE /* Network.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +179,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8752F12224DABC32007041EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8752F15024DBE85D007041EE /* Core.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8752F12A24DABC32007041EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8752F12E24DABC32007041EE /* Network.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -130,7 +205,10 @@
 				8752F0BB24DAAC4A007041EE /* PayDayTests */,
 				8752F0F224DAB04E007041EE /* Core */,
 				8752F0FF24DAB04E007041EE /* CoreTests */,
+				8752F12624DABC32007041EE /* Network */,
+				8752F13324DABC32007041EE /* NetworkTests */,
 				8752F0A024DAAC48007041EE /* Products */,
+				8752F14F24DBE85D007041EE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,6 +219,8 @@
 				8752F0B824DAAC4A007041EE /* PayDayTests.xctest */,
 				8752F0F124DAB04E007041EE /* Core.framework */,
 				8752F0F924DAB04E007041EE /* CoreTests.xctest */,
+				8752F12524DABC32007041EE /* Network.framework */,
+				8752F12D24DABC32007041EE /* NetworkTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -203,6 +283,67 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		8752F11D24DAB98F007041EE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8752F11E24DAB9B0007041EE /* URLSession+Request.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8752F12624DABC32007041EE /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8752F14324DABC5A007041EE /* Classes */,
+				8752F11D24DAB98F007041EE /* Extensions */,
+				8752F14624DABEDF007041EE /* Common */,
+				8752F14224DABC43007041EE /* SupportingFiles */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		8752F13324DABC32007041EE /* NetworkTests */ = {
+			isa = PBXGroup;
+			children = (
+				8752F13424DABC32007041EE /* NetworkTests.swift */,
+				8752F13624DABC32007041EE /* Info.plist */,
+			);
+			path = NetworkTests;
+			sourceTree = "<group>";
+		};
+		8752F14224DABC43007041EE /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				8752F12724DABC32007041EE /* Network.h */,
+				8752F12824DABC32007041EE /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		8752F14324DABC5A007041EE /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8752F11824DAB4DD007041EE /* NetworkOperation.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		8752F14624DABEDF007041EE /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				8752F14724DABEF7007041EE /* NetworkError.swift */,
+				8752F14924DABF95007041EE /* Constants.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		8752F14F24DBE85D007041EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -210,7 +351,15 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8752F11324DAB11A007041EE /* Core.h in Headers */,
+				8752F11A24DAB5EE007041EE /* Core.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8752F12024DABC32007041EE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8752F13724DABC32007041EE /* Network.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +379,7 @@
 			);
 			dependencies = (
 				8752F10524DAB04F007041EE /* PBXTargetDependency */,
+				8752F13924DABC32007041EE /* PBXTargetDependency */,
 			);
 			name = PayDay;
 			productName = PayDay;
@@ -291,6 +441,45 @@
 			productReference = 8752F0F924DAB04E007041EE /* CoreTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		8752F12424DABC32007041EE /* Network */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8752F13C24DABC32007041EE /* Build configuration list for PBXNativeTarget "Network" */;
+			buildPhases = (
+				8752F12024DABC32007041EE /* Headers */,
+				8752F12124DABC32007041EE /* Sources */,
+				8752F12224DABC32007041EE /* Frameworks */,
+				8752F12324DABC32007041EE /* Resources */,
+				8752F15424DBE85D007041EE /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8752F15324DBE85D007041EE /* PBXTargetDependency */,
+			);
+			name = Network;
+			productName = Network;
+			productReference = 8752F12524DABC32007041EE /* Network.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8752F12C24DABC32007041EE /* NetworkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8752F13F24DABC32007041EE /* Build configuration list for PBXNativeTarget "NetworkTests" */;
+			buildPhases = (
+				8752F12924DABC32007041EE /* Sources */,
+				8752F12A24DABC32007041EE /* Frameworks */,
+				8752F12B24DABC32007041EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8752F13024DABC32007041EE /* PBXTargetDependency */,
+				8752F13224DABC32007041EE /* PBXTargetDependency */,
+			);
+			name = NetworkTests;
+			productName = NetworkTests;
+			productReference = 8752F12D24DABC32007041EE /* NetworkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -316,6 +505,14 @@
 						CreatedOnToolsVersion = 11.2.1;
 						TestTargetID = 8752F09E24DAAC48007041EE;
 					};
+					8752F12424DABC32007041EE = {
+						CreatedOnToolsVersion = 11.2.1;
+						LastSwiftMigration = 1120;
+					};
+					8752F12C24DABC32007041EE = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 8752F09E24DAAC48007041EE;
+					};
 				};
 			};
 			buildConfigurationList = 8752F09A24DAAC48007041EE /* Build configuration list for PBXProject "PayDay" */;
@@ -335,6 +532,8 @@
 				8752F0B724DAAC4A007041EE /* PayDayTests */,
 				8752F0F024DAB04E007041EE /* Core */,
 				8752F0F824DAB04E007041EE /* CoreTests */,
+				8752F12424DABC32007041EE /* Network */,
+				8752F12C24DABC32007041EE /* NetworkTests */,
 			);
 		};
 /* End PBXProject section */
@@ -361,11 +560,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8752F11424DAB11A007041EE /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		8752F0F724DAB04E007041EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8752F12324DABC32007041EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8752F12B24DABC32007041EE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -409,6 +621,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8752F12124DABC32007041EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8752F14824DABEF7007041EE /* NetworkError.swift in Sources */,
+				8752F14B24DABFC6007041EE /* NetworkOperation.swift in Sources */,
+				8752F14C24DABFCC007041EE /* URLSession+Request.swift in Sources */,
+				8752F14A24DABF95007041EE /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8752F12924DABC32007041EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8752F13524DABC32007041EE /* NetworkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -431,6 +662,26 @@
 			isa = PBXTargetDependency;
 			target = 8752F0F024DAB04E007041EE /* Core */;
 			targetProxy = 8752F10424DAB04F007041EE /* PBXContainerItemProxy */;
+		};
+		8752F13024DABC32007041EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8752F12424DABC32007041EE /* Network */;
+			targetProxy = 8752F12F24DABC32007041EE /* PBXContainerItemProxy */;
+		};
+		8752F13224DABC32007041EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8752F09E24DAAC48007041EE /* PayDay */;
+			targetProxy = 8752F13124DABC32007041EE /* PBXContainerItemProxy */;
+		};
+		8752F13924DABC32007041EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8752F12424DABC32007041EE /* Network */;
+			targetProxy = 8752F13824DABC32007041EE /* PBXContainerItemProxy */;
+		};
+		8752F15324DBE85D007041EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8752F0F024DAB04E007041EE /* Core */;
+			targetProxy = 8752F15224DBE85D007041EE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -655,11 +906,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Core/Info.plist;
+				INFOPLIST_FILE = Core/SupportingFiles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -668,6 +921,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = test.Core;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -683,11 +937,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Core/Info.plist;
+				INFOPLIST_FILE = Core/SupportingFiles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -696,6 +952,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = test.Core;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -734,6 +991,103 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = test.CoreTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PayDay.app/PayDay";
+			};
+			name = Release;
+		};
+		8752F13D24DABC32007041EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Network/SupportingFiles/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = test.Network;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8752F13E24DABC32007041EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Network/SupportingFiles/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = test.Network;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8752F14024DABC32007041EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NetworkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = test.NetworkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PayDay.app/PayDay";
+			};
+			name = Debug;
+		};
+		8752F14124DABC32007041EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NetworkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = test.NetworkTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -785,6 +1139,24 @@
 			buildConfigurations = (
 				8752F10D24DAB04F007041EE /* Debug */,
 				8752F10E24DAB04F007041EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8752F13C24DABC32007041EE /* Build configuration list for PBXNativeTarget "Network" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8752F13D24DABC32007041EE /* Debug */,
+				8752F13E24DABC32007041EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8752F13F24DABC32007041EE /* Build configuration list for PBXNativeTarget "NetworkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8752F14024DABC32007041EE /* Debug */,
+				8752F14124DABC32007041EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
