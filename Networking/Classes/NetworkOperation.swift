@@ -8,7 +8,7 @@
 
 import Core
 
-public final class NetworkOperation: CoreOperation<URLRequest, Data> {
+public final class NetworkOperation: CoreOperation<RequestConvertible, Data> {
 
     // MARK: - Properties
     private var session: URLSession
@@ -17,7 +17,7 @@ public final class NetworkOperation: CoreOperation<URLRequest, Data> {
     // MARK: - Init / Deinit methods
     public init(in queue: OperationQueue,
                 session: URLSession,
-                request: URLRequest? = nil) {
+                request: RequestConvertible? = nil) {
         self.session = session
         super.init(in: queue)
         if let request = request {
@@ -38,7 +38,7 @@ public final class NetworkOperation: CoreOperation<URLRequest, Data> {
         dataTask?.cancel()
     }
     
-    private func execute(urlRequest: URLRequest) {
+    private func execute(urlRequest: RequestConvertible) {
         
         dataTask = session.request(urlRequest) { responseData, response, error in
             

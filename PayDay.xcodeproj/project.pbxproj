@@ -36,6 +36,10 @@
 		8752F16124DBFE67007041EE /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8752F16024DBFE67007041EE /* Login.storyboard */; };
 		8752F16424DC11E6007041EE /* OperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F16324DC11E6007041EE /* OperationQueue.swift */; };
 		8752F16624DC13A9007041EE /* URLSession+Additional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F16524DC13A9007041EE /* URLSession+Additional.swift */; };
+		8752F16B24DC473C007041EE /* RequestCovertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F16A24DC473C007041EE /* RequestCovertible.swift */; };
+		8752F16D24DC4795007041EE /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F16C24DC4795007041EE /* HTTPMethod.swift */; };
+		8752F17024DC5248007041EE /* AuthenticationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F16F24DC5248007041EE /* AuthenticationRequest.swift */; };
+		8752F17224DC8DF6007041EE /* JSONEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F17124DC8DF6007041EE /* JSONEncoder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +161,10 @@
 		8752F16024DBFE67007041EE /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		8752F16324DC11E6007041EE /* OperationQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationQueue.swift; sourceTree = "<group>"; };
 		8752F16524DC13A9007041EE /* URLSession+Additional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Additional.swift"; sourceTree = "<group>"; };
+		8752F16A24DC473C007041EE /* RequestCovertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCovertible.swift; sourceTree = "<group>"; };
+		8752F16C24DC4795007041EE /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		8752F16F24DC5248007041EE /* AuthenticationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRequest.swift; sourceTree = "<group>"; };
+		8752F17124DC8DF6007041EE /* JSONEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONEncoder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,6 +309,7 @@
 			children = (
 				8752F11E24DAB9B0007041EE /* URLSession+Request.swift */,
 				8752F16524DC13A9007041EE /* URLSession+Additional.swift */,
+				8752F17124DC8DF6007041EE /* JSONEncoder.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -309,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				8752F14324DABC5A007041EE /* Classes */,
+				8752F16924DC471D007041EE /* Protocols */,
 				8752F11D24DAB98F007041EE /* Extensions */,
 				8752F14624DABEDF007041EE /* Common */,
 				8752F14224DABC43007041EE /* SupportingFiles */,
@@ -337,7 +347,9 @@
 		8752F14324DABC5A007041EE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8752F16E24DC5218007041EE /* Requests */,
 				8752F11824DAB4DD007041EE /* NetworkOperation.swift */,
+				8752F16C24DC4795007041EE /* HTTPMethod.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -400,6 +412,22 @@
 				8752F16324DC11E6007041EE /* OperationQueue.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8752F16924DC471D007041EE /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				8752F16A24DC473C007041EE /* RequestCovertible.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		8752F16E24DC5218007041EE /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				8752F16F24DC5248007041EE /* AuthenticationRequest.swift */,
+			);
+			path = Requests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -688,11 +716,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8752F16B24DC473C007041EE /* RequestCovertible.swift in Sources */,
 				8752F14824DABEF7007041EE /* NetworkError.swift in Sources */,
+				8752F16D24DC4795007041EE /* HTTPMethod.swift in Sources */,
 				8752F14B24DABFC6007041EE /* NetworkOperation.swift in Sources */,
+				8752F17224DC8DF6007041EE /* JSONEncoder.swift in Sources */,
 				8752F14C24DABFCC007041EE /* URLSession+Request.swift in Sources */,
 				8752F14A24DABF95007041EE /* Constants.swift in Sources */,
 				8752F16624DC13A9007041EE /* URLSession+Additional.swift in Sources */,
+				8752F17024DC5248007041EE /* AuthenticationRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

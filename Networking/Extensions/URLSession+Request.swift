@@ -12,11 +12,18 @@ typealias URLRequestResponse = (Data?, URLResponse?, Error?) -> Void
 
 extension URLSession {
     
-    func request(_ urlRequest: URLRequest, completion: @escaping URLRequestResponse) -> URLSessionDataTask? {
-        let task = dataTask(with: urlRequest, completionHandler: completion)
-        
-        task.resume()
-        
-        return task
+    func request(_ urlRequest: RequestConvertible,
+                 completion: @escaping URLRequestResponse) -> URLSessionDataTask? {
+        do {
+            let request = try urlRequest.asURLRequest()
+            let task = dataTask(with: request, completionHandler: completion)
+            
+            task.resume()
+            
+            return task
+        } catch {
+            completion(nil, nil, error)
+            return nil
+        }
     }
 }
