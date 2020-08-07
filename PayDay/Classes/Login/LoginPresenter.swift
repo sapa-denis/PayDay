@@ -13,10 +13,7 @@ final class LoginPresenter {
 
     // MARK: - Properties
     private weak var view: LoginView!
-    private lazy var loginOperation: NetworkOperation = {
-        let request = URLRequest(url: URL(string: "")!)
-        return NetworkOperation(in: .networking, session: .main, request: request)
-    }()
+    private var loginOperation: NetworkOperation!
     
     // MARK: - Init / Deinit methods
     init(with view: LoginView) {
@@ -27,5 +24,19 @@ final class LoginPresenter {
     func loginAction(email: String, password: String) {
         
         
+        loginOperation = NetworkOperation(in: .networking,
+                                          session: .main,
+                                          request: AuthenticationRequest.authenticate(email: email,
+                                                                                      password: password))
+        loginOperation.outputUpdated = {
+            switch $0 {
+            case .success(let data):
+                print(String(data: data, encoding: .utf8)!)
+            default:
+                return
+            }
+        }
+        
+        loginOperation.start()
     }
 }

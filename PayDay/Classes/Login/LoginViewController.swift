@@ -33,7 +33,7 @@ final class LoginViewController: UIViewController {
 extension LoginViewController {
     
     @IBAction private func onLoginButtonTouchUp(_ sender: UIButton) {
-        
+        presenter.loginAction(email: "Nadiah.Spoel@example.com", password: "springs")
     }
 }
 
