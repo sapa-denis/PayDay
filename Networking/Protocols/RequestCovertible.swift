@@ -13,7 +13,6 @@ public typealias HTTPHeaders = [String: String]
 public protocol RequestConvertible {
     func absoluteURL() throws -> URL
     func httpMethod() -> HTTPMethod
-//    func credentials() -> HTTPHeaders
     func headers() -> HTTPHeaders?
     func encode(with encoder: JSONEncoder) throws -> Data?
     func domain() throws -> URL
@@ -33,7 +32,7 @@ extension RequestConvertible {
     }
     
     public func domain() throws -> URL {
-        guard let host = URL(string: "http://localhost:3000/") else {
+        guard let host = URL(string: "http://localhost:3000") else {
             fatalError("Can't get API Host during making RequestConvertible request")
         }
         
@@ -55,8 +54,7 @@ extension RequestConvertible {
         
         var encodedRequest = try JSONEncoder().encode(request, with: try json(encoder))
         encodedRequest.httpMethod = httpMethod().rawValue
-        
-//        credentials().forEach { encodedRequest.addValue($0.value, forHTTPHeaderField: $0.key) }
+
         headers()?.forEach { encodedRequest.addValue($0.value, forHTTPHeaderField: $0.key) }
         
         return encodedRequest

@@ -28,8 +28,8 @@ final class LoginPresenter {
                                           session: .main,
                                           request: AuthenticationRequest.authenticate(email: email,
                                                                                       password: password))
-        loginOperation.outputUpdated = {
-            switch $0 {
+        loginOperation.completed = { [weak loginOperation] in
+            switch loginOperation?.output {
             case .success(let data):
                 print(String(data: data, encoding: .utf8)!)
             default:
