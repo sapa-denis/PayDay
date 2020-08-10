@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class CoreOperation<InputType, OutputType>: Operation {
+open class CoreOperation<InputType, OutputType>: Operation, QueueConformable {
     
     //MARK: - Properties
     public final var input: Result<InputType, Error> {

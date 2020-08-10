@@ -11,6 +11,10 @@
 		5A03509DC17D3F626F4D52D1 /* Pods_PayDayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3E2136C70176CEC72D1638A /* Pods_PayDayTests.framework */; };
 		79E9B26CE3CE935794468C95 /* Pods_Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9FD432FCA2A0E0ACBED7AF0 /* Pods_Networking.framework */; };
 		7BC9339D60B6D16FE68C7B0A /* Pods_Core_CoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D857EFC8423E3DE68A7645BD /* Pods_Core_CoreTests.framework */; };
+		870C8BEE24E14F9800DE5EFC /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8BED24E14F9800DE5EFC /* UseCase.swift */; };
+		870C8BF124E14FCB00DE5EFC /* QueueConformable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8BF024E14FCB00DE5EFC /* QueueConformable.swift */; };
+		870C8BF324E1501800DE5EFC /* Operation+Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8BF224E1501800DE5EFC /* Operation+Chain.swift */; };
+		870C8BF524E1548000DE5EFC /* OperationQueue+Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8BF424E1548000DE5EFC /* OperationQueue+Chain.swift */; };
 		8752F0A324DAAC48007041EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F0A224DAAC48007041EE /* AppDelegate.swift */; };
 		8752F0A724DAAC48007041EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F0A624DAAC48007041EE /* ViewController.swift */; };
 		8752F0AA24DAAC48007041EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8752F0A824DAAC48007041EE /* Main.storyboard */; };
@@ -137,6 +141,10 @@
 		6050248ABC18DABE806FBBD1 /* Pods-Networking-NetworkingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Networking-NetworkingTests.release.xcconfig"; path = "Target Support Files/Pods-Networking-NetworkingTests/Pods-Networking-NetworkingTests.release.xcconfig"; sourceTree = "<group>"; };
 		724A721BF64EC7A0A65B556A /* Pods_PayDay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PayDay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D068DD3EE8030A04EECECAC /* Pods-PayDayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayDayTests.release.xcconfig"; path = "Target Support Files/Pods-PayDayTests/Pods-PayDayTests.release.xcconfig"; sourceTree = "<group>"; };
+		870C8BED24E14F9800DE5EFC /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
+		870C8BF024E14FCB00DE5EFC /* QueueConformable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueConformable.swift; sourceTree = "<group>"; };
+		870C8BF224E1501800DE5EFC /* Operation+Chain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Operation+Chain.swift"; sourceTree = "<group>"; };
+		870C8BF424E1548000DE5EFC /* OperationQueue+Chain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OperationQueue+Chain.swift"; sourceTree = "<group>"; };
 		8752F09F24DAAC48007041EE /* PayDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8752F0A224DAAC48007041EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8752F0A624DAAC48007041EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -264,8 +272,15 @@
 				D8F71D30AA369A696A229299 /* Pods-PayDayTests.debug.xcconfig */,
 				7D068DD3EE8030A04EECECAC /* Pods-PayDayTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		870C8BEF24E14FB200DE5EFC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				870C8BF024E14FCB00DE5EFC /* QueueConformable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		8752F09624DAAC48007041EE = {
@@ -323,6 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				8752F11524DAB125007041EE /* Classes */,
+				870C8BEF24E14FB200DE5EFC /* Protocols */,
 				8752F16224DC11BD007041EE /* Extensions */,
 				8752F11024DAB11A007041EE /* SupportingFiles */,
 			);
@@ -351,6 +367,7 @@
 			isa = PBXGroup;
 			children = (
 				8752F11624DAB154007041EE /* CoreOperation.swift */,
+				870C8BED24E14F9800DE5EFC /* UseCase.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -467,6 +484,8 @@
 			isa = PBXGroup;
 			children = (
 				8752F16324DC11E6007041EE /* OperationQueue.swift */,
+				870C8BF224E1501800DE5EFC /* Operation+Chain.swift */,
+				870C8BF424E1548000DE5EFC /* OperationQueue+Chain.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -897,8 +916,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				870C8BEE24E14F9800DE5EFC /* UseCase.swift in Sources */,
 				8752F11724DAB154007041EE /* CoreOperation.swift in Sources */,
+				870C8BF324E1501800DE5EFC /* Operation+Chain.swift in Sources */,
+				870C8BF124E14FCB00DE5EFC /* QueueConformable.swift in Sources */,
 				8752F16424DC11E6007041EE /* OperationQueue.swift in Sources */,
+				870C8BF524E1548000DE5EFC /* OperationQueue+Chain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
