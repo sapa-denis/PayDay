@@ -8,6 +8,7 @@
 
 import Core
 import Networking
+import Entities
 
 public final class LoginUseCase: UseCase<Void> {
     

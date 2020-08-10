@@ -29,6 +29,12 @@
 		870C8C2D24E16A4B00DE5EFC /* ResponseAdapterBuildable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C2C24E16A4B00DE5EFC /* ResponseAdapterBuildable.swift */; };
 		870C8C2F24E16A8900DE5EFC /* DecoderBuildable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C2E24E16A8900DE5EFC /* DecoderBuildable.swift */; };
 		870C8C3124E16E9A00DE5EFC /* CoreOperationClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C3024E16E9A00DE5EFC /* CoreOperationClosure.swift */; };
+		870C8C4024E19A3300DE5EFC /* Entities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870C8C3724E19A3300DE5EFC /* Entities.framework */; };
+		870C8C4724E19A3300DE5EFC /* EntitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C4624E19A3300DE5EFC /* EntitiesTests.swift */; };
+		870C8C4924E19A3300DE5EFC /* Entities.h in Headers */ = {isa = PBXBuildFile; fileRef = 870C8C3924E19A3300DE5EFC /* Entities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		870C8C4C24E19A3300DE5EFC /* Entities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870C8C3724E19A3300DE5EFC /* Entities.framework */; };
+		870C8C4D24E19A3300DE5EFC /* Entities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 870C8C3724E19A3300DE5EFC /* Entities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		870C8C5724E19A8000DE5EFC /* DecodeOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C5624E19A8000DE5EFC /* DecodeOperation.swift */; };
 		8752F0A324DAAC48007041EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F0A224DAAC48007041EE /* AppDelegate.swift */; };
 		8752F0A724DAAC48007041EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F0A624DAAC48007041EE /* ViewController.swift */; };
 		8752F0AA24DAAC48007041EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8752F0A824DAAC48007041EE /* Main.storyboard */; };
@@ -87,6 +93,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = 870C8BFA24E167B000DE5EFC;
 			remoteInfo = Features;
+		};
+		870C8C4124E19A3300DE5EFC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8752F09724DAAC48007041EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 870C8C3624E19A3300DE5EFC;
+			remoteInfo = Entities;
+		};
+		870C8C4324E19A3300DE5EFC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8752F09724DAAC48007041EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8752F09E24DAAC48007041EE;
+			remoteInfo = PayDay;
+		};
+		870C8C4A24E19A3300DE5EFC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8752F09724DAAC48007041EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 870C8C3624E19A3300DE5EFC;
+			remoteInfo = Entities;
 		};
 		8752F0B924DAAC4A007041EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -156,6 +183,7 @@
 				8752F10724DAB04F007041EE /* Core.framework in Embed Frameworks */,
 				8752F13B24DABC32007041EE /* Networking.framework in Embed Frameworks */,
 				870C8C1124E167B000DE5EFC /* Features.framework in Embed Frameworks */,
+				870C8C4D24E19A3300DE5EFC /* Entities.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,6 +224,13 @@
 		870C8C2C24E16A4B00DE5EFC /* ResponseAdapterBuildable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseAdapterBuildable.swift; sourceTree = "<group>"; };
 		870C8C2E24E16A8900DE5EFC /* DecoderBuildable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderBuildable.swift; sourceTree = "<group>"; };
 		870C8C3024E16E9A00DE5EFC /* CoreOperationClosure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreOperationClosure.swift; sourceTree = "<group>"; };
+		870C8C3724E19A3300DE5EFC /* Entities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Entities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		870C8C3924E19A3300DE5EFC /* Entities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Entities.h; sourceTree = "<group>"; };
+		870C8C3A24E19A3300DE5EFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		870C8C3F24E19A3300DE5EFC /* EntitiesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EntitiesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		870C8C4624E19A3300DE5EFC /* EntitiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitiesTests.swift; sourceTree = "<group>"; };
+		870C8C4824E19A3300DE5EFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		870C8C5624E19A8000DE5EFC /* DecodeOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodeOperation.swift; sourceTree = "<group>"; };
 		8752F09F24DAAC48007041EE /* PayDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8752F0A224DAAC48007041EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8752F0A624DAAC48007041EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -266,10 +301,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		870C8C3424E19A3300DE5EFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		870C8C3C24E19A3300DE5EFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				870C8C4024E19A3300DE5EFC /* Entities.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8752F09C24DAAC48007041EE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				870C8C4C24E19A3300DE5EFC /* Entities.framework in Frameworks */,
 				8752F10624DAB04F007041EE /* Core.framework in Frameworks */,
 				870C8C1024E167B000DE5EFC /* Features.framework in Frameworks */,
 				8752F13A24DABC32007041EE /* Networking.framework in Frameworks */,
@@ -433,6 +484,41 @@
 			path = Buildable;
 			sourceTree = "<group>";
 		};
+		870C8C3824E19A3300DE5EFC /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				870C8C5424E19A3C00DE5EFC /* Classes */,
+				870C8C3924E19A3300DE5EFC /* Entities.h */,
+				870C8C3A24E19A3300DE5EFC /* Info.plist */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		870C8C4524E19A3300DE5EFC /* EntitiesTests */ = {
+			isa = PBXGroup;
+			children = (
+				870C8C4624E19A3300DE5EFC /* EntitiesTests.swift */,
+				870C8C4824E19A3300DE5EFC /* Info.plist */,
+			);
+			path = EntitiesTests;
+			sourceTree = "<group>";
+		};
+		870C8C5424E19A3C00DE5EFC /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				870C8C5524E19A6A00DE5EFC /* CodableOperations */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		870C8C5524E19A6A00DE5EFC /* CodableOperations */ = {
+			isa = PBXGroup;
+			children = (
+				870C8C5624E19A8000DE5EFC /* DecodeOperation.swift */,
+			);
+			path = CodableOperations;
+			sourceTree = "<group>";
+		};
 		8752F09624DAAC48007041EE = {
 			isa = PBXGroup;
 			children = (
@@ -444,6 +530,8 @@
 				8752F13324DABC32007041EE /* NetworkingTests */,
 				870C8BFC24E167B000DE5EFC /* Features */,
 				870C8C0924E167B000DE5EFC /* FeaturesTests */,
+				870C8C3824E19A3300DE5EFC /* Entities */,
+				870C8C4524E19A3300DE5EFC /* EntitiesTests */,
 				8752F0A024DAAC48007041EE /* Products */,
 				8752F14F24DBE85D007041EE /* Frameworks */,
 				37D09FFAC0B7A0C75277C590 /* Pods */,
@@ -461,6 +549,8 @@
 				8752F12D24DABC32007041EE /* NetworkingTests.xctest */,
 				870C8BFB24E167B000DE5EFC /* Features.framework */,
 				870C8C0324E167B000DE5EFC /* FeaturesTests.xctest */,
+				870C8C3724E19A3300DE5EFC /* Entities.framework */,
+				870C8C3F24E19A3300DE5EFC /* EntitiesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -671,6 +761,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		870C8C3224E19A3300DE5EFC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				870C8C4924E19A3300DE5EFC /* Entities.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8752F0EC24DAB04E007041EE /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -727,6 +825,43 @@
 			productReference = 870C8C0324E167B000DE5EFC /* FeaturesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		870C8C3624E19A3300DE5EFC /* Entities */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 870C8C4E24E19A3300DE5EFC /* Build configuration list for PBXNativeTarget "Entities" */;
+			buildPhases = (
+				870C8C3224E19A3300DE5EFC /* Headers */,
+				870C8C3324E19A3300DE5EFC /* Sources */,
+				870C8C3424E19A3300DE5EFC /* Frameworks */,
+				870C8C3524E19A3300DE5EFC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Entities;
+			productName = Entities;
+			productReference = 870C8C3724E19A3300DE5EFC /* Entities.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		870C8C3E24E19A3300DE5EFC /* EntitiesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 870C8C5124E19A3300DE5EFC /* Build configuration list for PBXNativeTarget "EntitiesTests" */;
+			buildPhases = (
+				870C8C3B24E19A3300DE5EFC /* Sources */,
+				870C8C3C24E19A3300DE5EFC /* Frameworks */,
+				870C8C3D24E19A3300DE5EFC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				870C8C4224E19A3300DE5EFC /* PBXTargetDependency */,
+				870C8C4424E19A3300DE5EFC /* PBXTargetDependency */,
+			);
+			name = EntitiesTests;
+			productName = EntitiesTests;
+			productReference = 870C8C3F24E19A3300DE5EFC /* EntitiesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		8752F09E24DAAC48007041EE /* PayDay */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8752F0C124DAAC4A007041EE /* Build configuration list for PBXNativeTarget "PayDay" */;
@@ -743,6 +878,7 @@
 				8752F10524DAB04F007041EE /* PBXTargetDependency */,
 				8752F13924DABC32007041EE /* PBXTargetDependency */,
 				870C8C0F24E167B000DE5EFC /* PBXTargetDependency */,
+				870C8C4B24E19A3300DE5EFC /* PBXTargetDependency */,
 			);
 			name = PayDay;
 			productName = PayDay;
@@ -866,6 +1002,14 @@
 						CreatedOnToolsVersion = 11.2.1;
 						TestTargetID = 8752F09E24DAAC48007041EE;
 					};
+					870C8C3624E19A3300DE5EFC = {
+						CreatedOnToolsVersion = 11.2.1;
+						LastSwiftMigration = 1120;
+					};
+					870C8C3E24E19A3300DE5EFC = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 8752F09E24DAAC48007041EE;
+					};
 					8752F09E24DAAC48007041EE = {
 						CreatedOnToolsVersion = 11.2.1;
 					};
@@ -912,6 +1056,8 @@
 				8752F12C24DABC32007041EE /* NetworkingTests */,
 				870C8BFA24E167B000DE5EFC /* Features */,
 				870C8C0224E167B000DE5EFC /* FeaturesTests */,
+				870C8C3624E19A3300DE5EFC /* Entities */,
+				870C8C3E24E19A3300DE5EFC /* EntitiesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -925,6 +1071,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		870C8C0124E167B000DE5EFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		870C8C3524E19A3300DE5EFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		870C8C3D24E19A3300DE5EFC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1139,6 +1299,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		870C8C3324E19A3300DE5EFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				870C8C5724E19A8000DE5EFC /* DecodeOperation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		870C8C3B24E19A3300DE5EFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				870C8C4724E19A3300DE5EFC /* EntitiesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8752F09B24DAAC48007041EE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1222,6 +1398,21 @@
 			isa = PBXTargetDependency;
 			target = 870C8BFA24E167B000DE5EFC /* Features */;
 			targetProxy = 870C8C0E24E167B000DE5EFC /* PBXContainerItemProxy */;
+		};
+		870C8C4224E19A3300DE5EFC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 870C8C3624E19A3300DE5EFC /* Entities */;
+			targetProxy = 870C8C4124E19A3300DE5EFC /* PBXContainerItemProxy */;
+		};
+		870C8C4424E19A3300DE5EFC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8752F09E24DAAC48007041EE /* PayDay */;
+			targetProxy = 870C8C4324E19A3300DE5EFC /* PBXContainerItemProxy */;
+		};
+		870C8C4B24E19A3300DE5EFC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 870C8C3624E19A3300DE5EFC /* Entities */;
+			targetProxy = 870C8C4A24E19A3300DE5EFC /* PBXContainerItemProxy */;
 		};
 		8752F0BA24DAAC4A007041EE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1373,6 +1564,101 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = test.FeaturesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PayDay.app/PayDay";
+			};
+			name = Release;
+		};
+		870C8C4F24E19A3300DE5EFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Entities/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = test.Entities;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		870C8C5024E19A3300DE5EFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Entities/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = test.Entities;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		870C8C5224E19A3300DE5EFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = EntitiesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = test.EntitiesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PayDay.app/PayDay";
+			};
+			name = Debug;
+		};
+		870C8C5324E19A3300DE5EFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = EntitiesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = test.EntitiesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1799,6 +2085,24 @@
 			buildConfigurations = (
 				870C8C1624E167B000DE5EFC /* Debug */,
 				870C8C1724E167B000DE5EFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		870C8C4E24E19A3300DE5EFC /* Build configuration list for PBXNativeTarget "Entities" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				870C8C4F24E19A3300DE5EFC /* Debug */,
+				870C8C5024E19A3300DE5EFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		870C8C5124E19A3300DE5EFC /* Build configuration list for PBXNativeTarget "EntitiesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				870C8C5224E19A3300DE5EFC /* Debug */,
+				870C8C5324E19A3300DE5EFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
