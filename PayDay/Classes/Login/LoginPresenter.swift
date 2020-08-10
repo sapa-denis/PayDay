@@ -7,36 +7,32 @@
 //
 
 import Foundation
-import Networking
+import Features
 
 final class LoginPresenter {
 
     // MARK: - Properties
     private weak var view: LoginView!
-    private var loginOperation: NetworkOperation!
+    private let loginUseCase: LoginUseCase = LoginUseCase(quality: .userInitiated,
+                                                          priority: .veryHigh)
     
     // MARK: - Init / Deinit methods
     init(with view: LoginView) {
         self.view = view
     }
     
+    deinit {
+        loginUseCase.cancelAllOperations()
+    }
+    
     // MARK: - Public methods
     func loginAction(email: String, password: String) {
-        
-        
-        loginOperation = NetworkOperation(in: .networking,
-                                          session: .main,
-                                          request: AuthenticationRequest.authenticate(email: email,
-                                                                                      password: password))
-        loginOperation.completed = { [weak loginOperation] in
-            switch loginOperation?.output {
-            case .success(let data):
-                print(String(data: data, encoding: .utf8)!)
-            default:
-                return
-            }
+        if loginUseCase.isExecuting() {
+            loginUseCase.cancelAllOperations()
         }
         
-        loginOperation.start()
+        loginUseCase
+            .prepare(email: "Nadiah.Spoel@example.com", password: "springs")
+            .perform()
     }
 }
