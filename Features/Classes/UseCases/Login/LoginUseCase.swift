@@ -7,6 +7,7 @@
 //
 
 import Core
+import CoreData
 import Networking
 import Entities
 
@@ -32,11 +33,11 @@ public final class LoginUseCase: UseCase<Void> {
         let request = AuthenticationRequest.authenticate(email: email, password: password)
         let networkRequest = container.networkRequestBuilder.build(request: request)
         
-//        let jsonDecoder = JSONDecoder()
-//        let context = NSPersistentContainer.newBackgroundContext()
-//        jsonDecoder.userInfo[CodingUserInfoKey.context] = context
+        let jsonDecoder = JSONDecoder()
+        let context = NSPersistentContainer.newBackgroundContext()
+        jsonDecoder.userInfo[CodingUserInfoKey.context] = context
         
-//        let decodeOperation = container.responseDecodeBuilder.build(with: jsonDecoder, path: "data")
+        let decodeOperation = container.responseDecodeBuilder.build(with: jsonDecoder, path: "data")
         
         let save = container.responseAdapterBuilder.build(in: .additional) { input in
             
@@ -53,7 +54,7 @@ public final class LoginUseCase: UseCase<Void> {
         }
         
         prepareExecution(for: networkRequest
-//            .then(decodeOperation)
+            .then(decodeOperation)
             .then(save))
         
         return self
@@ -66,21 +67,21 @@ extension LoginUseCase {
     public struct DependencyContainer {
         static var base: DependencyContainer {
             return DependencyContainer(networkRequestBuilder: NetworkRequesterBuilder(),
-//                                       responseDecodeBuilder: ResponseDecodingBuilder(),
+                                       responseDecodeBuilder: ResponseDecodingBuilder(),
                                        responseAdapterBuilder: ResponseAdapterBuilder())
         }
         
         let networkRequestBuilder: NetworkRequesterBuildable
-//        let responseDecodeBuilder: AbstractDecoderBuilder<Int>
+        let responseDecodeBuilder: AbstractDecoderBuilder<Int>
         let responseAdapterBuilder: AbstractAdditionalOperationBuilder<Data, Void>
     }
     
-//    final class ResponseDecodingBuilder: AbstractDecoderBuilder<Int> {
-//
-//        override func build(with decoder: JSONDecoder, path: String?) -> DecodeOperation<Int> {
-//            DecodeOperation(in: .additional, decoder: decoder, path: path)
-//        }
-//    }
+    final class ResponseDecodingBuilder: AbstractDecoderBuilder<Int> {
+
+        override func build(with decoder: JSONDecoder, path: String?) -> DecodeOperation<Int> {
+            DecodeOperation(in: .additional, decoder: decoder, path: path)
+        }
+    }
     
     final class ResponseAdapterBuilder: AbstractAdditionalOperationBuilder<Data, Void> {
         

@@ -35,10 +35,17 @@
 		870C8C4C24E19A3300DE5EFC /* Entities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870C8C3724E19A3300DE5EFC /* Entities.framework */; };
 		870C8C4D24E19A3300DE5EFC /* Entities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 870C8C3724E19A3300DE5EFC /* Entities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		870C8C5724E19A8000DE5EFC /* DecodeOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C5624E19A8000DE5EFC /* DecodeOperation.swift */; };
+		870C8C5824E19DBC00DE5EFC /* PayDay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8752F0AB24DAAC48007041EE /* PayDay.xcdatamodeld */; };
+		870C8C5B24E19DFF00DE5EFC /* NSPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C5A24E19DFF00DE5EFC /* NSPersistentContainer.swift */; };
+		870C8C5D24E1A14500DE5EFC /* CodingUserInfoKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C5C24E1A14500DE5EFC /* CodingUserInfoKey.swift */; };
+		870C8C6124E1B8E500DE5EFC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C6024E1B8E500DE5EFC /* User.swift */; };
+		870C8C6324E1CB7300DE5EFC /* NSManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C6224E1CB7300DE5EFC /* NSManagedObjectContext.swift */; };
+		870C8C6724E1CC0300DE5EFC /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C6624E1CC0300DE5EFC /* Entity.swift */; };
+		870C8C6A24E1CD5100DE5EFC /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C6924E1CD5100DE5EFC /* Operators.swift */; };
+		870C8C6E24E2C0A700DE5EFC /* NSManagedObject+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C6D24E2C0A700DE5EFC /* NSManagedObject+Name.swift */; };
 		8752F0A324DAAC48007041EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F0A224DAAC48007041EE /* AppDelegate.swift */; };
 		8752F0A724DAAC48007041EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F0A624DAAC48007041EE /* ViewController.swift */; };
 		8752F0AA24DAAC48007041EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8752F0A824DAAC48007041EE /* Main.storyboard */; };
-		8752F0AD24DAAC48007041EE /* PayDay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8752F0AB24DAAC48007041EE /* PayDay.xcdatamodeld */; };
 		8752F0AF24DAAC49007041EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8752F0AE24DAAC49007041EE /* Assets.xcassets */; };
 		8752F0B224DAAC49007041EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8752F0B024DAAC49007041EE /* LaunchScreen.storyboard */; };
 		8752F0BD24DAAC4A007041EE /* PayDayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F0BC24DAAC4A007041EE /* PayDayTests.swift */; };
@@ -231,6 +238,13 @@
 		870C8C4624E19A3300DE5EFC /* EntitiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitiesTests.swift; sourceTree = "<group>"; };
 		870C8C4824E19A3300DE5EFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		870C8C5624E19A8000DE5EFC /* DecodeOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodeOperation.swift; sourceTree = "<group>"; };
+		870C8C5A24E19DFF00DE5EFC /* NSPersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSPersistentContainer.swift; sourceTree = "<group>"; };
+		870C8C5C24E1A14500DE5EFC /* CodingUserInfoKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingUserInfoKey.swift; sourceTree = "<group>"; };
+		870C8C6024E1B8E500DE5EFC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		870C8C6224E1CB7300DE5EFC /* NSManagedObjectContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContext.swift; sourceTree = "<group>"; };
+		870C8C6624E1CC0300DE5EFC /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		870C8C6924E1CD5100DE5EFC /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		870C8C6D24E2C0A700DE5EFC /* NSManagedObject+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Name.swift"; sourceTree = "<group>"; };
 		8752F09F24DAAC48007041EE /* PayDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8752F0A224DAAC48007041EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8752F0A624DAAC48007041EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -487,7 +501,11 @@
 		870C8C3824E19A3300DE5EFC /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				8752F0AB24DAAC48007041EE /* PayDay.xcdatamodeld */,
+				870C8C5E24E1B8B900DE5EFC /* Entities */,
 				870C8C5424E19A3C00DE5EFC /* Classes */,
+				870C8C6424E1CBEA00DE5EFC /* Protocols */,
+				870C8C5924E19DD300DE5EFC /* Extensions */,
 				870C8C3924E19A3300DE5EFC /* Entities.h */,
 				870C8C3A24E19A3300DE5EFC /* Info.plist */,
 			);
@@ -517,6 +535,49 @@
 				870C8C5624E19A8000DE5EFC /* DecodeOperation.swift */,
 			);
 			path = CodableOperations;
+			sourceTree = "<group>";
+		};
+		870C8C5924E19DD300DE5EFC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				870C8C5A24E19DFF00DE5EFC /* NSPersistentContainer.swift */,
+				870C8C5C24E1A14500DE5EFC /* CodingUserInfoKey.swift */,
+				870C8C6224E1CB7300DE5EFC /* NSManagedObjectContext.swift */,
+				870C8C6D24E2C0A700DE5EFC /* NSManagedObject+Name.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		870C8C5E24E1B8B900DE5EFC /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				870C8C5F24E1B8D000DE5EFC /* User */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		870C8C5F24E1B8D000DE5EFC /* User */ = {
+			isa = PBXGroup;
+			children = (
+				870C8C6024E1B8E500DE5EFC /* User.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		870C8C6424E1CBEA00DE5EFC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				870C8C6624E1CC0300DE5EFC /* Entity.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		870C8C6824E1CD3C00DE5EFC /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				870C8C6924E1CD5100DE5EFC /* Operators.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		8752F09624DAAC48007041EE = {
@@ -564,7 +625,6 @@
 				8752F0A824DAAC48007041EE /* Main.storyboard */,
 				8752F15624DBF496007041EE /* Resources */,
 				8752F15724DBF4AF007041EE /* SupportingFiles */,
-				8752F0AB24DAAC48007041EE /* PayDay.xcdatamodeld */,
 			);
 			path = PayDay;
 			sourceTree = "<group>";
@@ -582,6 +642,7 @@
 			isa = PBXGroup;
 			children = (
 				8752F11524DAB125007041EE /* Classes */,
+				870C8C6824E1CD3C00DE5EFC /* Common */,
 				870C8BEF24E14FB200DE5EFC /* Protocols */,
 				8752F16224DC11BD007041EE /* Extensions */,
 				8752F11024DAB11A007041EE /* SupportingFiles */,
@@ -1304,6 +1365,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				870C8C5724E19A8000DE5EFC /* DecodeOperation.swift in Sources */,
+				870C8C6324E1CB7300DE5EFC /* NSManagedObjectContext.swift in Sources */,
+				870C8C6724E1CC0300DE5EFC /* Entity.swift in Sources */,
+				870C8C5B24E19DFF00DE5EFC /* NSPersistentContainer.swift in Sources */,
+				870C8C5D24E1A14500DE5EFC /* CodingUserInfoKey.swift in Sources */,
+				870C8C6124E1B8E500DE5EFC /* User.swift in Sources */,
+				870C8C6E24E2C0A700DE5EFC /* NSManagedObject+Name.swift in Sources */,
+				870C8C5824E19DBC00DE5EFC /* PayDay.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1322,7 +1390,6 @@
 				8752F15F24DBFD07007041EE /* LoginPresenter.swift in Sources */,
 				8752F0A724DAAC48007041EE /* ViewController.swift in Sources */,
 				8752F0A324DAAC48007041EE /* AppDelegate.swift in Sources */,
-				8752F0AD24DAAC48007041EE /* PayDay.xcdatamodeld in Sources */,
 				8752F15D24DBFB86007041EE /* LoginViewController.swift in Sources */,
 				8752F15B24DBF9D8007041EE /* LoginModule.swift in Sources */,
 			);
@@ -1342,6 +1409,7 @@
 			files = (
 				870C8BEE24E14F9800DE5EFC /* UseCase.swift in Sources */,
 				8752F11724DAB154007041EE /* CoreOperation.swift in Sources */,
+				870C8C6A24E1CD5100DE5EFC /* Operators.swift in Sources */,
 				870C8BF324E1501800DE5EFC /* Operation+Chain.swift in Sources */,
 				870C8BF124E14FCB00DE5EFC /* QueueConformable.swift in Sources */,
 				8752F16424DC11E6007041EE /* OperationQueue.swift in Sources */,
