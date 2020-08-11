@@ -40,17 +40,7 @@ public final class LoginUseCase: UseCase<Void> {
         let decodeOperation = container.responseDecodeBuilder.build(with: jsonDecoder, path: "data")
         
         let save = container.responseAdapterBuilder.build(in: .additional) { input in
-            
-            switch input {
-            case .success(let data):
-                print("\(String(data: data, encoding: .utf8))")
-            default:
-                return .failure(NetworkError.unacceptableStatusCode(code: -100))
-            }
-            
-            return input.map { (data) -> Void in
-                return
-            } //Result { try context.saveIfNeeded() }
+            Result { try context.saveIfNeeded() }
         }
         
         prepareExecution(for: networkRequest
@@ -72,21 +62,21 @@ extension LoginUseCase {
         }
         
         let networkRequestBuilder: NetworkRequesterBuildable
-        let responseDecodeBuilder: AbstractDecoderBuilder<Int>
-        let responseAdapterBuilder: AbstractAdditionalOperationBuilder<Data, Void>
+        let responseDecodeBuilder: AbstractDecoderBuilder<User>
+        let responseAdapterBuilder: AbstractAdditionalOperationBuilder<User, Void>
     }
     
-    final class ResponseDecodingBuilder: AbstractDecoderBuilder<Int> {
+    final class ResponseDecodingBuilder: AbstractDecoderBuilder<User> {
 
-        override func build(with decoder: JSONDecoder, path: String?) -> DecodeOperation<Int> {
+        override func build(with decoder: JSONDecoder, path: String?) -> DecodeOperation<User> {
             DecodeOperation(in: .additional, decoder: decoder, path: path)
         }
     }
     
-    final class ResponseAdapterBuilder: AbstractAdditionalOperationBuilder<Data, Void> {
+    final class ResponseAdapterBuilder: AbstractAdditionalOperationBuilder<User, Void> {
         
         override func build(in queue: OperationQueue,
-                            closure: @escaping OperationCompletion) -> CoreOperationClosure<Data, Void> {
+                            closure: @escaping OperationCompletion) -> CoreOperationClosure<User, Void> {
             CoreOperationClosure(in: queue, closure: closure)
         }
     }

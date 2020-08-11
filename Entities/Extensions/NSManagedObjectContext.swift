@@ -14,7 +14,9 @@ extension NSManagedObjectContext {
     
     // MARK: - Public methods
     public func saveIfNeeded() throws {
-        guard hasChanges else { return }
+        guard hasChanges else {
+            return
+        }
         
         var savingError: Error?
         save { error in

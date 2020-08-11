@@ -43,6 +43,8 @@
 		870C8C6724E1CC0300DE5EFC /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C6624E1CC0300DE5EFC /* Entity.swift */; };
 		870C8C6A24E1CD5100DE5EFC /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C6924E1CD5100DE5EFC /* Operators.swift */; };
 		870C8C6E24E2C0A700DE5EFC /* NSManagedObject+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C6D24E2C0A700DE5EFC /* NSManagedObject+Name.swift */; };
+		870C8C7C24E2C75700DE5EFC /* PayDay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8752F0AB24DAAC48007041EE /* PayDay.xcdatamodeld */; };
+		870C8C7D24E2C75C00DE5EFC /* PayDay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8752F0AB24DAAC48007041EE /* PayDay.xcdatamodeld */; };
 		8752F0A324DAAC48007041EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F0A224DAAC48007041EE /* AppDelegate.swift */; };
 		8752F0A724DAAC48007041EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F0A624DAAC48007041EE /* ViewController.swift */; };
 		8752F0AA24DAAC48007041EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8752F0A824DAAC48007041EE /* Main.storyboard */; };
@@ -116,6 +118,27 @@
 			remoteInfo = PayDay;
 		};
 		870C8C4A24E19A3300DE5EFC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8752F09724DAAC48007041EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 870C8C3624E19A3300DE5EFC;
+			remoteInfo = Entities;
+		};
+		870C8C7624E2C72000DE5EFC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8752F09724DAAC48007041EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8752F0F024DAB04E007041EE;
+			remoteInfo = Core;
+		};
+		870C8C7824E2C73600DE5EFC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8752F09724DAAC48007041EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8752F0F024DAB04E007041EE;
+			remoteInfo = Core;
+		};
+		870C8C7A24E2C73600DE5EFC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8752F09724DAAC48007041EE /* Project object */;
 			proxyType = 1;
@@ -861,6 +884,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				870C8C7924E2C73600DE5EFC /* PBXTargetDependency */,
+				870C8C7B24E2C73600DE5EFC /* PBXTargetDependency */,
 			);
 			name = Features;
 			productName = Features;
@@ -898,6 +923,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				870C8C7724E2C72000DE5EFC /* PBXTargetDependency */,
 			);
 			name = Entities;
 			productName = Entities;
@@ -1341,6 +1367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				870C8C2B24E16A2C00DE5EFC /* AbstractAdditionalOperationBuilder.swift in Sources */,
+				870C8C7D24E2C75C00DE5EFC /* PayDay.xcdatamodeld in Sources */,
 				870C8C2D24E16A4B00DE5EFC /* ResponseAdapterBuildable.swift in Sources */,
 				870C8C2524E1692300DE5EFC /* NetworkRequesterBuildable.swift in Sources */,
 				870C8C2F24E16A8900DE5EFC /* DecoderBuildable.swift in Sources */,
@@ -1388,6 +1415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8752F15F24DBFD07007041EE /* LoginPresenter.swift in Sources */,
+				870C8C7C24E2C75700DE5EFC /* PayDay.xcdatamodeld in Sources */,
 				8752F0A724DAAC48007041EE /* ViewController.swift in Sources */,
 				8752F0A324DAAC48007041EE /* AppDelegate.swift in Sources */,
 				8752F15D24DBFB86007041EE /* LoginViewController.swift in Sources */,
@@ -1481,6 +1509,21 @@
 			isa = PBXTargetDependency;
 			target = 870C8C3624E19A3300DE5EFC /* Entities */;
 			targetProxy = 870C8C4A24E19A3300DE5EFC /* PBXContainerItemProxy */;
+		};
+		870C8C7724E2C72000DE5EFC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8752F0F024DAB04E007041EE /* Core */;
+			targetProxy = 870C8C7624E2C72000DE5EFC /* PBXContainerItemProxy */;
+		};
+		870C8C7924E2C73600DE5EFC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8752F0F024DAB04E007041EE /* Core */;
+			targetProxy = 870C8C7824E2C73600DE5EFC /* PBXContainerItemProxy */;
+		};
+		870C8C7B24E2C73600DE5EFC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 870C8C3624E19A3300DE5EFC /* Entities */;
+			targetProxy = 870C8C7A24E2C73600DE5EFC /* PBXContainerItemProxy */;
 		};
 		8752F0BA24DAAC4A007041EE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
