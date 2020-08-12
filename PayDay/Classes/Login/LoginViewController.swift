@@ -26,6 +26,7 @@ final class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupView()
     }
 }
 
@@ -33,9 +34,51 @@ final class LoginViewController: UIViewController {
 extension LoginViewController {
     
     @IBAction private func onLoginButtonTouchUp(_ sender: UIButton) {
+        guard validateFields(),
+            let email = emailTextField.text,
+            let password = passwordTextField.text else {
+                return
+        }
+        
         presenter
-            .loginAction(email: "Nadiah.Spoel@example.com",
-                         password: "springs")
+            .loginAction(email: email,
+                         password: password)
+    }
+}
+
+// MARK: - Private methods
+extension LoginViewController {
+    
+    private func setupView() {
+        applyStyle(for: emailTextField)
+        applyStyle(for: passwordTextField)
+        
+        loginButton.layer.cornerRadius = Constants.cornerRadius
+    }
+    
+    private func validateFields() -> Bool {
+        guard let email = emailTextField.text,
+            let password = passwordTextField.text else {
+                return false
+        }
+        
+        return email.isEmail && password.count > 1
+    }
+    
+    private func applyStyle(for textField: UITextField) {
+        let placeholder: String = textField.placeholder ?? ""
+        let attributes: [NSAttributedString.Key: Any] = [
+                        .foregroundColor: UIColor.placeholder,
+                        .font: UIFont.general
+        ]
+        
+        textField.attributedPlaceholder = NSAttributedString(string: placeholder,
+                                                             attributes: attributes)
+        textField.textColor = .black
+        textField.font = .general
+        textField.layer.borderColor = UIColor.border.cgColor
+        textField.layer.borderWidth = Constants.borderWidth
+        textField.layer.cornerRadius = Constants.cornerRadius
     }
 }
 

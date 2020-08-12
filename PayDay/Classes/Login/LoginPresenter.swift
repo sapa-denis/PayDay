@@ -13,12 +13,14 @@ final class LoginPresenter {
 
     // MARK: - Properties
     private weak var view: LoginView!
+    private weak var router: LoginPresentation!
     private let loginUseCase: LoginUseCase = LoginUseCase(quality: .userInitiated,
                                                           priority: .veryHigh)
     
     // MARK: - Init / Deinit methods
-    init(with view: LoginView) {
+    init(with view: LoginView, router: LoginPresentation) {
         self.view = view
+        self.router = router
     }
     
     deinit {
@@ -32,7 +34,11 @@ final class LoginPresenter {
         }
         
         loginUseCase
-            .prepare(email: "Nadiah.Spoel@example.com", password: "springs")
+            .prepare(email: email, password: password)
+            .success { userId in
+                UserSessionController.shared.authorizationStatus = .authorized(userId: userId)
+                
+            }
             .perform()
     }
 }

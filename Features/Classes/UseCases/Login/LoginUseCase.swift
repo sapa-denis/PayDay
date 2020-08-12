@@ -11,7 +11,7 @@ import CoreData
 import Networking
 import Entities
 
-public final class LoginUseCase: UseCase<Void> {
+public final class LoginUseCase: UseCase<Int> {
     
     // MARK: - Properties
     private let container: DependencyContainer
@@ -37,10 +37,16 @@ public final class LoginUseCase: UseCase<Void> {
         let context = NSPersistentContainer.newBackgroundContext()
         jsonDecoder.userInfo[CodingUserInfoKey.context] = context
         
-        let decodeOperation = container.responseDecodeBuilder.build(with: jsonDecoder, path: "data")
+        let decodeOperation = container.responseDecodeBuilder.build(with: jsonDecoder, path: nil)
         
         let save = container.responseAdapterBuilder.build(in: .additional) { input in
-            Result { try context.saveIfNeeded() }
+            if case .failure(let error) = Result(catching: { try context.saveIfNeeded() }) {
+                return .failure(error)
+            }
+            
+            return input.map {
+                Int($0.identifier)
+            }
         }
         
         prepareExecution(for: networkRequest
@@ -63,7 +69,7 @@ extension LoginUseCase {
         
         let networkRequestBuilder: NetworkRequesterBuildable
         let responseDecodeBuilder: AbstractDecoderBuilder<User>
-        let responseAdapterBuilder: AbstractAdditionalOperationBuilder<User, Void>
+        let responseAdapterBuilder: AbstractAdditionalOperationBuilder<User, Int>
     }
     
     final class ResponseDecodingBuilder: AbstractDecoderBuilder<User> {
@@ -73,10 +79,10 @@ extension LoginUseCase {
         }
     }
     
-    final class ResponseAdapterBuilder: AbstractAdditionalOperationBuilder<User, Void> {
+    final class ResponseAdapterBuilder: AbstractAdditionalOperationBuilder<User, Int> {
         
         override func build(in queue: OperationQueue,
-                            closure: @escaping OperationCompletion) -> CoreOperationClosure<User, Void> {
+                            closure: @escaping OperationCompletion) -> CoreOperationClosure<User, Int> {
             CoreOperationClosure(in: queue, closure: closure)
         }
     }

@@ -45,6 +45,18 @@
 		870C8C6E24E2C0A700DE5EFC /* NSManagedObject+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C6D24E2C0A700DE5EFC /* NSManagedObject+Name.swift */; };
 		870C8C7C24E2C75700DE5EFC /* PayDay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8752F0AB24DAAC48007041EE /* PayDay.xcdatamodeld */; };
 		870C8C7D24E2C75C00DE5EFC /* PayDay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8752F0AB24DAAC48007041EE /* PayDay.xcdatamodeld */; };
+		870C8C8324E2F93F00DE5EFC /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C8224E2F93F00DE5EFC /* UIColor.swift */; };
+		870C8C8524E2FBB900DE5EFC /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C8424E2FBB900DE5EFC /* UIFont.swift */; };
+		870C8C8824E2FCD600DE5EFC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C8724E2FCD600DE5EFC /* Constants.swift */; };
+		870C8C8A24E300EC00DE5EFC /* String+Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C8924E300EC00DE5EFC /* String+Email.swift */; };
+		870C8C8C24E3148700DE5EFC /* UserSessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C8B24E3148700DE5EFC /* UserSessionController.swift */; };
+		870C8C8E24E31A1E00DE5EFC /* UserDefaultsAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C8D24E31A1E00DE5EFC /* UserDefaultsAccessor.swift */; };
+		870C8C9124E32E4E00DE5EFC /* ListenEntityOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C9024E32E4E00DE5EFC /* ListenEntityOperation.swift */; };
+		870C8C9424E3C44F00DE5EFC /* CollectionChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C9324E3C44F00DE5EFC /* CollectionChange.swift */; };
+		870C8C9724E3C90E00DE5EFC /* Listener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C9624E3C90E00DE5EFC /* Listener.swift */; };
+		870C8C9924E3DDD500DE5EFC /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C9824E3DDD500DE5EFC /* LoginRouter.swift */; };
+		870C8C9B24E3E0E100DE5EFC /* UIWindow+Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C9A24E3E0E100DE5EFC /* UIWindow+Root.swift */; };
+		870C8C9D24E3E12500DE5EFC /* UIView+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C9C24E3E12500DE5EFC /* UIView+Snapshot.swift */; };
 		8752F0A324DAAC48007041EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F0A224DAAC48007041EE /* AppDelegate.swift */; };
 		8752F0A724DAAC48007041EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F0A624DAAC48007041EE /* ViewController.swift */; };
 		8752F0AA24DAAC48007041EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8752F0A824DAAC48007041EE /* Main.storyboard */; };
@@ -268,6 +280,18 @@
 		870C8C6624E1CC0300DE5EFC /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		870C8C6924E1CD5100DE5EFC /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		870C8C6D24E2C0A700DE5EFC /* NSManagedObject+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Name.swift"; sourceTree = "<group>"; };
+		870C8C8224E2F93F00DE5EFC /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		870C8C8424E2FBB900DE5EFC /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		870C8C8724E2FCD600DE5EFC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		870C8C8924E300EC00DE5EFC /* String+Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Email.swift"; sourceTree = "<group>"; };
+		870C8C8B24E3148700DE5EFC /* UserSessionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionController.swift; sourceTree = "<group>"; };
+		870C8C8D24E31A1E00DE5EFC /* UserDefaultsAccessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsAccessor.swift; sourceTree = "<group>"; };
+		870C8C9024E32E4E00DE5EFC /* ListenEntityOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListenEntityOperation.swift; sourceTree = "<group>"; };
+		870C8C9324E3C44F00DE5EFC /* CollectionChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionChange.swift; sourceTree = "<group>"; };
+		870C8C9624E3C90E00DE5EFC /* Listener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listener.swift; sourceTree = "<group>"; };
+		870C8C9824E3DDD500DE5EFC /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		870C8C9A24E3E0E100DE5EFC /* UIWindow+Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Root.swift"; sourceTree = "<group>"; };
+		870C8C9C24E3E12500DE5EFC /* UIView+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Snapshot.swift"; sourceTree = "<group>"; };
 		8752F09F24DAAC48007041EE /* PayDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8752F0A224DAAC48007041EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8752F0A624DAAC48007041EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -527,6 +551,7 @@
 				8752F0AB24DAAC48007041EE /* PayDay.xcdatamodeld */,
 				870C8C5E24E1B8B900DE5EFC /* Entities */,
 				870C8C5424E19A3C00DE5EFC /* Classes */,
+				870C8C9224E3C44100DE5EFC /* Common */,
 				870C8C6424E1CBEA00DE5EFC /* Protocols */,
 				870C8C5924E19DD300DE5EFC /* Extensions */,
 				870C8C3924E19A3300DE5EFC /* Entities.h */,
@@ -547,6 +572,8 @@
 		870C8C5424E19A3C00DE5EFC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				870C8C9524E3C8FE00DE5EFC /* Listener */,
+				870C8C8F24E32E3C00DE5EFC /* ListenOperation */,
 				870C8C5524E19A6A00DE5EFC /* CodableOperations */,
 			);
 			path = Classes;
@@ -603,6 +630,60 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		870C8C7E24E2CD7E00DE5EFC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				870C8C7F24E2CD8D00DE5EFC /* UIKit */,
+				870C8C8924E300EC00DE5EFC /* String+Email.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		870C8C7F24E2CD8D00DE5EFC /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				870C8C8224E2F93F00DE5EFC /* UIColor.swift */,
+				870C8C8424E2FBB900DE5EFC /* UIFont.swift */,
+				870C8C9A24E3E0E100DE5EFC /* UIWindow+Root.swift */,
+				870C8C9C24E3E12500DE5EFC /* UIView+Snapshot.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		870C8C8624E2FCC100DE5EFC /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				870C8C8724E2FCD600DE5EFC /* Constants.swift */,
+				870C8C8B24E3148700DE5EFC /* UserSessionController.swift */,
+				870C8C8D24E31A1E00DE5EFC /* UserDefaultsAccessor.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		870C8C8F24E32E3C00DE5EFC /* ListenOperation */ = {
+			isa = PBXGroup;
+			children = (
+				870C8C9024E32E4E00DE5EFC /* ListenEntityOperation.swift */,
+			);
+			path = ListenOperation;
+			sourceTree = "<group>";
+		};
+		870C8C9224E3C44100DE5EFC /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				870C8C9324E3C44F00DE5EFC /* CollectionChange.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		870C8C9524E3C8FE00DE5EFC /* Listener */ = {
+			isa = PBXGroup;
+			children = (
+				870C8C9624E3C90E00DE5EFC /* Listener.swift */,
+			);
+			path = Listener;
+			sourceTree = "<group>";
+		};
 		8752F09624DAAC48007041EE = {
 			isa = PBXGroup;
 			children = (
@@ -643,6 +724,8 @@
 			isa = PBXGroup;
 			children = (
 				8752F15824DBF4C3007041EE /* Classes */,
+				870C8C8624E2FCC100DE5EFC /* Common */,
+				870C8C7E24E2CD7E00DE5EFC /* Extensions */,
 				8752F0A224DAAC48007041EE /* AppDelegate.swift */,
 				8752F0A624DAAC48007041EE /* ViewController.swift */,
 				8752F0A824DAAC48007041EE /* Main.storyboard */,
@@ -802,6 +885,7 @@
 			children = (
 				8752F15A24DBF9D8007041EE /* LoginModule.swift */,
 				8752F15C24DBFB86007041EE /* LoginViewController.swift */,
+				870C8C9824E3DDD500DE5EFC /* LoginRouter.swift */,
 				8752F15E24DBFD07007041EE /* LoginPresenter.swift */,
 				8752F16024DBFE67007041EE /* Login.storyboard */,
 			);
@@ -1392,9 +1476,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				870C8C5724E19A8000DE5EFC /* DecodeOperation.swift in Sources */,
+				870C8C9724E3C90E00DE5EFC /* Listener.swift in Sources */,
+				870C8C9124E32E4E00DE5EFC /* ListenEntityOperation.swift in Sources */,
 				870C8C6324E1CB7300DE5EFC /* NSManagedObjectContext.swift in Sources */,
 				870C8C6724E1CC0300DE5EFC /* Entity.swift in Sources */,
 				870C8C5B24E19DFF00DE5EFC /* NSPersistentContainer.swift in Sources */,
+				870C8C9424E3C44F00DE5EFC /* CollectionChange.swift in Sources */,
 				870C8C5D24E1A14500DE5EFC /* CodingUserInfoKey.swift in Sources */,
 				870C8C6124E1B8E500DE5EFC /* User.swift in Sources */,
 				870C8C6E24E2C0A700DE5EFC /* NSManagedObject+Name.swift in Sources */,
@@ -1414,12 +1501,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				870C8C8C24E3148700DE5EFC /* UserSessionController.swift in Sources */,
 				8752F15F24DBFD07007041EE /* LoginPresenter.swift in Sources */,
+				870C8C8324E2F93F00DE5EFC /* UIColor.swift in Sources */,
 				870C8C7C24E2C75700DE5EFC /* PayDay.xcdatamodeld in Sources */,
+				870C8C8A24E300EC00DE5EFC /* String+Email.swift in Sources */,
 				8752F0A724DAAC48007041EE /* ViewController.swift in Sources */,
+				870C8C8524E2FBB900DE5EFC /* UIFont.swift in Sources */,
+				870C8C9B24E3E0E100DE5EFC /* UIWindow+Root.swift in Sources */,
+				870C8C9D24E3E12500DE5EFC /* UIView+Snapshot.swift in Sources */,
+				870C8C8E24E31A1E00DE5EFC /* UserDefaultsAccessor.swift in Sources */,
 				8752F0A324DAAC48007041EE /* AppDelegate.swift in Sources */,
 				8752F15D24DBFB86007041EE /* LoginViewController.swift in Sources */,
 				8752F15B24DBF9D8007041EE /* LoginModule.swift in Sources */,
+				870C8C9924E3DDD500DE5EFC /* LoginRouter.swift in Sources */,
+				870C8C8824E2FCD600DE5EFC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

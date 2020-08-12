@@ -76,6 +76,7 @@ public final class User: NSManagedObject, Decodable {
             password <>= try container.decode(String.self, forKey: .password)
             dob <>= try container.decode(String.self, forKey: .dob)
             phone <>= try container.decode(String.self, forKey: .phone)
+            gender <>= try container.decode(Gender.self, forKey: .gender)
         }
     }
 }
@@ -91,7 +92,7 @@ extension User: Entity {
 // MARK: - External declaration
 extension User {
     
-    public enum Gender: String {
+    public enum Gender: String, Decodable {
         case male
         case female
     }
