@@ -62,7 +62,7 @@ extension LoginViewController {
                 return false
         }
         
-        return email.isEmail && password.count > 1
+        return email.isEmail && password.count > 6
     }
     
     private func applyStyle(for textField: UITextField) {

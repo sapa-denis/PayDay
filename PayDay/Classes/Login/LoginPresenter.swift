@@ -35,9 +35,9 @@ final class LoginPresenter {
         
         loginUseCase
             .prepare(email: email, password: password)
-            .success { userId in
+            .success { [weak self] userId in
                 UserSessionController.shared.authorizationStatus = .authorized(userId: userId)
-                
+                self?.router.openTransactions()
             }
             .perform()
     }
