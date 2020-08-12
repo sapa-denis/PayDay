@@ -1,5 +1,5 @@
 //
-//  AuthenticationRequest.swift
+//  PayDayRequest.swift
 //  Networking
 //
 //  Created by Sapa Denys on 06.08.2020.
@@ -8,21 +8,36 @@
 
 import Foundation
 
-public enum AuthenticationRequest: RequestConvertible {
+public enum PayDayRequest: RequestConvertible {
     
     case authenticate(email: String, password: String)
+    case transactions(userId: Int)
     
     public func uri() -> String {
         switch self {
         case .authenticate:
             return .authenticateEndpoint
+        case .transactions:
+            return .transactionsEndpoint
         }
+        
     }
     
     public func httpMethod() -> HTTPMethod {
         switch self {
         case .authenticate:
             return .post
+        case .transactions:
+            return .get
+        }
+    }
+    
+    public func query() -> [URLQueryItem]? {
+        switch self {
+        case .transactions(let userId):
+            return [URLQueryItem(name: .accountId, value: "\(userId)")]
+        case .authenticate:
+            return nil
         }
     }
     
@@ -32,11 +47,13 @@ public enum AuthenticationRequest: RequestConvertible {
             return try encodeAuthenticationParams(with: encoder,
                                                   email: email,
                                                   password: password)
+        case .transactions:
+            return nil
         }
     }
 }
 
-extension AuthenticationRequest {
+extension PayDayRequest {
     
     private func encodeAuthenticationParams(with encoder: JSONEncoder,
                                             email: String,
@@ -47,7 +64,7 @@ extension AuthenticationRequest {
 }
 
 // MARK: - External declaration
-extension AuthenticationRequest {
+extension PayDayRequest {
     
     private struct AuthenticationBody: Encodable {
         
@@ -56,7 +73,13 @@ extension AuthenticationRequest {
     }
 }
 
-// MARK: - Constants
+// MARK: - Endpoints
 private extension String {
     static let authenticateEndpoint = "/authenticate"
+    static let transactionsEndpoint = "/transactions"
+}
+
+// MARK: - Query keys
+private extension String {
+    static let accountId = "account_id"
 }

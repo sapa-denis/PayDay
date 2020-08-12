@@ -17,13 +17,24 @@ public protocol RequestConvertible {
     func encode(with encoder: JSONEncoder) throws -> Data?
     func domain() throws -> URL
     func uri() throws -> String
+    func query() -> [URLQueryItem]?
 }
 
 extension RequestConvertible {
     
     public func absoluteURL() throws -> URL {
-        let absoluteURL = try domain().absoluteString + uri()
-        guard let url = URL(string: absoluteURL) else { throw RequestConvertibleError.invalidAbsoluteURL }
+        guard let uriString = try? uri(),
+            var uriComponents = URLComponents(string: uriString) else {
+                throw RequestConvertibleError.invalidURI
+        }
+
+        uriComponents.queryItems = (uriComponents.queryItems ?? []) + (query() ?? [])
+        
+        let host = try domain()
+        guard let url = uriComponents.url(relativeTo: host) else {
+            throw RequestConvertibleError.invalidAbsoluteURL
+        }
+        
         return url
     }
     
@@ -64,4 +75,5 @@ extension RequestConvertible {
 // MARK: - Errors
 public enum RequestConvertibleError: Error {
     case invalidAbsoluteURL
+    case invalidURI
 }

@@ -1,18 +1,18 @@
 //
-//  LoginUseCase.swift
+//  TransactionsUseCase.swift
 //  Features
 //
-//  Created by Sapa Denys on 10.08.2020.
+//  Created by Sapa Denys on 12.08.2020.
 //  Copyright © 2020 Sapa Denys. All rights reserved.
 //
 
 import Core
+import Entities
 import CoreData
 import Networking
-import Entities
 
-public final class LoginUseCase: UseCase<Int> {
-    
+class TransactionsUseCase: UseCase<Void> {
+
     // MARK: - Properties
     private let container: DependencyContainer
     
@@ -28,9 +28,8 @@ public final class LoginUseCase: UseCase<Int> {
     }
     
     // MARK: - Public methods
-    public func prepare(email: String,
-                        password: String) -> Self {
-        let request = PayDayRequest.authenticate(email: email, password: password)
+    public func prepare(userId: Int) -> Self {
+        let request = PayDayRequest.transactions(userId: userId)
         let networkRequest = container.networkRequestBuilder.build(request: request)
         
         let jsonDecoder = JSONDecoder()
@@ -40,13 +39,7 @@ public final class LoginUseCase: UseCase<Int> {
         let decodeOperation = container.responseDecodeBuilder.build(with: jsonDecoder)
         
         let save = container.responseAdapterBuilder.build(in: .additional) { input in
-            if case .failure(let error) = Result(catching: { try context.saveIfNeeded() }) {
-                return .failure(error)
-            }
-            
-            return input.map {
-                Int($0.identifier)
-            }
+            return Result { try context.saveIfNeeded() }
         }
         
         prepareExecution(for: networkRequest
@@ -58,7 +51,7 @@ public final class LoginUseCase: UseCase<Int> {
 }
 
 // MARK: - Container declaration
-extension LoginUseCase {
+extension TransactionsUseCase {
     
     public struct DependencyContainer {
         static var base: DependencyContainer {
@@ -68,21 +61,21 @@ extension LoginUseCase {
         }
         
         let networkRequestBuilder: NetworkRequesterBuildable
-        let responseDecodeBuilder: AbstractDecoderBuilder<User>
-        let responseAdapterBuilder: AbstractAdditionalOperationBuilder<User, Int>
+        let responseDecodeBuilder: AbstractDecoderBuilder<Transaction>
+        let responseAdapterBuilder: AbstractAdditionalOperationBuilder<Transaction, Void>
     }
     
-    final class ResponseDecodingBuilder: AbstractDecoderBuilder<User> {
+    final class ResponseDecodingBuilder: AbstractDecoderBuilder<Transaction> {
 
-        override func build(with decoder: JSONDecoder, path: String? = nil) -> DecodeOperation<User> {
+        override func build(with decoder: JSONDecoder, path: String? = nil) -> DecodeOperation<Transaction> {
             DecodeOperation(in: .additional, decoder: decoder, path: path)
         }
     }
     
-    final class ResponseAdapterBuilder: AbstractAdditionalOperationBuilder<User, Int> {
+    final class ResponseAdapterBuilder: AbstractAdditionalOperationBuilder<Transaction, Void> {
         
         override func build(in queue: OperationQueue,
-                            closure: @escaping OperationCompletion) -> CoreOperationClosure<User, Int> {
+                            closure: @escaping OperationCompletion) -> CoreOperationClosure<Transaction, Void> {
             CoreOperationClosure(in: queue, closure: closure)
         }
     }

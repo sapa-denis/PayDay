@@ -63,6 +63,8 @@
 		870C8CA724E3ECDD00DE5EFC /* TransactionList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 870C8CA624E3ECDD00DE5EFC /* TransactionList.storyboard */; };
 		870C8CAA24E3F49C00DE5EFC /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8CA924E3F49C00DE5EFC /* TransactionTableViewCell.swift */; };
 		870C8CAC24E3F71900DE5EFC /* TransactionListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8CAB24E3F71900DE5EFC /* TransactionListRouter.swift */; };
+		870C8CAE24E3FB4100DE5EFC /* TransactionsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8CAD24E3FB4100DE5EFC /* TransactionsUseCase.swift */; };
+		870C8CB224E439A800DE5EFC /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8CB124E439A800DE5EFC /* Transaction.swift */; };
 		8752F0A324DAAC48007041EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F0A224DAAC48007041EE /* AppDelegate.swift */; };
 		8752F0A724DAAC48007041EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F0A624DAAC48007041EE /* ViewController.swift */; };
 		8752F0AA24DAAC48007041EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8752F0A824DAAC48007041EE /* Main.storyboard */; };
@@ -93,7 +95,7 @@
 		8752F16624DC13A9007041EE /* URLSession+Additional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F16524DC13A9007041EE /* URLSession+Additional.swift */; };
 		8752F16B24DC473C007041EE /* RequestCovertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F16A24DC473C007041EE /* RequestCovertible.swift */; };
 		8752F16D24DC4795007041EE /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F16C24DC4795007041EE /* HTTPMethod.swift */; };
-		8752F17024DC5248007041EE /* AuthenticationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F16F24DC5248007041EE /* AuthenticationRequest.swift */; };
+		8752F17024DC5248007041EE /* PayDayRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F16F24DC5248007041EE /* PayDayRequest.swift */; };
 		8752F17224DC8DF6007041EE /* JSONEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F17124DC8DF6007041EE /* JSONEncoder.swift */; };
 		E5C9EB133D63A16A109706CA /* Pods_Networking_NetworkingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3AC639B23304F22362751C /* Pods_Networking_NetworkingTests.framework */; };
 		E8CC1D2974D16AEBCED95B2F /* Pods_PayDay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 724A721BF64EC7A0A65B556A /* Pods_PayDay.framework */; };
@@ -304,6 +306,8 @@
 		870C8CA624E3ECDD00DE5EFC /* TransactionList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TransactionList.storyboard; sourceTree = "<group>"; };
 		870C8CA924E3F49C00DE5EFC /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
 		870C8CAB24E3F71900DE5EFC /* TransactionListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListRouter.swift; sourceTree = "<group>"; };
+		870C8CAD24E3FB4100DE5EFC /* TransactionsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsUseCase.swift; sourceTree = "<group>"; };
+		870C8CB124E439A800DE5EFC /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		8752F09F24DAAC48007041EE /* PayDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8752F0A224DAAC48007041EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8752F0A624DAAC48007041EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -340,7 +344,7 @@
 		8752F16524DC13A9007041EE /* URLSession+Additional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Additional.swift"; sourceTree = "<group>"; };
 		8752F16A24DC473C007041EE /* RequestCovertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCovertible.swift; sourceTree = "<group>"; };
 		8752F16C24DC4795007041EE /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
-		8752F16F24DC5248007041EE /* AuthenticationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRequest.swift; sourceTree = "<group>"; };
+		8752F16F24DC5248007041EE /* PayDayRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayDayRequest.swift; sourceTree = "<group>"; };
 		8752F17124DC8DF6007041EE /* JSONEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONEncoder.swift; sourceTree = "<group>"; };
 		89D07C566BC992ADDD1302F0 /* Pods_Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A270CA01BB0B2D4998457E8 /* Pods-Core-CoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Core-CoreTests.debug.xcconfig"; path = "Target Support Files/Pods-Core-CoreTests/Pods-Core-CoreTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -507,6 +511,7 @@
 			isa = PBXGroup;
 			children = (
 				870C8C1A24E1680100DE5EFC /* Login */,
+				870C8CAF24E3FB4700DE5EFC /* Transactions */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -613,6 +618,7 @@
 		870C8C5E24E1B8B900DE5EFC /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				870C8CB024E4398200DE5EFC /* Transaction */,
 				870C8C5F24E1B8D000DE5EFC /* User */,
 			);
 			path = Entities;
@@ -715,6 +721,22 @@
 				870C8CA924E3F49C00DE5EFC /* TransactionTableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		870C8CAF24E3FB4700DE5EFC /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				870C8CAD24E3FB4100DE5EFC /* TransactionsUseCase.swift */,
+			);
+			path = Transactions;
+			sourceTree = "<group>";
+		};
+		870C8CB024E4398200DE5EFC /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				870C8CB124E439A800DE5EFC /* Transaction.swift */,
+			);
+			path = Transaction;
 			sourceTree = "<group>";
 		};
 		8752F09624DAAC48007041EE = {
@@ -947,7 +969,7 @@
 		8752F16E24DC5218007041EE /* Requests */ = {
 			isa = PBXGroup;
 			children = (
-				8752F16F24DC5248007041EE /* AuthenticationRequest.swift */,
+				8752F16F24DC5248007041EE /* PayDayRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -1487,6 +1509,7 @@
 			files = (
 				870C8C2B24E16A2C00DE5EFC /* AbstractAdditionalOperationBuilder.swift in Sources */,
 				870C8C7D24E2C75C00DE5EFC /* PayDay.xcdatamodeld in Sources */,
+				870C8CAE24E3FB4100DE5EFC /* TransactionsUseCase.swift in Sources */,
 				870C8C2D24E16A4B00DE5EFC /* ResponseAdapterBuildable.swift in Sources */,
 				870C8C2524E1692300DE5EFC /* NetworkRequesterBuildable.swift in Sources */,
 				870C8C2F24E16A8900DE5EFC /* DecoderBuildable.swift in Sources */,
@@ -1512,6 +1535,7 @@
 			files = (
 				870C8C5724E19A8000DE5EFC /* DecodeOperation.swift in Sources */,
 				870C8C9724E3C90E00DE5EFC /* Listener.swift in Sources */,
+				870C8CB224E439A800DE5EFC /* Transaction.swift in Sources */,
 				870C8C9124E32E4E00DE5EFC /* ListenEntityOperation.swift in Sources */,
 				870C8C6324E1CB7300DE5EFC /* NSManagedObjectContext.swift in Sources */,
 				870C8C6724E1CC0300DE5EFC /* Entity.swift in Sources */,
@@ -1601,7 +1625,7 @@
 				8752F14C24DABFCC007041EE /* URLSession+Request.swift in Sources */,
 				8752F14A24DABF95007041EE /* Constants.swift in Sources */,
 				8752F16624DC13A9007041EE /* URLSession+Additional.swift in Sources */,
-				8752F17024DC5248007041EE /* AuthenticationRequest.swift in Sources */,
+				8752F17024DC5248007041EE /* PayDayRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
