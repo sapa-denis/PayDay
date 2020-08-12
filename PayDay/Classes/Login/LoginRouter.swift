@@ -15,6 +15,7 @@ protocol LoginPresentation: AnyObject {
 extension LoginViewController: LoginPresentation {
     
     func openTransactions() {
-
+        let window = UIApplication.shared.keyWindow
+        window?.replaceRootViewControllerWith(TransactionListModule().viewController())
     }
 }
