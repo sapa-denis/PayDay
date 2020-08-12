@@ -1,5 +1,5 @@
 //
-//  Transaction.swift
+//  Account.swift
 //  Entities
 //
 //  Created by Sapa Denys on 12.08.2020.
@@ -9,21 +9,21 @@
 import CoreData
 import Core
 
-@objc(Transaction)
-public final class Transaction: NSManagedObject, Decodable {
+@objc(Account)
+public final class Account: NSManagedObject, Decodable {
     
     // MARK: - Properties
     @NSManaged public private(set) var identifier: Int64
-    @NSManaged public private(set) var amount: String
-    @NSManaged public private(set) var vendor: String
-    @NSManaged public private(set) var category: String
-    @NSManaged public private(set) var date: Date
+    @NSManaged public private(set) var iban: String
+    @NSManaged public private(set) var type: String
+    @NSManaged public private(set) var createdDate: Date
+    @NSManaged public private(set) var isActive: Bool
     
     // MARK: - Init / Deinit Methods
     required convenience public init(from decoder: Decoder) throws {
         guard let managedObjectContext = decoder.userInfo[CodingUserInfoKey.context] as? NSManagedObjectContext,
-            let entity = NSEntityDescription.entity(forEntityName: Transaction.entityName, in: managedObjectContext) else {
-                fatalError("Failed to decode \(Transaction.self)")
+            let entity = NSEntityDescription.entity(forEntityName: Account.entityName, in: managedObjectContext) else {
+                fatalError("Failed to decode \(Account.self)")
         }
         
         self.init(entity: entity, insertInto: managedObjectContext)
@@ -34,7 +34,7 @@ public final class Transaction: NSManagedObject, Decodable {
                 return
         }
         
-        let object: Transaction = (try? managedObjectContext.first(withPrimaryKey: identifier)) ?? self
+        let object: Account = (try? managedObjectContext.first(withPrimaryKey: identifier)) ?? self
         
         do {
             try object.decode(container: container, in: managedObjectContext)
@@ -51,16 +51,16 @@ public final class Transaction: NSManagedObject, Decodable {
     private func decode(container: KeyedDecodingContainer<CodingKeys>, in context: NSManagedObjectContext) throws {
         try context.performAndWait {
             identifier <>= try container.decode(Int64.self, forKey: .identifier)
-            amount <>= try container.decode(String.self, forKey: .amount)
-            vendor <>= try container.decode(String.self, forKey: .vendor)
-            category <>= try container.decode(String.self, forKey: .category)
-            date <>= try container.decode(Date.self, forKey: .date)
+            iban <>= try container.decode(String.self, forKey: .iban)
+            type <>= try container.decode(String.self, forKey: .type)
+            createdDate <>= try container.decode(Date.self, forKey: .createdDate)
+            isActive <>= try container.decode(Bool.self, forKey: .isActive)
         }
     }
 }
 
 // MARK: - Entity
-extension Transaction: Entity {
+extension Account: Entity {
     
     public static var primaryKey: String {
         return #keyPath(identifier)
@@ -68,13 +68,13 @@ extension Transaction: Entity {
 }
 
 // MARK: - CodingKeys
-extension Transaction {
+extension Account {
     
     enum CodingKeys: String, CodingKey {
         case identifier = "id"
-        case amount
-        case vendor
-        case category
-        case date
+        case iban
+        case type
+        case createdDate = "date_created"
+        case isActive
     }
 }

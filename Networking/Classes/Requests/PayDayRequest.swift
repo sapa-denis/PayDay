@@ -11,12 +11,15 @@ import Foundation
 public enum PayDayRequest: RequestConvertible {
     
     case authenticate(email: String, password: String)
-    case transactions(userId: Int)
+    case accounts(userId: Int)
+    case transactions(accountId: Int)
     
     public func uri() -> String {
         switch self {
         case .authenticate:
             return .authenticateEndpoint
+        case .accounts:
+            return .accountsEndpoint
         case .transactions:
             return .transactionsEndpoint
         }
@@ -27,15 +30,18 @@ public enum PayDayRequest: RequestConvertible {
         switch self {
         case .authenticate:
             return .post
-        case .transactions:
+        case .accounts,
+             .transactions:
             return .get
         }
     }
     
     public func query() -> [URLQueryItem]? {
         switch self {
-        case .transactions(let userId):
-            return [URLQueryItem(name: .accountId, value: "\(userId)")]
+        case .accounts(let userId):
+            return [URLQueryItem(name: .customerId, value: "\(userId)")]
+        case .transactions(let accountId):
+            return [URLQueryItem(name: .accountId, value: "\(accountId)")]
         case .authenticate:
             return nil
         }
@@ -47,7 +53,8 @@ public enum PayDayRequest: RequestConvertible {
             return try encodeAuthenticationParams(with: encoder,
                                                   email: email,
                                                   password: password)
-        case .transactions:
+        case .accounts,
+             .transactions:
             return nil
         }
     }
@@ -77,9 +84,11 @@ extension PayDayRequest {
 private extension String {
     static let authenticateEndpoint = "/authenticate"
     static let transactionsEndpoint = "/transactions"
+    static let accountsEndpoint = "/accounts"
 }
 
 // MARK: - Query keys
 private extension String {
     static let accountId = "account_id"
+    static let customerId = "customer_id"
 }
