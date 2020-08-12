@@ -20,8 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ = NSPersistentContainer.container
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = LoginModule().viewController()
-        window?.makeKeyAndVisible()
+        
+        let authorizationStatus = UserSessionController.shared.authorizationStatus
+        switch authorizationStatus {
+        case .authorized:
+            window?.replaceRootViewControllerWith(TransactionListModule().viewController())
+        case .notAuthorized:
+            window?.replaceRootViewControllerWith(LoginModule().viewController(), animated: false)
+        }
         
         return true
     }
