@@ -63,10 +63,11 @@
 		870C8CA724E3ECDD00DE5EFC /* TransactionList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 870C8CA624E3ECDD00DE5EFC /* TransactionList.storyboard */; };
 		870C8CAA24E3F49C00DE5EFC /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8CA924E3F49C00DE5EFC /* TransactionTableViewCell.swift */; };
 		870C8CAC24E3F71900DE5EFC /* TransactionListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8CAB24E3F71900DE5EFC /* TransactionListRouter.swift */; };
-		870C8CAE24E3FB4100DE5EFC /* TransactionsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8CAD24E3FB4100DE5EFC /* TransactionsUseCase.swift */; };
+		870C8CAE24E3FB4100DE5EFC /* TransactionListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8CAD24E3FB4100DE5EFC /* TransactionListUseCase.swift */; };
 		870C8CB224E439A800DE5EFC /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8CB124E439A800DE5EFC /* Transaction.swift */; };
 		870C8CB624E43FBA00DE5EFC /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8CB524E43FBA00DE5EFC /* Account.swift */; };
-		870C8CB824E4580000DE5EFC /* AccountsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8CB724E4580000DE5EFC /* AccountsUseCase.swift */; };
+		870C8CB824E4580000DE5EFC /* AccountListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8CB724E4580000DE5EFC /* AccountListUseCase.swift */; };
+		870C8CBB24E5347F00DE5EFC /* FeatureError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8CBA24E5347F00DE5EFC /* FeatureError.swift */; };
 		8752F0A324DAAC48007041EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F0A224DAAC48007041EE /* AppDelegate.swift */; };
 		8752F0A724DAAC48007041EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F0A624DAAC48007041EE /* ViewController.swift */; };
 		8752F0AA24DAAC48007041EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8752F0A824DAAC48007041EE /* Main.storyboard */; };
@@ -308,10 +309,11 @@
 		870C8CA624E3ECDD00DE5EFC /* TransactionList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TransactionList.storyboard; sourceTree = "<group>"; };
 		870C8CA924E3F49C00DE5EFC /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
 		870C8CAB24E3F71900DE5EFC /* TransactionListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListRouter.swift; sourceTree = "<group>"; };
-		870C8CAD24E3FB4100DE5EFC /* TransactionsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsUseCase.swift; sourceTree = "<group>"; };
+		870C8CAD24E3FB4100DE5EFC /* TransactionListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListUseCase.swift; sourceTree = "<group>"; };
 		870C8CB124E439A800DE5EFC /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		870C8CB524E43FBA00DE5EFC /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
-		870C8CB724E4580000DE5EFC /* AccountsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsUseCase.swift; sourceTree = "<group>"; };
+		870C8CB724E4580000DE5EFC /* AccountListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountListUseCase.swift; sourceTree = "<group>"; };
+		870C8CBA24E5347F00DE5EFC /* FeatureError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureError.swift; sourceTree = "<group>"; };
 		8752F09F24DAAC48007041EE /* PayDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8752F0A224DAAC48007041EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8752F0A624DAAC48007041EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -532,6 +534,7 @@
 		870C8C1D24E1689700DE5EFC /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				870C8CB924E5346600DE5EFC /* Errors */,
 				870C8C1E24E168AA00DE5EFC /* AbstractBuilders */,
 				870C8C3024E16E9A00DE5EFC /* CoreOperationClosure.swift */,
 			);
@@ -732,7 +735,7 @@
 		870C8CAF24E3FB4700DE5EFC /* Transactions */ = {
 			isa = PBXGroup;
 			children = (
-				870C8CAD24E3FB4100DE5EFC /* TransactionsUseCase.swift */,
+				870C8CAD24E3FB4100DE5EFC /* TransactionListUseCase.swift */,
 			);
 			path = Transactions;
 			sourceTree = "<group>";
@@ -748,7 +751,7 @@
 		870C8CB324E43F6900DE5EFC /* Accounts */ = {
 			isa = PBXGroup;
 			children = (
-				870C8CB724E4580000DE5EFC /* AccountsUseCase.swift */,
+				870C8CB724E4580000DE5EFC /* AccountListUseCase.swift */,
 			);
 			path = Accounts;
 			sourceTree = "<group>";
@@ -759,6 +762,14 @@
 				870C8CB524E43FBA00DE5EFC /* Account.swift */,
 			);
 			path = Account;
+			sourceTree = "<group>";
+		};
+		870C8CB924E5346600DE5EFC /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				870C8CBA24E5347F00DE5EFC /* FeatureError.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 		8752F09624DAAC48007041EE = {
@@ -1531,15 +1542,16 @@
 			files = (
 				870C8C2B24E16A2C00DE5EFC /* AbstractAdditionalOperationBuilder.swift in Sources */,
 				870C8C7D24E2C75C00DE5EFC /* PayDay.xcdatamodeld in Sources */,
-				870C8CAE24E3FB4100DE5EFC /* TransactionsUseCase.swift in Sources */,
+				870C8CAE24E3FB4100DE5EFC /* TransactionListUseCase.swift in Sources */,
 				870C8C2D24E16A4B00DE5EFC /* ResponseAdapterBuildable.swift in Sources */,
 				870C8C2524E1692300DE5EFC /* NetworkRequesterBuildable.swift in Sources */,
-				870C8CB824E4580000DE5EFC /* AccountsUseCase.swift in Sources */,
+				870C8CB824E4580000DE5EFC /* AccountListUseCase.swift in Sources */,
 				870C8C2F24E16A8900DE5EFC /* DecoderBuildable.swift in Sources */,
 				870C8C3124E16E9A00DE5EFC /* CoreOperationClosure.swift in Sources */,
 				870C8C1C24E1681500DE5EFC /* LoginUseCase.swift in Sources */,
 				870C8C2724E1694900DE5EFC /* NetworkExecutable.swift in Sources */,
 				870C8C2924E16A0200DE5EFC /* AbstractDecoderBuilder.swift in Sources */,
+				870C8CBB24E5347F00DE5EFC /* FeatureError.swift in Sources */,
 				870C8C2124E168D300DE5EFC /* NetworkRequesterBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

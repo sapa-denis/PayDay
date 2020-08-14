@@ -1,17 +1,17 @@
 //
-//  AccountsUseCase.swift
+//  TransactionsUseCase.swift
 //  Features
 //
 //  Created by Sapa Denys on 12.08.2020.
 //  Copyright © 2020 Sapa Denys. All rights reserved.
 //
 
-import CoreData
 import Core
 import Entities
+import CoreData
 import Networking
 
-final public class AccountsUseCase: UseCase<Void> {
+class TransactionListUseCase: UseCase<Void> {
 
     // MARK: - Properties
     private let container: DependencyContainer
@@ -28,8 +28,8 @@ final public class AccountsUseCase: UseCase<Void> {
     }
     
     // MARK: - Public methods
-    public func prepare(userId: Int) -> Self {
-        let request = PayDayRequest.accounts(userId: userId)
+    public func prepare(accountId: Int) -> Self {
+        let request = PayDayRequest.transactions(accountId: accountId)
         let networkRequest = container.networkRequestBuilder.build(request: request)
         
         let jsonDecoder = JSONDecoder()
@@ -39,9 +39,7 @@ final public class AccountsUseCase: UseCase<Void> {
         let decodeOperation = container.responseDecodeBuilder.build(with: jsonDecoder)
         
         let save = container.responseAdapterBuilder.build(in: .additional) { input in
-            return Result {
-                try context.saveIfNeeded()
-            }
+            return Result { try context.saveIfNeeded() }
         }
         
         prepareExecution(for: networkRequest
@@ -53,7 +51,7 @@ final public class AccountsUseCase: UseCase<Void> {
 }
 
 // MARK: - Container declaration
-extension AccountsUseCase {
+extension TransactionListUseCase {
     
     public struct DependencyContainer {
         static var base: DependencyContainer {
@@ -63,21 +61,21 @@ extension AccountsUseCase {
         }
         
         let networkRequestBuilder: NetworkRequesterBuildable
-        let responseDecodeBuilder: AbstractDecoderBuilder<[Account]>
-        let responseAdapterBuilder: AbstractAdditionalOperationBuilder<[Account], Void>
+        let responseDecodeBuilder: AbstractDecoderBuilder<Transaction>
+        let responseAdapterBuilder: AbstractAdditionalOperationBuilder<Transaction, Void>
     }
     
-    final class ResponseDecodingBuilder: AbstractDecoderBuilder<[Account]> {
+    final class ResponseDecodingBuilder: AbstractDecoderBuilder<Transaction> {
 
-        override func build(with decoder: JSONDecoder, path: String? = nil) -> DecodeOperation<[Account]> {
+        override func build(with decoder: JSONDecoder, path: String? = nil) -> DecodeOperation<Transaction> {
             DecodeOperation(in: .additional, decoder: decoder, path: path)
         }
     }
     
-    final class ResponseAdapterBuilder: AbstractAdditionalOperationBuilder<[Account], Void> {
+    final class ResponseAdapterBuilder: AbstractAdditionalOperationBuilder<Transaction, Void> {
         
         override func build(in queue: OperationQueue,
-                            closure: @escaping OperationCompletion) -> CoreOperationClosure<[Account], Void> {
+                            closure: @escaping OperationCompletion) -> CoreOperationClosure<Transaction, Void> {
             CoreOperationClosure(in: queue, closure: closure)
         }
     }

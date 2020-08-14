@@ -24,10 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let authorizationStatus = UserSessionController.shared.authorizationStatus
         switch authorizationStatus {
         case .authorized:
-            window?.replaceRootViewControllerWith(TransactionListModule().viewController())
+            window?.rootViewController = TransactionListModule().viewController()
         case .notAuthorized:
-            window?.replaceRootViewControllerWith(LoginModule().viewController(), animated: false)
+            window?.rootViewController = LoginModule().viewController()
+            
         }
+        window?.makeKeyAndVisible()
         
         return true
     }

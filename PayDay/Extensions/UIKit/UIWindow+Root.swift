@@ -29,7 +29,7 @@ public extension UIWindow {
                 completion?()
             }
         }
-        if self.rootViewController!.presentedViewController != nil {
+        if self.rootViewController?.presentedViewController != nil {
             self.rootViewController!.dismiss(animated: false, completion: dismissCompletion)
         } else {
             dismissCompletion()

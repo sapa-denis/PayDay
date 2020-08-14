@@ -20,6 +20,7 @@ public final class User: NSManagedObject, Decodable {
     @NSManaged public private(set) var password: String
     @NSManaged public private(set) var dob: String
     @NSManaged public private(set) var phone: String
+    @NSManaged public var accountList: Set<Account>?
     
     @NSManaged private var primitiveGender: String
     public private(set) var gender: Gender {

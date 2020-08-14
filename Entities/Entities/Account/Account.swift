@@ -16,8 +16,9 @@ public final class Account: NSManagedObject, Decodable {
     @NSManaged public private(set) var identifier: Int64
     @NSManaged public private(set) var iban: String
     @NSManaged public private(set) var type: String
-    @NSManaged public private(set) var createdDate: Date
+    @NSManaged public private(set) var createdDate: String
     @NSManaged public private(set) var isActive: Bool
+    @NSManaged public private(set) var customer: User?
     
     // MARK: - Init / Deinit Methods
     required convenience public init(from decoder: Decoder) throws {
@@ -53,7 +54,7 @@ public final class Account: NSManagedObject, Decodable {
             identifier <>= try container.decode(Int64.self, forKey: .identifier)
             iban <>= try container.decode(String.self, forKey: .iban)
             type <>= try container.decode(String.self, forKey: .type)
-            createdDate <>= try container.decode(Date.self, forKey: .createdDate)
+            createdDate <>= try container.decode(String.self, forKey: .createdDate)
             isActive <>= try container.decode(Bool.self, forKey: .isActive)
         }
     }
@@ -75,6 +76,6 @@ extension Account {
         case iban
         case type
         case createdDate = "date_created"
-        case isActive
+        case isActive = "active"
     }
 }
