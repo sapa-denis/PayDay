@@ -18,7 +18,9 @@ protocol TransactionDisplayable {
 extension Transaction: TransactionDisplayable {
     
     var dateFormatted: String {
-        date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        return dateFormatter.string(from: date as Date)
     }
     
     var amountFormatted: String {

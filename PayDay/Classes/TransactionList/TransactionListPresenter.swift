@@ -91,9 +91,10 @@ extension TransactionListPresenter {
         let predicate = NSPredicate(format: "%K = %d",
                                     #keyPath(Transaction.account.identifier), currentAccountId)
 
+        let sortDescriptor = NSSortDescriptor(key: #keyPath(Transaction.date), ascending: false)
         var collectionUpdates: [ContentUpdate] = []
         
-        transactionListListener.prepare(predicate: predicate, sortDescriptors: [])
+        transactionListListener.prepare(predicate: predicate, sortDescriptors: [sortDescriptor])
             .success { [weak self] change in
                 guard let self = self else {
                     return

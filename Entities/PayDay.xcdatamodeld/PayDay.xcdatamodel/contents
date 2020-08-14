@@ -17,7 +17,7 @@
     <entity name="Transaction" representedClassName="Transaction" syncable="YES">
         <attribute name="amount" attributeType="String"/>
         <attribute name="category" attributeType="String"/>
-        <attribute name="date" attributeType="String"/>
+        <attribute name="date" attributeType="Date" defaultDateTimeInterval="619107600" usesScalarValueType="NO"/>
         <attribute name="identifier" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="vendor" attributeType="String"/>
         <relationship name="account" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Account" inverseName="transactions" inverseEntity="Account"/>
