@@ -17,7 +17,8 @@ public final class Transaction: NSManagedObject, Decodable {
     @NSManaged public private(set) var amount: String
     @NSManaged public private(set) var vendor: String
     @NSManaged public private(set) var category: String
-    @NSManaged public private(set) var date: Date
+    @NSManaged public private(set) var date: String
+    @NSManaged public private(set) var account: Account?
     
     // MARK: - Init / Deinit Methods
     required convenience public init(from decoder: Decoder) throws {
@@ -54,7 +55,7 @@ public final class Transaction: NSManagedObject, Decodable {
             amount <>= try container.decode(String.self, forKey: .amount)
             vendor <>= try container.decode(String.self, forKey: .vendor)
             category <>= try container.decode(String.self, forKey: .category)
-            date <>= try container.decode(Date.self, forKey: .date)
+            date <>= try container.decode(String.self, forKey: .date)
         }
     }
 }

@@ -19,6 +19,7 @@ public final class Account: NSManagedObject, Decodable {
     @NSManaged public private(set) var createdDate: String
     @NSManaged public private(set) var isActive: Bool
     @NSManaged public private(set) var customer: User?
+    @NSManaged public var transactions: Set<Transaction>?
     
     // MARK: - Init / Deinit Methods
     required convenience public init(from decoder: Decoder) throws {

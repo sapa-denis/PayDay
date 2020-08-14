@@ -10,19 +10,23 @@ import UIKit
 
 class TransactionTableViewCell: UITableViewCell {
 
+    // MARK: - Outlets
     @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!
     @IBOutlet private weak var amountLabel: UILabel!
     @IBOutlet private weak var iconView: UIView!
     
+    // MARK: - Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
         
         iconView.layer.cornerRadius = Constants.cornerRadius
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    // MARK: - Public methods
+    func configure(with transaction: TransactionDisplayable) {
+        dateLabel.text = transaction.dateFormatted
+        descriptionLabel.text = transaction.vendorFormatted
+        amountLabel.text = transaction.amountFormatted
     }
-
 }

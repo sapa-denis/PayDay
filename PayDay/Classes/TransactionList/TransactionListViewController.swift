@@ -9,7 +9,8 @@
 import UIKit
 
 protocol TransactionListView: AnyObject {
-    
+    func reload(alerts: [TransactionDisplayable])
+    func update(alerts: [TransactionDisplayable], with updates: [ContentUpdate])
 }
 
 class TransactionListViewController: UIViewController {
@@ -19,13 +20,48 @@ class TransactionListViewController: UIViewController {
     
     // MARK: - Properties
     var presenter: TransactionListPresenter!
+    
+    private var data: [TransactionDisplayable] = []
+}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+// MARK: - TransactionListView
+extension TransactionListViewController: TransactionListView {
+    
+    func reload(alerts: [TransactionDisplayable]) {
+        data = alerts
+        
+        guard tableView != nil else {
+            return
+        }
+        
+        tableView.reloadData()
+    }
+    
+    func update(alerts: [TransactionDisplayable], with updates: [ContentUpdate]) {
+        data = alerts
+        
+        guard tableView != nil else {
+            return
+        }
+        
+        tableView.beginUpdates()
+        tableView.perform(updates: updates)
+        tableView.endUpdates()
     }
 }
 
-extension TransactionListViewController: TransactionListView {
+// MARK: - UITableViewDataSource
+extension TransactionListViewController: UITableViewDataSource {
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(at: indexPath, cellType: TransactionTableViewCell.self)
+        
+        cell.configure(with: data[indexPath.row])
+        
+        return cell
+    }
 }

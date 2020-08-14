@@ -11,7 +11,7 @@ import Entities
 import CoreData
 import Networking
 
-class TransactionListUseCase: UseCase<Void> {
+public final class TransactionListUseCase: UseCase<Void> {
 
     // MARK: - Properties
     private let container: DependencyContainer
@@ -38,12 +38,47 @@ class TransactionListUseCase: UseCase<Void> {
         
         let decodeOperation = container.responseDecodeBuilder.build(with: jsonDecoder)
         
+        let bindTransactionsWithAccount = CoreOperationClosure<[Transaction], Void>(in: .additional) { input in
+            switch input {
+            case .success(let transactions):
+                let transactionsInContext = transactions.compactMap { transaction -> Transaction? in
+                    guard transaction.managedObjectContext == context,
+                        transaction.identifier != 0 else {
+                            return nil
+                    }
+                    
+                    return transaction
+                }
+                
+                guard transactionsInContext.count > 0 else {
+                    return .failure(FeatureError.customMessage("Empty Transaction array to bind"))
+                }
+                
+                let fetchRequest = NSFetchRequest<Account>(entityName: Account.className)
+                fetchRequest.predicate = NSPredicate(format: "%K == %d",
+                                                     #keyPath(Account.identifier),
+                                                     accountId)
+                
+                guard let result = try? context.fetch(fetchRequest),
+                    let account = result.first else {
+                        return .failure(FeatureError.coreData(.missingEntity(Account.self, accountId)))
+                }
+                
+                account.transactions = Set(transactionsInContext)
+                
+                return .success(())
+            case .failure(let error):
+                return .failure(error)
+            }
+        }
+        
         let save = container.responseAdapterBuilder.build(in: .additional) { input in
             return Result { try context.saveIfNeeded() }
         }
         
         prepareExecution(for: networkRequest
             .then(decodeOperation)
+            .then(bindTransactionsWithAccount)
             .then(save))
         
         return self
@@ -61,21 +96,21 @@ extension TransactionListUseCase {
         }
         
         let networkRequestBuilder: NetworkRequesterBuildable
-        let responseDecodeBuilder: AbstractDecoderBuilder<Transaction>
-        let responseAdapterBuilder: AbstractAdditionalOperationBuilder<Transaction, Void>
+        let responseDecodeBuilder: AbstractDecoderBuilder<[Transaction]>
+        let responseAdapterBuilder: AbstractAdditionalOperationBuilder<[Transaction], Void>
     }
     
-    final class ResponseDecodingBuilder: AbstractDecoderBuilder<Transaction> {
+    final class ResponseDecodingBuilder: AbstractDecoderBuilder<[Transaction]> {
 
-        override func build(with decoder: JSONDecoder, path: String? = nil) -> DecodeOperation<Transaction> {
+        override func build(with decoder: JSONDecoder, path: String? = nil) -> DecodeOperation<[Transaction]> {
             DecodeOperation(in: .additional, decoder: decoder, path: path)
         }
     }
     
-    final class ResponseAdapterBuilder: AbstractAdditionalOperationBuilder<Transaction, Void> {
+    final class ResponseAdapterBuilder: AbstractAdditionalOperationBuilder<[Transaction], Void> {
         
         override func build(in queue: OperationQueue,
-                            closure: @escaping OperationCompletion) -> CoreOperationClosure<Transaction, Void> {
+                            closure: @escaping OperationCompletion) -> CoreOperationClosure<[Transaction], Void> {
             CoreOperationClosure(in: queue, closure: closure)
         }
     }

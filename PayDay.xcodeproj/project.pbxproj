@@ -68,6 +68,12 @@
 		870C8CB624E43FBA00DE5EFC /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8CB524E43FBA00DE5EFC /* Account.swift */; };
 		870C8CB824E4580000DE5EFC /* AccountListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8CB724E4580000DE5EFC /* AccountListUseCase.swift */; };
 		870C8CBB24E5347F00DE5EFC /* FeatureError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8CBA24E5347F00DE5EFC /* FeatureError.swift */; };
+		870C8CBE24E6BA0A00DE5EFC /* CellReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8CBD24E6BA0A00DE5EFC /* CellReusable.swift */; };
+		870C8CC024E6BA8100DE5EFC /* UITableView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8CBF24E6BA8100DE5EFC /* UITableView+Reusable.swift */; };
+		870C8CC324E6BBE300DE5EFC /* TransactionDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8CC224E6BBE300DE5EFC /* TransactionDisplayable.swift */; };
+		870C8CC524E6C6BE00DE5EFC /* CollectionContentUpdating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8CC424E6C6BE00DE5EFC /* CollectionContentUpdating.swift */; };
+		870C8CC724E6C72400DE5EFC /* UITableView+Updates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8CC624E6C72400DE5EFC /* UITableView+Updates.swift */; };
+		870C8CC924E6C79F00DE5EFC /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8CC824E6C79E00DE5EFC /* Typealiases.swift */; };
 		8752F0A324DAAC48007041EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F0A224DAAC48007041EE /* AppDelegate.swift */; };
 		8752F0A724DAAC48007041EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F0A624DAAC48007041EE /* ViewController.swift */; };
 		8752F0AA24DAAC48007041EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8752F0A824DAAC48007041EE /* Main.storyboard */; };
@@ -314,6 +320,12 @@
 		870C8CB524E43FBA00DE5EFC /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		870C8CB724E4580000DE5EFC /* AccountListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountListUseCase.swift; sourceTree = "<group>"; };
 		870C8CBA24E5347F00DE5EFC /* FeatureError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureError.swift; sourceTree = "<group>"; };
+		870C8CBD24E6BA0A00DE5EFC /* CellReusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellReusable.swift; sourceTree = "<group>"; };
+		870C8CBF24E6BA8100DE5EFC /* UITableView+Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Reusable.swift"; sourceTree = "<group>"; };
+		870C8CC224E6BBE300DE5EFC /* TransactionDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDisplayable.swift; sourceTree = "<group>"; };
+		870C8CC424E6C6BE00DE5EFC /* CollectionContentUpdating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionContentUpdating.swift; sourceTree = "<group>"; };
+		870C8CC624E6C72400DE5EFC /* UITableView+Updates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Updates.swift"; sourceTree = "<group>"; };
+		870C8CC824E6C79E00DE5EFC /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
 		8752F09F24DAAC48007041EE /* PayDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8752F0A224DAAC48007041EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8752F0A624DAAC48007041EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -673,6 +685,8 @@
 				870C8C8424E2FBB900DE5EFC /* UIFont.swift */,
 				870C8C9A24E3E0E100DE5EFC /* UIWindow+Root.swift */,
 				870C8C9C24E3E12500DE5EFC /* UIView+Snapshot.swift */,
+				870C8CBF24E6BA8100DE5EFC /* UITableView+Reusable.swift */,
+				870C8CC624E6C72400DE5EFC /* UITableView+Updates.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -683,6 +697,7 @@
 				870C8C8724E2FCD600DE5EFC /* Constants.swift */,
 				870C8C8B24E3148700DE5EFC /* UserSessionController.swift */,
 				870C8C8D24E31A1E00DE5EFC /* UserDefaultsAccessor.swift */,
+				870C8CC824E6C79E00DE5EFC /* Typealiases.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -714,6 +729,7 @@
 		870C8C9F24E3EB5700DE5EFC /* TransactionList */ = {
 			isa = PBXGroup;
 			children = (
+				870C8CC124E6BBD200DE5EFC /* Model */,
 				870C8CA624E3ECDD00DE5EFC /* TransactionList.storyboard */,
 				870C8CA024E3EB8F00DE5EFC /* TransactionListModule.swift */,
 				870C8CA424E3EBCC00DE5EFC /* TransactionListPresenter.swift */,
@@ -772,6 +788,23 @@
 			path = Errors;
 			sourceTree = "<group>";
 		};
+		870C8CBC24E6B9F400DE5EFC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				870C8CBD24E6BA0A00DE5EFC /* CellReusable.swift */,
+				870C8CC424E6C6BE00DE5EFC /* CollectionContentUpdating.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		870C8CC124E6BBD200DE5EFC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				870C8CC224E6BBE300DE5EFC /* TransactionDisplayable.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		8752F09624DAAC48007041EE = {
 			isa = PBXGroup;
 			children = (
@@ -813,6 +846,7 @@
 			children = (
 				8752F15824DBF4C3007041EE /* Classes */,
 				870C8C8624E2FCC100DE5EFC /* Common */,
+				870C8CBC24E6B9F400DE5EFC /* Protocols */,
 				870C8C7E24E2CD7E00DE5EFC /* Extensions */,
 				8752F0A224DAAC48007041EE /* AppDelegate.swift */,
 				8752F0A624DAAC48007041EE /* ViewController.swift */,
@@ -1600,9 +1634,11 @@
 				8752F15F24DBFD07007041EE /* LoginPresenter.swift in Sources */,
 				870C8C8324E2F93F00DE5EFC /* UIColor.swift in Sources */,
 				870C8C7C24E2C75700DE5EFC /* PayDay.xcdatamodeld in Sources */,
+				870C8CC024E6BA8100DE5EFC /* UITableView+Reusable.swift in Sources */,
 				870C8C8A24E300EC00DE5EFC /* String+Email.swift in Sources */,
 				8752F0A724DAAC48007041EE /* ViewController.swift in Sources */,
 				870C8C8524E2FBB900DE5EFC /* UIFont.swift in Sources */,
+				870C8CC924E6C79F00DE5EFC /* Typealiases.swift in Sources */,
 				870C8C9B24E3E0E100DE5EFC /* UIWindow+Root.swift in Sources */,
 				870C8CA324E3EBB500DE5EFC /* TransactionListViewController.swift in Sources */,
 				870C8C9D24E3E12500DE5EFC /* UIView+Snapshot.swift in Sources */,
@@ -1612,10 +1648,14 @@
 				870C8CAC24E3F71900DE5EFC /* TransactionListRouter.swift in Sources */,
 				8752F15D24DBFB86007041EE /* LoginViewController.swift in Sources */,
 				8752F15B24DBF9D8007041EE /* LoginModule.swift in Sources */,
+				870C8CC724E6C72400DE5EFC /* UITableView+Updates.swift in Sources */,
 				870C8C9924E3DDD500DE5EFC /* LoginRouter.swift in Sources */,
+				870C8CC324E6BBE300DE5EFC /* TransactionDisplayable.swift in Sources */,
 				870C8CA524E3EBCC00DE5EFC /* TransactionListPresenter.swift in Sources */,
 				870C8CA124E3EB8F00DE5EFC /* TransactionListModule.swift in Sources */,
+				870C8CC524E6C6BE00DE5EFC /* CollectionContentUpdating.swift in Sources */,
 				870C8C8824E2FCD600DE5EFC /* Constants.swift in Sources */,
+				870C8CBE24E6BA0A00DE5EFC /* CellReusable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

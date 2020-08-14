@@ -40,7 +40,6 @@ final public class AccountListUseCase: UseCase<Void> {
         
         let bindAccountsWithUser = CoreOperationClosure<[Account], Void>(in: .additional) { input in
             switch input {
-            
             case .success(let accounts):
                 let accountsInContext = accounts.compactMap { acc -> Account? in
                     guard acc.managedObjectContext == context,
@@ -54,6 +53,7 @@ final public class AccountListUseCase: UseCase<Void> {
                 guard accountsInContext.count > 0 else {
                     return .success(())
                 }
+                
                 let fetchRequest = NSFetchRequest<User>(entityName: User.className)
                 fetchRequest.predicate = NSPredicate(format: "%K == %d",
                                                      #keyPath(User.identifier),
@@ -68,7 +68,6 @@ final public class AccountListUseCase: UseCase<Void> {
                 
                 return .success(())
             case .failure(let error):
-                
                 return .failure(error)
             }
         }
