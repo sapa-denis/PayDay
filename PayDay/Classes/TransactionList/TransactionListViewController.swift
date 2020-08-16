@@ -20,6 +20,16 @@ class TransactionListViewController: UIViewController {
     
     // MARK: - Properties
     var presenter: TransactionListPresenter!
+    
+    // MARK: - Lifecycle
+    override func viewDidLoad() {
+        title = "Transactions"
+        
+        if let navigationBar = navigationController?.navigationBar {            
+            navigationBar.setBackgroundImage(UIImage(), for: .default)
+            navigationBar.shadowImage = UIImage()
+        }
+    }
 }
 
 // MARK: - TransactionListView

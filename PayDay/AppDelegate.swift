@@ -24,7 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let authorizationStatus = UserSessionController.shared.authorizationStatus
         switch authorizationStatus {
         case .authorized:
-            window?.rootViewController = TransactionListModule().viewController()
+            let navigationController = UINavigationController(rootViewController: TransactionListModule().viewController())
+            window?.rootViewController = navigationController
         case .notAuthorized:
             window?.rootViewController = LoginModule().viewController()
             
