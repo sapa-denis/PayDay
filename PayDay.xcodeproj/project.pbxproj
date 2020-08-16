@@ -106,6 +106,10 @@
 		8752F16D24DC4795007041EE /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F16C24DC4795007041EE /* HTTPMethod.swift */; };
 		8752F17024DC5248007041EE /* PayDayRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F16F24DC5248007041EE /* PayDayRequest.swift */; };
 		8752F17224DC8DF6007041EE /* JSONEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F17124DC8DF6007041EE /* JSONEncoder.swift */; };
+		87726CE624E9575600594193 /* DashboardModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87726CE524E9575600594193 /* DashboardModule.swift */; };
+		87726CE824E9576200594193 /* DashboardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87726CE724E9576200594193 /* DashboardPresenter.swift */; };
+		87726CEA24E9577800594193 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87726CE924E9577800594193 /* DashboardViewController.swift */; };
+		87726CEC24E9578D00594193 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87726CEB24E9578D00594193 /* Dashboard.storyboard */; };
 		E5C9EB133D63A16A109706CA /* Pods_Networking_NetworkingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3AC639B23304F22362751C /* Pods_Networking_NetworkingTests.framework */; };
 		E8CC1D2974D16AEBCED95B2F /* Pods_PayDay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 724A721BF64EC7A0A65B556A /* Pods_PayDay.framework */; };
 /* End PBXBuildFile section */
@@ -364,6 +368,10 @@
 		8752F16C24DC4795007041EE /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		8752F16F24DC5248007041EE /* PayDayRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayDayRequest.swift; sourceTree = "<group>"; };
 		8752F17124DC8DF6007041EE /* JSONEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONEncoder.swift; sourceTree = "<group>"; };
+		87726CE524E9575600594193 /* DashboardModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardModule.swift; sourceTree = "<group>"; };
+		87726CE724E9576200594193 /* DashboardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardPresenter.swift; sourceTree = "<group>"; };
+		87726CE924E9577800594193 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		87726CEB24E9578D00594193 /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
 		89D07C566BC992ADDD1302F0 /* Pods_Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A270CA01BB0B2D4998457E8 /* Pods-Core-CoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Core-CoreTests.debug.xcconfig"; path = "Target Support Files/Pods-Core-CoreTests/Pods-Core-CoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9F3AC639B23304F22362751C /* Pods_Networking_NetworkingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Networking_NetworkingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -999,6 +1007,7 @@
 			children = (
 				8752F15924DBF509007041EE /* Login */,
 				870C8C9F24E3EB5700DE5EFC /* TransactionList */,
+				87726CE424E9573000594193 /* Dashboard */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1039,6 +1048,17 @@
 				8752F16F24DC5248007041EE /* PayDayRequest.swift */,
 			);
 			path = Requests;
+			sourceTree = "<group>";
+		};
+		87726CE424E9573000594193 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				87726CEB24E9578D00594193 /* Dashboard.storyboard */,
+				87726CE524E9575600594193 /* DashboardModule.swift */,
+				87726CE724E9576200594193 /* DashboardPresenter.swift */,
+				87726CE924E9577800594193 /* DashboardViewController.swift */,
+			);
+			path = Dashboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1390,6 +1410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8752F16124DBFE67007041EE /* Login.storyboard in Resources */,
+				87726CEC24E9578D00594193 /* Dashboard.storyboard in Resources */,
 				8752F0B224DAAC49007041EE /* LaunchScreen.storyboard in Resources */,
 				8752F0AF24DAAC49007041EE /* Assets.xcassets in Resources */,
 				8752F0AA24DAAC48007041EE /* Main.storyboard in Resources */,
@@ -1641,13 +1662,16 @@
 				870C8CC924E6C79F00DE5EFC /* Typealiases.swift in Sources */,
 				870C8C9B24E3E0E100DE5EFC /* UIWindow+Root.swift in Sources */,
 				870C8CA324E3EBB500DE5EFC /* TransactionListViewController.swift in Sources */,
+				87726CE824E9576200594193 /* DashboardPresenter.swift in Sources */,
 				870C8C9D24E3E12500DE5EFC /* UIView+Snapshot.swift in Sources */,
 				870C8CAA24E3F49C00DE5EFC /* TransactionTableViewCell.swift in Sources */,
 				870C8C8E24E31A1E00DE5EFC /* UserDefaultsAccessor.swift in Sources */,
 				8752F0A324DAAC48007041EE /* AppDelegate.swift in Sources */,
 				870C8CAC24E3F71900DE5EFC /* TransactionListRouter.swift in Sources */,
 				8752F15D24DBFB86007041EE /* LoginViewController.swift in Sources */,
+				87726CE624E9575600594193 /* DashboardModule.swift in Sources */,
 				8752F15B24DBF9D8007041EE /* LoginModule.swift in Sources */,
+				87726CEA24E9577800594193 /* DashboardViewController.swift in Sources */,
 				870C8CC724E6C72400DE5EFC /* UITableView+Updates.swift in Sources */,
 				870C8C9924E3DDD500DE5EFC /* LoginRouter.swift in Sources */,
 				870C8CC324E6BBE300DE5EFC /* TransactionDisplayable.swift in Sources */,

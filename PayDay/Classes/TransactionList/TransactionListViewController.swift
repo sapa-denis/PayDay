@@ -28,6 +28,12 @@ class TransactionListViewController: UIViewController {
         if let navigationBar = navigationController?.navigationBar {            
             navigationBar.setBackgroundImage(UIImage(), for: .default)
             navigationBar.shadowImage = UIImage()
+            navigationBar.tintColor = UIColor(named: "placeholder")
+            let dashboardItem = UIBarButtonItem(image: UIImage(named: "dashboard"),
+                                                style: .plain,
+                                                target: self,
+                                                action: #selector(onDashboardButtonTouchUp))
+            navigationItem.setRightBarButton(dashboardItem, animated: false)
         }
     }
 }
@@ -51,6 +57,14 @@ extension TransactionListViewController: TransactionListView {
         tableView.beginUpdates()
         tableView.perform(updates: updates)
         tableView.endUpdates()
+    }
+}
+
+// MARK: - Actions
+extension TransactionListViewController {
+    
+    @objc private func onDashboardButtonTouchUp() {
+        openDashboard()
     }
 }
 
