@@ -17,7 +17,8 @@ public final class Listener<Entity: NSManagedObject>: UseCase<CollectionChange<E
     // MARK: - Public methods
     public func prepare(predicate: NSPredicate?,
                         sortDescriptors: [NSSortDescriptor],
-                        fetchBatch: FetchSize? = nil) -> Self {
+                        fetchBatch: FetchSize? = nil,
+                        sectionNameKeyPath: String? = nil) -> Self {
         cancelAllOperations()
         
         let listenEntityOperation = ListenEntityOperation<Entity>(
@@ -25,7 +26,8 @@ public final class Listener<Entity: NSManagedObject>: UseCase<CollectionChange<E
             context: NSPersistentContainer.container.viewContext,
             descriptors: sortDescriptors,
             predicate: predicate,
-            fetchSize: fetchBatch
+            fetchSize: fetchBatch,
+            sectionNameKeyPath: sectionNameKeyPath
         )
         
         prepareExecution(for: listenEntityOperation)

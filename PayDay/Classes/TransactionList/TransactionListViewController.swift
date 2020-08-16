@@ -9,8 +9,8 @@
 import UIKit
 
 protocol TransactionListView: AnyObject {
-    func reload(alerts: [TransactionDisplayable])
-    func update(alerts: [TransactionDisplayable], with updates: [ContentUpdate])
+    func reload()
+    func update(with updates: [ContentUpdate])
 }
 
 class TransactionListViewController: UIViewController {
@@ -20,16 +20,12 @@ class TransactionListViewController: UIViewController {
     
     // MARK: - Properties
     var presenter: TransactionListPresenter!
-    
-    private var data: [TransactionDisplayable] = []
 }
 
 // MARK: - TransactionListView
 extension TransactionListViewController: TransactionListView {
     
-    func reload(alerts: [TransactionDisplayable]) {
-        data = alerts
-        
+    func reload() {
         guard tableView != nil else {
             return
         }
@@ -37,9 +33,7 @@ extension TransactionListViewController: TransactionListView {
         tableView.reloadData()
     }
     
-    func update(alerts: [TransactionDisplayable], with updates: [ContentUpdate]) {
-        data = alerts
-        
+    func update(with updates: [ContentUpdate]) {
         guard tableView != nil else {
             return
         }
@@ -53,14 +47,23 @@ extension TransactionListViewController: TransactionListView {
 // MARK: - UITableViewDataSource
 extension TransactionListViewController: UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return presenter.numberOfSections()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return presenter.numberOfElementsIn(section: section)
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return presenter.title(for: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(at: indexPath, cellType: TransactionTableViewCell.self)
         
-        cell.configure(with: data[indexPath.row])
+        let data = presenter.object(in: indexPath.section, at: indexPath.row)
+        cell.configure(with: data)
         
         return cell
     }

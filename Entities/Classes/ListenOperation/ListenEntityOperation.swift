@@ -21,6 +21,7 @@ final public class ListenEntityOperation<Entity: NSManagedObject>: CoreOperation
     private let fetchSize: FetchSize?
     private let asFaults: Bool
     private let cacheName: String?
+    private let sectionNameKeyPath: String?
     private var resultsController: NSFetchedResultsController<Entity>!
     private var collectionChange: CollectionChange<Entity>!
     
@@ -30,6 +31,7 @@ final public class ListenEntityOperation<Entity: NSManagedObject>: CoreOperation
                 descriptors: [NSSortDescriptor],
                 predicate: NSPredicate? = nil,
                 fetchSize: FetchSize? = nil,
+                sectionNameKeyPath: String? = nil,
                 asFaults: Bool = false,
                 inMemoryOnly: Bool = true
         ) {
@@ -38,6 +40,7 @@ final public class ListenEntityOperation<Entity: NSManagedObject>: CoreOperation
         listenerContext = context
         self.descriptors = descriptors
         self.predicate = predicate
+        self.sectionNameKeyPath = sectionNameKeyPath
         self.fetchSize = fetchSize
         self.asFaults = asFaults
         cacheName = inMemoryOnly ? nil : .cacheNameKey
@@ -126,7 +129,7 @@ extension ListenEntityOperation {
         cleanCache()
         resultsController = NSFetchedResultsController(fetchRequest: request,
                                                        managedObjectContext: listenerContext,
-                                                       sectionNameKeyPath: nil,
+                                                       sectionNameKeyPath: sectionNameKeyPath,
                                                        cacheName: cacheName)
         resultsController.delegate = self
         collectionChange = CollectionChange(resultsController: resultsController)

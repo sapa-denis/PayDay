@@ -20,6 +20,19 @@ public final class Transaction: NSManagedObject, Decodable {
     @NSManaged public private(set) var date: NSDate
     @NSManaged public private(set) var account: Account?
     
+    @objc public var dateWithFormat: String? {
+        let calendar = Calendar.current
+        if calendar.isDateInToday(date as Date) {
+           return "Today"
+        } else if calendar.isDateInYesterday(date as Date) {
+            return "Yesterday" 
+        } else {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .medium
+            return formatter.string(from: date as Date)
+        }
+    }
+    
     // MARK: - Init / Deinit Methods
     required convenience public init(from decoder: Decoder) throws {
         guard let managedObjectContext = decoder.userInfo[CodingUserInfoKey.context] as? NSManagedObjectContext,

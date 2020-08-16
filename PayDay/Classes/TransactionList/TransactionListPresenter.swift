@@ -25,7 +25,7 @@ class TransactionListPresenter {
     
     private let userId: Int
     private var currentAccountId: Int!
-    private var data: [Transaction] = []
+    private var collectionContent: CollectionChange<Transaction>?
 
     // MARK: - Init/Deinit methods
     init(with view: TransactionListView, router: TransactionListPresentation) {
@@ -38,6 +38,40 @@ class TransactionListPresenter {
     
     deinit {
         accountListUseCase.cancelAllOperations()
+    }
+    
+    // MARK: - Public methods
+    func numberOfSections() -> Int {
+        guard let collectionContent = collectionContent else {
+            return 0
+        }
+        
+        return collectionContent.sectionedData.count
+    }
+    
+    func numberOfElementsIn(section: Int) -> Int {
+        guard let collectionContent = collectionContent else {
+            return 0
+        }
+        
+        return collectionContent.sectionedData[section].numberOfObjects
+    }
+    
+    func title(for section: Int) -> String? {
+        guard let collectionContent = collectionContent else {
+            return nil
+        }
+        
+        return collectionContent.sectionedData[section].name
+
+    }
+    
+    func object(in section: Int, at index: Int) -> TransactionDisplayable {
+        guard let transaction = collectionContent?.sectionedData[section].objects?[index] as? Transaction else {
+            fatalError("Can't find Transaction at [\(section): \(index)]")
+        }
+        
+        return transaction
     }
 }
 
@@ -94,7 +128,9 @@ extension TransactionListPresenter {
         let sortDescriptor = NSSortDescriptor(key: #keyPath(Transaction.date), ascending: false)
         var collectionUpdates: [ContentUpdate] = []
         
-        transactionListListener.prepare(predicate: predicate, sortDescriptors: [sortDescriptor])
+        transactionListListener.prepare(predicate: predicate,
+                                        sortDescriptors: [sortDescriptor],
+                                        sectionNameKeyPath: "dateWithFormat")
             .success { [weak self] change in
                 guard let self = self else {
                     return
@@ -102,16 +138,16 @@ extension TransactionListPresenter {
                 
                 switch change.changeType {
                 case .initial:
-                    self.data = change.data
-                    self.view.reload(alerts: change.data)
+                    self.collectionContent = change
+                    self.view.reload()
                 case .willChange:
                     collectionUpdates = []
                 case .update(_, let atIndexPath, let type, let newIndexPath):
                     let update: ContentUpdate = (type: type, atIndexPath: atIndexPath, newIndexPath: newIndexPath)
                     collectionUpdates.append(update)
                 case .didChange:
-                    self.data = change.data
-                    self.view.update(alerts: change.data, with: collectionUpdates)
+                    self.collectionContent = change
+                    self.view.update(with: collectionUpdates)
                 }
         }
         .performOnCurrentThread()

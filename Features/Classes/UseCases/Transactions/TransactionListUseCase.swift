@@ -51,7 +51,7 @@ public final class TransactionListUseCase: UseCase<Void> {
                 }
                 
                 guard transactionsInContext.count > 0 else {
-                    return .failure(FeatureError.customMessage("Empty Transaction array to bind"))
+                    return .success(()) // .failure(FeatureError.customMessage("Empty Transaction array to bind"))
                 }
                 
                 let fetchRequest = NSFetchRequest<Account>(entityName: Account.className)

@@ -18,6 +18,10 @@ public final class CollectionChange<Entity: NSManagedObject> {
         return resultsController.fetchedObjects ?? []
     }
     
+    public var sectionedData: [NSFetchedResultsSectionInfo] {
+        resultsController.sections ?? []
+    }
+    
     private var resultsController: NSFetchedResultsController<Entity>
     
     // MARK: - Init / Deinit methods
