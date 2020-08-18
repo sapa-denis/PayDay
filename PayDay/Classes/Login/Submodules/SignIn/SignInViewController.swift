@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  SignInViewController.swift
 //  PayDay
 //
 //  Created by Sapa Denys on 06.08.2020.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-protocol LoginView: AnyObject {
+protocol SignInView: AnyObject {
     
 }
 
-final class LoginViewController: UIViewController {
+final class SignInViewController: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet private weak var emailTextField: UITextField!
@@ -20,7 +20,7 @@ final class LoginViewController: UIViewController {
     @IBOutlet private weak var loginButton: UIButton!
     
     // MARK: - Properties
-    var presenter: LoginPresenter!
+    var presenter: SignInPresenter!
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -31,7 +31,7 @@ final class LoginViewController: UIViewController {
 }
 
 // MARK: - Actions
-extension LoginViewController {
+extension SignInViewController {
     
     @IBAction private func onLoginButtonTouchUp(_ sender: UIButton) {
         guard validateFields(),
@@ -47,7 +47,7 @@ extension LoginViewController {
 }
 
 // MARK: - Private methods
-extension LoginViewController {
+extension SignInViewController {
     
     private func setupView() {
         applyStyle(for: emailTextField)
@@ -82,5 +82,5 @@ extension LoginViewController {
     }
 }
 
-// MARK: - LoginView
-extension LoginViewController: LoginView {}
+// MARK: - SignInView
+extension SignInViewController: SignInView {}

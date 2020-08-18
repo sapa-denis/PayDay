@@ -54,7 +54,7 @@
 		870C8C9124E32E4E00DE5EFC /* ListenEntityOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C9024E32E4E00DE5EFC /* ListenEntityOperation.swift */; };
 		870C8C9424E3C44F00DE5EFC /* CollectionChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C9324E3C44F00DE5EFC /* CollectionChange.swift */; };
 		870C8C9724E3C90E00DE5EFC /* Listener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C9624E3C90E00DE5EFC /* Listener.swift */; };
-		870C8C9924E3DDD500DE5EFC /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C9824E3DDD500DE5EFC /* LoginRouter.swift */; };
+		870C8C9924E3DDD500DE5EFC /* SignInRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C9824E3DDD500DE5EFC /* SignInRouter.swift */; };
 		870C8C9B24E3E0E100DE5EFC /* UIWindow+Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C9A24E3E0E100DE5EFC /* UIWindow+Root.swift */; };
 		870C8C9D24E3E12500DE5EFC /* UIView+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C9C24E3E12500DE5EFC /* UIView+Snapshot.swift */; };
 		870C8CA124E3EB8F00DE5EFC /* TransactionListModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8CA024E3EB8F00DE5EFC /* TransactionListModule.swift */; };
@@ -96,9 +96,9 @@
 		8752F14B24DABFC6007041EE /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F11824DAB4DD007041EE /* NetworkOperation.swift */; };
 		8752F14C24DABFCC007041EE /* URLSession+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F11E24DAB9B0007041EE /* URLSession+Request.swift */; };
 		8752F15024DBE85D007041EE /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8752F0F124DAB04E007041EE /* Core.framework */; };
-		8752F15B24DBF9D8007041EE /* LoginModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F15A24DBF9D8007041EE /* LoginModule.swift */; };
-		8752F15D24DBFB86007041EE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F15C24DBFB86007041EE /* LoginViewController.swift */; };
-		8752F15F24DBFD07007041EE /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F15E24DBFD07007041EE /* LoginPresenter.swift */; };
+		8752F15B24DBF9D8007041EE /* SignInModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F15A24DBF9D8007041EE /* SignInModule.swift */; };
+		8752F15D24DBFB86007041EE /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F15C24DBFB86007041EE /* SignInViewController.swift */; };
+		8752F15F24DBFD07007041EE /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F15E24DBFD07007041EE /* SignInPresenter.swift */; };
 		8752F16124DBFE67007041EE /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8752F16024DBFE67007041EE /* Login.storyboard */; };
 		8752F16424DC11E6007041EE /* OperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F16324DC11E6007041EE /* OperationQueue.swift */; };
 		8752F16624DC13A9007041EE /* URLSession+Additional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F16524DC13A9007041EE /* URLSession+Additional.swift */; };
@@ -314,7 +314,7 @@
 		870C8C9024E32E4E00DE5EFC /* ListenEntityOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListenEntityOperation.swift; sourceTree = "<group>"; };
 		870C8C9324E3C44F00DE5EFC /* CollectionChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionChange.swift; sourceTree = "<group>"; };
 		870C8C9624E3C90E00DE5EFC /* Listener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listener.swift; sourceTree = "<group>"; };
-		870C8C9824E3DDD500DE5EFC /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		870C8C9824E3DDD500DE5EFC /* SignInRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRouter.swift; sourceTree = "<group>"; };
 		870C8C9A24E3E0E100DE5EFC /* UIWindow+Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Root.swift"; sourceTree = "<group>"; };
 		870C8C9C24E3E12500DE5EFC /* UIView+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Snapshot.swift"; sourceTree = "<group>"; };
 		870C8CA024E3EB8F00DE5EFC /* TransactionListModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListModule.swift; sourceTree = "<group>"; };
@@ -362,9 +362,9 @@
 		8752F13624DABC32007041EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8752F14724DABEF7007041EE /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		8752F14924DABF95007041EE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		8752F15A24DBF9D8007041EE /* LoginModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModule.swift; sourceTree = "<group>"; };
-		8752F15C24DBFB86007041EE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		8752F15E24DBFD07007041EE /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		8752F15A24DBF9D8007041EE /* SignInModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModule.swift; sourceTree = "<group>"; };
+		8752F15C24DBFB86007041EE /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		8752F15E24DBFD07007041EE /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
 		8752F16024DBFE67007041EE /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		8752F16324DC11E6007041EE /* OperationQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationQueue.swift; sourceTree = "<group>"; };
 		8752F16524DC13A9007041EE /* URLSession+Additional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Additional.swift"; sourceTree = "<group>"; };
@@ -1023,11 +1023,8 @@
 		8752F15924DBF509007041EE /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				8752F15A24DBF9D8007041EE /* LoginModule.swift */,
-				8752F15C24DBFB86007041EE /* LoginViewController.swift */,
-				870C8C9824E3DDD500DE5EFC /* LoginRouter.swift */,
-				8752F15E24DBFD07007041EE /* LoginPresenter.swift */,
 				8752F16024DBFE67007041EE /* Login.storyboard */,
+				87726CF824EC061800594193 /* Submodules */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1095,6 +1092,33 @@
 				87726CF624EB035900594193 /* CategoryDisplayable.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		87726CF824EC061800594193 /* Submodules */ = {
+			isa = PBXGroup;
+			children = (
+				87726CFA24EC065200594193 /* SignUp */,
+				87726CF924EC064400594193 /* SignIn */,
+			);
+			path = Submodules;
+			sourceTree = "<group>";
+		};
+		87726CF924EC064400594193 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				8752F15A24DBF9D8007041EE /* SignInModule.swift */,
+				8752F15C24DBFB86007041EE /* SignInViewController.swift */,
+				870C8C9824E3DDD500DE5EFC /* SignInRouter.swift */,
+				8752F15E24DBFD07007041EE /* SignInPresenter.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		87726CFA24EC065200594193 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1689,7 +1713,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				870C8C8C24E3148700DE5EFC /* UserSessionController.swift in Sources */,
-				8752F15F24DBFD07007041EE /* LoginPresenter.swift in Sources */,
+				8752F15F24DBFD07007041EE /* SignInPresenter.swift in Sources */,
 				870C8C8324E2F93F00DE5EFC /* UIColor.swift in Sources */,
 				870C8C7C24E2C75700DE5EFC /* PayDay.xcdatamodeld in Sources */,
 				870C8CC024E6BA8100DE5EFC /* UITableView+Reusable.swift in Sources */,
@@ -1705,12 +1729,12 @@
 				870C8C8E24E31A1E00DE5EFC /* UserDefaultsAccessor.swift in Sources */,
 				8752F0A324DAAC48007041EE /* AppDelegate.swift in Sources */,
 				870C8CAC24E3F71900DE5EFC /* TransactionListRouter.swift in Sources */,
-				8752F15D24DBFB86007041EE /* LoginViewController.swift in Sources */,
+				8752F15D24DBFB86007041EE /* SignInViewController.swift in Sources */,
 				87726CE624E9575600594193 /* DashboardModule.swift in Sources */,
-				8752F15B24DBF9D8007041EE /* LoginModule.swift in Sources */,
+				8752F15B24DBF9D8007041EE /* SignInModule.swift in Sources */,
 				87726CEA24E9577800594193 /* DashboardViewController.swift in Sources */,
 				870C8CC724E6C72400DE5EFC /* UITableView+Updates.swift in Sources */,
-				870C8C9924E3DDD500DE5EFC /* LoginRouter.swift in Sources */,
+				870C8C9924E3DDD500DE5EFC /* SignInRouter.swift in Sources */,
 				870C8CC324E6BBE300DE5EFC /* TransactionDisplayable.swift in Sources */,
 				87726CEF24EAFA7A00594193 /* DashboardTableViewCell.swift in Sources */,
 				870C8CA524E3EBCC00DE5EFC /* TransactionListPresenter.swift in Sources */,

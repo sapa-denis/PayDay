@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let navigationController = UINavigationController(rootViewController: TransactionListModule().viewController())
             window?.rootViewController = navigationController
         case .notAuthorized:
-            window?.rootViewController = LoginModule().viewController()
+            window?.rootViewController = SignInModule().viewController()
             
         }
         window?.makeKeyAndVisible()

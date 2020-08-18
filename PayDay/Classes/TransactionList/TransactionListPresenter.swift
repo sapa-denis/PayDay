@@ -63,7 +63,6 @@ class TransactionListPresenter {
         }
         
         return collectionContent.sectionedData[section].name
-
     }
     
     func object(in section: Int, at index: Int) -> TransactionDisplayable {

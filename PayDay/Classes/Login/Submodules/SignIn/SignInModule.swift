@@ -1,5 +1,5 @@
 //
-//  LoginModule.swift
+//  SignInModule.swift
 //  PayDay
 //
 //  Created by Sapa Denys on 06.08.2020.
@@ -8,17 +8,17 @@
 
 import UIKit
 
-final class LoginModule {
+final class SignInModule {
     
     // MARK: - Properties
-    private let view: LoginViewController
-    private let presenter: LoginPresenter
+    private let view: SignInViewController
+    private let presenter: SignInPresenter
     
     // MARK: - Init / Deinit methods
     init() {
         view = UIStoryboard.init(name: "Login", bundle: .main)
-            .instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        presenter = LoginPresenter(with: view, router: view)
+            .instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
+        presenter = SignInPresenter(with: view, router: view)
         view.presenter = presenter
     }
     

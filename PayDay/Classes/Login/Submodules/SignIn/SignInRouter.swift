@@ -8,11 +8,11 @@
 
 import UIKit
 
-protocol LoginPresentation: AnyObject {
+protocol SignInPresentation: AnyObject {
     func openTransactions()
 }
 
-extension LoginViewController: LoginPresentation {
+extension SignInViewController: SignInPresentation {
     
     func openTransactions() {
         let window = UIApplication.shared.keyWindow

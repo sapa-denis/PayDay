@@ -1,5 +1,5 @@
 //
-//  LoginPresenter.swift
+//  SignInPresenter.swift
 //  PayDay
 //
 //  Created by Sapa Denys on 06.08.2020.
@@ -9,16 +9,16 @@
 import Foundation
 import Features
 
-final class LoginPresenter {
+final class SignInPresenter {
 
     // MARK: - Properties
-    private weak var view: LoginView!
-    private weak var router: LoginPresentation!
+    private weak var view: SignInView!
+    private weak var router: SignInPresentation!
     private let loginUseCase: LoginUseCase = LoginUseCase(quality: .userInitiated,
                                                           priority: .veryHigh)
     
     // MARK: - Init / Deinit methods
-    init(with view: LoginView, router: LoginPresentation) {
+    init(with view: SignInView, router: SignInPresentation) {
         self.view = view
         self.router = router
     }
