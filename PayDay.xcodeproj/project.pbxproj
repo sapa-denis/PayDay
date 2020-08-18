@@ -106,6 +106,12 @@
 		8752F16D24DC4795007041EE /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F16C24DC4795007041EE /* HTTPMethod.swift */; };
 		8752F17024DC5248007041EE /* PayDayRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F16F24DC5248007041EE /* PayDayRequest.swift */; };
 		8752F17224DC8DF6007041EE /* JSONEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F17124DC8DF6007041EE /* JSONEncoder.swift */; };
+		8762E54124EC10FD001E7E7B /* SignUpModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8762E54024EC10FD001E7E7B /* SignUpModule.swift */; };
+		8762E54324EC112F001E7E7B /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8762E54224EC112F001E7E7B /* SignUpPresenter.swift */; };
+		8762E54524EC1152001E7E7B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8762E54424EC1152001E7E7B /* SignUpViewController.swift */; };
+		8762E54724EC1C59001E7E7B /* LoginModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8762E54624EC1C59001E7E7B /* LoginModule.swift */; };
+		8762E54924EC1C69001E7E7B /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8762E54824EC1C69001E7E7B /* LoginPresenter.swift */; };
+		8762E54B24EC1C79001E7E7B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8762E54A24EC1C79001E7E7B /* LoginViewController.swift */; };
 		87726CE624E9575600594193 /* DashboardModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87726CE524E9575600594193 /* DashboardModule.swift */; };
 		87726CE824E9576200594193 /* DashboardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87726CE724E9576200594193 /* DashboardPresenter.swift */; };
 		87726CEA24E9577800594193 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87726CE924E9577800594193 /* DashboardViewController.swift */; };
@@ -372,6 +378,12 @@
 		8752F16C24DC4795007041EE /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		8752F16F24DC5248007041EE /* PayDayRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayDayRequest.swift; sourceTree = "<group>"; };
 		8752F17124DC8DF6007041EE /* JSONEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONEncoder.swift; sourceTree = "<group>"; };
+		8762E54024EC10FD001E7E7B /* SignUpModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModule.swift; sourceTree = "<group>"; };
+		8762E54224EC112F001E7E7B /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
+		8762E54424EC1152001E7E7B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		8762E54624EC1C59001E7E7B /* LoginModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModule.swift; sourceTree = "<group>"; };
+		8762E54824EC1C69001E7E7B /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		8762E54A24EC1C79001E7E7B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		87726CE524E9575600594193 /* DashboardModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardModule.swift; sourceTree = "<group>"; };
 		87726CE724E9576200594193 /* DashboardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardPresenter.swift; sourceTree = "<group>"; };
 		87726CE924E9577800594193 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
@@ -1024,6 +1036,9 @@
 			isa = PBXGroup;
 			children = (
 				8752F16024DBFE67007041EE /* Login.storyboard */,
+				8762E54624EC1C59001E7E7B /* LoginModule.swift */,
+				8762E54824EC1C69001E7E7B /* LoginPresenter.swift */,
+				8762E54A24EC1C79001E7E7B /* LoginViewController.swift */,
 				87726CF824EC061800594193 /* Submodules */,
 			);
 			path = Login;
@@ -1107,9 +1122,9 @@
 			isa = PBXGroup;
 			children = (
 				8752F15A24DBF9D8007041EE /* SignInModule.swift */,
+				8752F15E24DBFD07007041EE /* SignInPresenter.swift */,
 				8752F15C24DBFB86007041EE /* SignInViewController.swift */,
 				870C8C9824E3DDD500DE5EFC /* SignInRouter.swift */,
-				8752F15E24DBFD07007041EE /* SignInPresenter.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -1117,6 +1132,9 @@
 		87726CFA24EC065200594193 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				8762E54024EC10FD001E7E7B /* SignUpModule.swift */,
+				8762E54224EC112F001E7E7B /* SignUpPresenter.swift */,
+				8762E54424EC1152001E7E7B /* SignUpViewController.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -1716,6 +1734,7 @@
 				8752F15F24DBFD07007041EE /* SignInPresenter.swift in Sources */,
 				870C8C8324E2F93F00DE5EFC /* UIColor.swift in Sources */,
 				870C8C7C24E2C75700DE5EFC /* PayDay.xcdatamodeld in Sources */,
+				8762E54B24EC1C79001E7E7B /* LoginViewController.swift in Sources */,
 				870C8CC024E6BA8100DE5EFC /* UITableView+Reusable.swift in Sources */,
 				870C8C8A24E300EC00DE5EFC /* String+Email.swift in Sources */,
 				8752F0A724DAAC48007041EE /* ViewController.swift in Sources */,
@@ -1723,6 +1742,7 @@
 				870C8CC924E6C79F00DE5EFC /* Typealiases.swift in Sources */,
 				870C8C9B24E3E0E100DE5EFC /* UIWindow+Root.swift in Sources */,
 				870C8CA324E3EBB500DE5EFC /* TransactionListViewController.swift in Sources */,
+				8762E54724EC1C59001E7E7B /* LoginModule.swift in Sources */,
 				87726CE824E9576200594193 /* DashboardPresenter.swift in Sources */,
 				870C8C9D24E3E12500DE5EFC /* UIView+Snapshot.swift in Sources */,
 				870C8CAA24E3F49C00DE5EFC /* TransactionTableViewCell.swift in Sources */,
@@ -1730,6 +1750,7 @@
 				8752F0A324DAAC48007041EE /* AppDelegate.swift in Sources */,
 				870C8CAC24E3F71900DE5EFC /* TransactionListRouter.swift in Sources */,
 				8752F15D24DBFB86007041EE /* SignInViewController.swift in Sources */,
+				8762E54324EC112F001E7E7B /* SignUpPresenter.swift in Sources */,
 				87726CE624E9575600594193 /* DashboardModule.swift in Sources */,
 				8752F15B24DBF9D8007041EE /* SignInModule.swift in Sources */,
 				87726CEA24E9577800594193 /* DashboardViewController.swift in Sources */,
@@ -1740,10 +1761,13 @@
 				870C8CA524E3EBCC00DE5EFC /* TransactionListPresenter.swift in Sources */,
 				870C8CA124E3EB8F00DE5EFC /* TransactionListModule.swift in Sources */,
 				87726CF224EAFFC000594193 /* DashboardSectionHeader.swift in Sources */,
+				8762E54524EC1152001E7E7B /* SignUpViewController.swift in Sources */,
 				87726CF724EB035900594193 /* CategoryDisplayable.swift in Sources */,
 				870C8CC524E6C6BE00DE5EFC /* CollectionContentUpdating.swift in Sources */,
 				870C8C8824E2FCD600DE5EFC /* Constants.swift in Sources */,
+				8762E54924EC1C69001E7E7B /* LoginPresenter.swift in Sources */,
 				870C8CBE24E6BA0A00DE5EFC /* CellReusable.swift in Sources */,
+				8762E54124EC10FD001E7E7B /* SignUpModule.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
