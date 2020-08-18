@@ -51,7 +51,7 @@ public final class TransactionListUseCase: UseCase<Void> {
                 }
                 
                 guard transactionsInContext.count > 0 else {
-                    return .success(()) // .failure(FeatureError.customMessage("Empty Transaction array to bind"))
+                    return .success(())
                 }
                 
                 let fetchRequest = NSFetchRequest<Account>(entityName: Account.className)
@@ -64,7 +64,9 @@ public final class TransactionListUseCase: UseCase<Void> {
                         return .failure(FeatureError.coreData(.missingEntity(Account.self, accountId)))
                 }
                 
-                account.transactions = Set(transactionsInContext)
+                for transaction in transactionsInContext {
+                    account.transactions?.insert(transaction)
+                }
                 
                 return .success(())
             case .failure(let error):

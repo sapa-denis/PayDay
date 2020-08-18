@@ -64,7 +64,9 @@ final public class AccountListUseCase: UseCase<Void> {
                         return .failure(FeatureError.coreData(.missingEntity(User.self, userId)))
                 }
                 
-                user.accountList = Set(accountsInContext)
+                for account in accountsInContext {
+                    user.accountList?.insert(account)
+                }
                 
                 return .success(())
             case .failure(let error):

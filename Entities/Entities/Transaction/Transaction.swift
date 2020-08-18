@@ -14,7 +14,7 @@ public final class Transaction: NSManagedObject, Decodable {
     
     // MARK: - Properties
     @NSManaged public private(set) var identifier: Int64
-    @NSManaged public private(set) var amount: String
+    @NSManaged public private(set) var amount: NSDecimalNumber
     @NSManaged public private(set) var vendor: String
     @NSManaged public private(set) var category: String
     @NSManaged public private(set) var date: NSDate
@@ -32,6 +32,8 @@ public final class Transaction: NSManagedObject, Decodable {
             return formatter.string(from: date as Date)
         }
     }
+    
+    @NSManaged public var executionPeriod: String
     
     // MARK: - Init / Deinit Methods
     required convenience public init(from decoder: Decoder) throws {
@@ -65,12 +67,19 @@ public final class Transaction: NSManagedObject, Decodable {
     private func decode(container: KeyedDecodingContainer<CodingKeys>, in context: NSManagedObjectContext) throws {
         try context.performAndWait {
             identifier <>= try container.decode(Int64.self, forKey: .identifier)
-            amount <>= try container.decode(String.self, forKey: .amount)
+            
+            let amountString = try container.decode(String.self, forKey: .amount)
+            amount <>= (Decimal(string: amountString) ?? 0) as NSDecimalNumber
+            
             vendor <>= try container.decode(String.self, forKey: .vendor)
             category <>= try container.decode(String.self, forKey: .category)
             let dateString = try container.decode(String.self, forKey: .date)
             let dateFormatter = ISO8601DateFormatter()
             date <>= dateFormatter.date(from:dateString)! as NSDate
+            
+            let formatter = DateFormatter()
+            formatter.dateFormat = "MMMM, yyyy"
+            executionPeriod <>= formatter.string(from: date as Date)
         }
     }
 }

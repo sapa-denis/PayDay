@@ -110,6 +110,10 @@
 		87726CE824E9576200594193 /* DashboardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87726CE724E9576200594193 /* DashboardPresenter.swift */; };
 		87726CEA24E9577800594193 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87726CE924E9577800594193 /* DashboardViewController.swift */; };
 		87726CEC24E9578D00594193 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87726CEB24E9578D00594193 /* Dashboard.storyboard */; };
+		87726CEF24EAFA7A00594193 /* DashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87726CEE24EAFA7A00594193 /* DashboardTableViewCell.swift */; };
+		87726CF224EAFFC000594193 /* DashboardSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87726CF124EAFFC000594193 /* DashboardSectionHeader.swift */; };
+		87726CF424EAFFCF00594193 /* DashboardSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87726CF324EAFFCF00594193 /* DashboardSectionHeader.xib */; };
+		87726CF724EB035900594193 /* CategoryDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87726CF624EB035900594193 /* CategoryDisplayable.swift */; };
 		E5C9EB133D63A16A109706CA /* Pods_Networking_NetworkingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3AC639B23304F22362751C /* Pods_Networking_NetworkingTests.framework */; };
 		E8CC1D2974D16AEBCED95B2F /* Pods_PayDay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 724A721BF64EC7A0A65B556A /* Pods_PayDay.framework */; };
 /* End PBXBuildFile section */
@@ -372,6 +376,10 @@
 		87726CE724E9576200594193 /* DashboardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardPresenter.swift; sourceTree = "<group>"; };
 		87726CE924E9577800594193 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		87726CEB24E9578D00594193 /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
+		87726CEE24EAFA7A00594193 /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
+		87726CF124EAFFC000594193 /* DashboardSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardSectionHeader.swift; sourceTree = "<group>"; };
+		87726CF324EAFFCF00594193 /* DashboardSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardSectionHeader.xib; sourceTree = "<group>"; };
+		87726CF624EB035900594193 /* CategoryDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDisplayable.swift; sourceTree = "<group>"; };
 		89D07C566BC992ADDD1302F0 /* Pods_Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A270CA01BB0B2D4998457E8 /* Pods-Core-CoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Core-CoreTests.debug.xcconfig"; path = "Target Support Files/Pods-Core-CoreTests/Pods-Core-CoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9F3AC639B23304F22362751C /* Pods_Networking_NetworkingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Networking_NetworkingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1053,12 +1061,40 @@
 		87726CE424E9573000594193 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				87726CF524EB034900594193 /* Model */,
 				87726CEB24E9578D00594193 /* Dashboard.storyboard */,
 				87726CE524E9575600594193 /* DashboardModule.swift */,
 				87726CE724E9576200594193 /* DashboardPresenter.swift */,
 				87726CE924E9577800594193 /* DashboardViewController.swift */,
+				87726CED24EAFA1200594193 /* View */,
 			);
 			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		87726CED24EAFA1200594193 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				87726CF024EAFF7A00594193 /* SectionHeader */,
+				87726CEE24EAFA7A00594193 /* DashboardTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		87726CF024EAFF7A00594193 /* SectionHeader */ = {
+			isa = PBXGroup;
+			children = (
+				87726CF124EAFFC000594193 /* DashboardSectionHeader.swift */,
+				87726CF324EAFFCF00594193 /* DashboardSectionHeader.xib */,
+			);
+			path = SectionHeader;
+			sourceTree = "<group>";
+		};
+		87726CF524EB034900594193 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				87726CF624EB035900594193 /* CategoryDisplayable.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1409,6 +1445,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87726CF424EAFFCF00594193 /* DashboardSectionHeader.xib in Resources */,
 				8752F16124DBFE67007041EE /* Login.storyboard in Resources */,
 				87726CEC24E9578D00594193 /* Dashboard.storyboard in Resources */,
 				8752F0B224DAAC49007041EE /* LaunchScreen.storyboard in Resources */,
@@ -1675,8 +1712,11 @@
 				870C8CC724E6C72400DE5EFC /* UITableView+Updates.swift in Sources */,
 				870C8C9924E3DDD500DE5EFC /* LoginRouter.swift in Sources */,
 				870C8CC324E6BBE300DE5EFC /* TransactionDisplayable.swift in Sources */,
+				87726CEF24EAFA7A00594193 /* DashboardTableViewCell.swift in Sources */,
 				870C8CA524E3EBCC00DE5EFC /* TransactionListPresenter.swift in Sources */,
 				870C8CA124E3EB8F00DE5EFC /* TransactionListModule.swift in Sources */,
+				87726CF224EAFFC000594193 /* DashboardSectionHeader.swift in Sources */,
+				87726CF724EB035900594193 /* CategoryDisplayable.swift in Sources */,
 				870C8CC524E6C6BE00DE5EFC /* CollectionContentUpdating.swift in Sources */,
 				870C8C8824E2FCD600DE5EFC /* Constants.swift in Sources */,
 				870C8CBE24E6BA0A00DE5EFC /* CellReusable.swift in Sources */,

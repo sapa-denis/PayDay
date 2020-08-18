@@ -15,10 +15,11 @@
         </uniquenessConstraints>
     </entity>
     <entity name="Transaction" representedClassName="Transaction" syncable="YES">
-        <attribute name="amount" attributeType="String"/>
+        <attribute name="amount" attributeType="Decimal" defaultValueString="0.0"/>
         <attribute name="category" attributeType="String"/>
         <attribute name="date" attributeType="Date" defaultDateTimeInterval="619107600" usesScalarValueType="NO"/>
         <attribute name="dateWithFormat" optional="YES" transient="YES" attributeType="String"/>
+        <attribute name="executionPeriod" attributeType="String"/>
         <attribute name="identifier" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="vendor" attributeType="String"/>
         <relationship name="account" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Account" inverseName="transactions" inverseEntity="Account"/>
@@ -45,8 +46,8 @@
         </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="User" positionX="-417.63671875" positionY="-11.1328125" width="128" height="178"/>
-        <element name="Transaction" positionX="9.5078125" positionY="-0.78515625" width="128" height="148"/>
         <element name="Account" positionX="-192.96484375" positionY="-6.390625" width="128" height="148"/>
+        <element name="Transaction" positionX="9.5078125" positionY="-0.78515625" width="128" height="163"/>
+        <element name="User" positionX="-417.63671875" positionY="-11.1328125" width="128" height="178"/>
     </elements>
 </model>

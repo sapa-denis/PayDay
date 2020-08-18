@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DashboardSectionHeader" customModule="PayDay" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="531" height="80"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tsE-F7-Epo">
+                    <rect key="frame" x="16" y="16" width="37" height="18"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNh-y8-ep2">
+                    <rect key="frame" x="16" y="44" width="47.5" height="21.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="DNh-y8-ep2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Lic-vJ-Kvq"/>
+                <constraint firstItem="DNh-y8-ep2" firstAttribute="top" secondItem="tsE-F7-Epo" secondAttribute="bottom" constant="10" id="Oqt-gS-EVL"/>
+                <constraint firstItem="tsE-F7-Epo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="erx-xf-oqb"/>
+                <constraint firstItem="tsE-F7-Epo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="l62-IS-LrQ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="monthLabel" destination="tsE-F7-Epo" id="FDA-ss-ZBp"/>
+                <outlet property="totalAmountLabel" destination="DNh-y8-ep2" id="9AF-1K-DlO"/>
+            </connections>
+            <point key="canvasLocation" x="222.46376811594206" y="-120.53571428571428"/>
+        </view>
+    </objects>
+</document>
