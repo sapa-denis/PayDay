@@ -13,6 +13,23 @@ protocol SignUpView: AnyObject {
 }
 
 class SignUpViewController: UITableViewController {
+    
+    // MARK: - Outlest
+    @IBOutlet private weak var firstNameTextField: UITextField!
+    @IBOutlet private weak var lastNameTextField: UITextField!
+    @IBOutlet private weak var phoneNumberTextField: UITextField!
+    @IBOutlet private weak var emailTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var passwordConfirmationTextField: UITextField!
+    
+    @IBOutlet private weak var maleRadioButtonImageView: UIImageView!
+    @IBOutlet private weak var femaleRadioButtonImageView: UIImageView!
+    
+    @IBOutlet private weak var dayTextField: UITextField!
+    @IBOutlet private weak var monthTextField: UITextField!
+    @IBOutlet private weak var yearTextField: UITextField!
+    
+    
 
     // MARK: - Properties
     var presenter: SignUpPresenter!
@@ -25,4 +42,70 @@ class SignUpViewController: UITableViewController {
 // MARK: - SignUpView
 extension SignUpViewController: SignUpView {
     
+}
+
+// MARK: - Actions
+extension SignUpViewController {
+    
+    @IBAction private func onMaleRadioButtonTouchUp() {
+        maleRadioButtonImageView.isHighlighted = true
+        femaleRadioButtonImageView.isHighlighted = false
+    }
+    
+    @IBAction private func onFemaleRadioButtonTouchUp() {
+        maleRadioButtonImageView.isHighlighted = false
+        femaleRadioButtonImageView.isHighlighted = true
+    }
+    
+    @IBAction private func onRegisterButtonTouchUp(_ sender: UIButton) {
+        registerAction()
+    }
+    
+    @IBAction private func onSwitchToLoginButtonTouchUp(_ sender: UIButton) {
+        UIApplication.shared.sendAction(#selector(SwitchToLoginChainActionsHandler
+                                                  .onSwitchToLoginAction),
+                                        to: nil,
+                                        from: self,
+                                        for: nil)
+    }
+}
+
+// MARK: - Private methods
+extension SignUpViewController {
+    
+    private func registerAction() {
+        
+    }
+}
+
+extension SignUpViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        switch textField {
+        case firstNameTextField:
+            lastNameTextField.becomeFirstResponder()
+        case lastNameTextField:
+            phoneNumberTextField.becomeFirstResponder()
+        case phoneNumberTextField:
+            emailTextField.becomeFirstResponder()
+        case emailTextField:
+            passwordTextField.becomeFirstResponder()
+        case passwordTextField:
+            passwordConfirmationTextField.becomeFirstResponder()
+        case passwordConfirmationTextField:
+            break
+        case dayTextField:
+            monthTextField.becomeFirstResponder()
+        case monthTextField:
+            yearTextField.becomeFirstResponder()
+        case yearTextField:
+            registerAction()
+        default:
+            break
+        }
+        
+        return true
+    }
 }

@@ -32,6 +32,38 @@ extension LoginViewController: LoginView {
     
 }
 
+// MARK: - SwitchToLoginChainActionsHandler
+extension LoginViewController: SwitchToLoginChainActionsHandler {
+    
+    func onSwitchToLoginAction() {
+        let viewController: UIViewController
+        
+        if pages.count > 1 {
+            viewController = pages[1]
+        } else {
+            viewController = SignInModule().viewController()
+            pages.append(viewController)
+        }
+        
+        
+        pageViewController.setViewControllers([viewController],
+                                              direction: .forward,
+                                              animated: true)
+    }
+}
+
+// MARK: - SwitchToLoginChainActionsHandler
+extension LoginViewController: SwitchToRegistrationChainActionsHandler {
+    
+    func onSwitchToRegistrationAction() {
+        let viewController: UIViewController = pages[0]
+        
+        pageViewController.setViewControllers([viewController],
+                                              direction: .reverse,
+                                              animated: true)
+    }
+}
+
 // MARK: - Private methods
 extension LoginViewController {
     

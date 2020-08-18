@@ -44,6 +44,14 @@ extension SignInViewController {
             .loginAction(email: email,
                          password: password)
     }
+    
+    @IBAction private func onSwitchToRegistrationButtonTouchUp(_ sender: UIButton) {
+        UIApplication.shared.sendAction(#selector(SwitchToRegistrationChainActionsHandler
+                                                  .onSwitchToRegistrationAction),
+                                        to: nil,
+                                        from: self,
+                                        for: nil)
+    }
 }
 
 // MARK: - Private methods
