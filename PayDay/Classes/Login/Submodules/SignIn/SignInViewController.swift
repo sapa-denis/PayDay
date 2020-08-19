@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SignInView: AnyObject {
-    
+    func onSuccessfulRegistration()
 }
 
 final class SignInViewController: UIViewController {
@@ -54,6 +54,18 @@ extension SignInViewController {
     }
 }
 
+// MARK: - SignInView
+extension SignInViewController: SignInView {
+    
+    func onSuccessfulRegistration() {
+        UIApplication.shared.sendAction(#selector(SuccessLoginChainActionHandler
+            .onSuccessLogin),
+                                        to: nil,
+                                        from: self,
+                                        for: nil)
+    }
+}
+
 // MARK: - Private methods
 extension SignInViewController {
     
@@ -89,6 +101,3 @@ extension SignInViewController {
         textField.layer.cornerRadius = Constants.cornerRadius
     }
 }
-
-// MARK: - SignInView
-extension SignInViewController: SignInView {}

@@ -54,7 +54,7 @@
 		870C8C9124E32E4E00DE5EFC /* ListenEntityOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C9024E32E4E00DE5EFC /* ListenEntityOperation.swift */; };
 		870C8C9424E3C44F00DE5EFC /* CollectionChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C9324E3C44F00DE5EFC /* CollectionChange.swift */; };
 		870C8C9724E3C90E00DE5EFC /* Listener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C9624E3C90E00DE5EFC /* Listener.swift */; };
-		870C8C9924E3DDD500DE5EFC /* SignInRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C9824E3DDD500DE5EFC /* SignInRouter.swift */; };
+		870C8C9924E3DDD500DE5EFC /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C9824E3DDD500DE5EFC /* LoginRouter.swift */; };
 		870C8C9B24E3E0E100DE5EFC /* UIWindow+Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C9A24E3E0E100DE5EFC /* UIWindow+Root.swift */; };
 		870C8C9D24E3E12500DE5EFC /* UIView+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8C9C24E3E12500DE5EFC /* UIView+Snapshot.swift */; };
 		870C8CA124E3EB8F00DE5EFC /* TransactionListModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8CA024E3EB8F00DE5EFC /* TransactionListModule.swift */; };
@@ -114,6 +114,8 @@
 		8762E54B24EC1C79001E7E7B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8762E54A24EC1C79001E7E7B /* LoginViewController.swift */; };
 		8762E54E24EC4EEA001E7E7B /* SwitchToLoginChainActionsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8762E54D24EC4EEA001E7E7B /* SwitchToLoginChainActionsHandler.swift */; };
 		8762E55024EC4EFE001E7E7B /* SwitchToRegistrationChainActionsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8762E54F24EC4EFE001E7E7B /* SwitchToRegistrationChainActionsHandler.swift */; };
+		8762E55324EC5427001E7E7B /* RegistrationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8762E55224EC5427001E7E7B /* RegistrationUseCase.swift */; };
+		8762E55524EC6578001E7E7B /* SuccessLoginChainActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8762E55424EC6578001E7E7B /* SuccessLoginChainActionHandler.swift */; };
 		87726CE624E9575600594193 /* DashboardModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87726CE524E9575600594193 /* DashboardModule.swift */; };
 		87726CE824E9576200594193 /* DashboardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87726CE724E9576200594193 /* DashboardPresenter.swift */; };
 		87726CEA24E9577800594193 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87726CE924E9577800594193 /* DashboardViewController.swift */; };
@@ -322,7 +324,7 @@
 		870C8C9024E32E4E00DE5EFC /* ListenEntityOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListenEntityOperation.swift; sourceTree = "<group>"; };
 		870C8C9324E3C44F00DE5EFC /* CollectionChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionChange.swift; sourceTree = "<group>"; };
 		870C8C9624E3C90E00DE5EFC /* Listener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listener.swift; sourceTree = "<group>"; };
-		870C8C9824E3DDD500DE5EFC /* SignInRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRouter.swift; sourceTree = "<group>"; };
+		870C8C9824E3DDD500DE5EFC /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		870C8C9A24E3E0E100DE5EFC /* UIWindow+Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Root.swift"; sourceTree = "<group>"; };
 		870C8C9C24E3E12500DE5EFC /* UIView+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Snapshot.swift"; sourceTree = "<group>"; };
 		870C8CA024E3EB8F00DE5EFC /* TransactionListModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListModule.swift; sourceTree = "<group>"; };
@@ -388,6 +390,8 @@
 		8762E54A24EC1C79001E7E7B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8762E54D24EC4EEA001E7E7B /* SwitchToLoginChainActionsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchToLoginChainActionsHandler.swift; sourceTree = "<group>"; };
 		8762E54F24EC4EFE001E7E7B /* SwitchToRegistrationChainActionsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchToRegistrationChainActionsHandler.swift; sourceTree = "<group>"; };
+		8762E55224EC5427001E7E7B /* RegistrationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationUseCase.swift; sourceTree = "<group>"; };
+		8762E55424EC6578001E7E7B /* SuccessLoginChainActionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessLoginChainActionHandler.swift; sourceTree = "<group>"; };
 		87726CE524E9575600594193 /* DashboardModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardModule.swift; sourceTree = "<group>"; };
 		87726CE724E9576200594193 /* DashboardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardPresenter.swift; sourceTree = "<group>"; };
 		87726CE924E9577800594193 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
@@ -560,6 +564,7 @@
 		870C8C1924E167CC00DE5EFC /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				8762E55124EC5407001E7E7B /* Registration */,
 				870C8C1A24E1680100DE5EFC /* Login */,
 				870C8CB324E43F6900DE5EFC /* Accounts */,
 				870C8CAF24E3FB4700DE5EFC /* Transactions */,
@@ -1043,6 +1048,7 @@
 				8762E54624EC1C59001E7E7B /* LoginModule.swift */,
 				8762E54824EC1C69001E7E7B /* LoginPresenter.swift */,
 				8762E54A24EC1C79001E7E7B /* LoginViewController.swift */,
+				870C8C9824E3DDD500DE5EFC /* LoginRouter.swift */,
 				87726CF824EC061800594193 /* Submodules */,
 				8762E54C24EC4E5F001E7E7B /* Protocols */,
 			);
@@ -1080,8 +1086,17 @@
 			children = (
 				8762E54D24EC4EEA001E7E7B /* SwitchToLoginChainActionsHandler.swift */,
 				8762E54F24EC4EFE001E7E7B /* SwitchToRegistrationChainActionsHandler.swift */,
+				8762E55424EC6578001E7E7B /* SuccessLoginChainActionHandler.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		8762E55124EC5407001E7E7B /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				8762E55224EC5427001E7E7B /* RegistrationUseCase.swift */,
+			);
+			path = Registration;
 			sourceTree = "<group>";
 		};
 		87726CE424E9573000594193 /* Dashboard */ = {
@@ -1138,7 +1153,6 @@
 				8752F15A24DBF9D8007041EE /* SignInModule.swift */,
 				8752F15E24DBFD07007041EE /* SignInPresenter.swift */,
 				8752F15C24DBFB86007041EE /* SignInViewController.swift */,
-				870C8C9824E3DDD500DE5EFC /* SignInRouter.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -1692,6 +1706,7 @@
 				870C8C7D24E2C75C00DE5EFC /* PayDay.xcdatamodeld in Sources */,
 				870C8CAE24E3FB4100DE5EFC /* TransactionListUseCase.swift in Sources */,
 				870C8C2D24E16A4B00DE5EFC /* ResponseAdapterBuildable.swift in Sources */,
+				8762E55324EC5427001E7E7B /* RegistrationUseCase.swift in Sources */,
 				870C8C2524E1692300DE5EFC /* NetworkRequesterBuildable.swift in Sources */,
 				870C8CB824E4580000DE5EFC /* AccountListUseCase.swift in Sources */,
 				870C8C2F24E16A8900DE5EFC /* DecoderBuildable.swift in Sources */,
@@ -1758,6 +1773,7 @@
 				870C8C9B24E3E0E100DE5EFC /* UIWindow+Root.swift in Sources */,
 				870C8CA324E3EBB500DE5EFC /* TransactionListViewController.swift in Sources */,
 				8762E54724EC1C59001E7E7B /* LoginModule.swift in Sources */,
+				8762E55524EC6578001E7E7B /* SuccessLoginChainActionHandler.swift in Sources */,
 				87726CE824E9576200594193 /* DashboardPresenter.swift in Sources */,
 				870C8C9D24E3E12500DE5EFC /* UIView+Snapshot.swift in Sources */,
 				870C8CAA24E3F49C00DE5EFC /* TransactionTableViewCell.swift in Sources */,
@@ -1771,7 +1787,7 @@
 				8752F15B24DBF9D8007041EE /* SignInModule.swift in Sources */,
 				87726CEA24E9577800594193 /* DashboardViewController.swift in Sources */,
 				870C8CC724E6C72400DE5EFC /* UITableView+Updates.swift in Sources */,
-				870C8C9924E3DDD500DE5EFC /* SignInRouter.swift in Sources */,
+				870C8C9924E3DDD500DE5EFC /* LoginRouter.swift in Sources */,
 				870C8CC324E6BBE300DE5EFC /* TransactionDisplayable.swift in Sources */,
 				87726CEF24EAFA7A00594193 /* DashboardTableViewCell.swift in Sources */,
 				870C8CA524E3EBCC00DE5EFC /* TransactionListPresenter.swift in Sources */,

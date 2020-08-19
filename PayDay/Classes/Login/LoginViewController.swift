@@ -64,6 +64,14 @@ extension LoginViewController: SwitchToRegistrationChainActionsHandler {
     }
 }
 
+// MARK: - SuccessLoginChainActionHandler
+extension LoginViewController: SuccessLoginChainActionHandler {
+    
+    func onSuccessLogin() {
+        openTransactions()
+    }
+}
+
 // MARK: - Private methods
 extension LoginViewController {
     

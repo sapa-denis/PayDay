@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SignUpView: AnyObject {
-    
+    func onSuccessfulRegistration()
 }
 
 class SignUpViewController: UITableViewController {
@@ -28,8 +28,6 @@ class SignUpViewController: UITableViewController {
     @IBOutlet private weak var dayTextField: UITextField!
     @IBOutlet private weak var monthTextField: UITextField!
     @IBOutlet private weak var yearTextField: UITextField!
-    
-    
 
     // MARK: - Properties
     var presenter: SignUpPresenter!
@@ -42,6 +40,13 @@ class SignUpViewController: UITableViewController {
 // MARK: - SignUpView
 extension SignUpViewController: SignUpView {
     
+    func onSuccessfulRegistration() {
+        UIApplication.shared.sendAction(#selector(SuccessLoginChainActionHandler
+            .onSuccessLogin),
+                                        to: nil,
+                                        from: self,
+                                        for: nil)
+    }
 }
 
 // MARK: - Actions
@@ -74,7 +79,13 @@ extension SignUpViewController {
 extension SignUpViewController {
     
     private func registerAction() {
-        
+//        presenter.loginAction(with: <#T##String#>,
+//                              lastName: <#T##String#>,
+//                              email: <#T##String#>,
+//                              phone: <#T##String#>,
+//                              password: <#T##String#>,
+//                              gender: <#T##String#>,
+//                              dateOfBirth: <#T##String#>)
     }
 }
 

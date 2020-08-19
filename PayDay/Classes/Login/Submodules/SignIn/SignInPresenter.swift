@@ -37,7 +37,7 @@ final class SignInPresenter {
             .prepare(email: email, password: password)
             .success { [weak self] userId in
                 UserSessionController.shared.authorizationStatus = .authorized(userId: userId)
-                self?.router.openTransactions()
+                self?.view.onSuccessfulRegistration()
             }
             .perform()
     }
