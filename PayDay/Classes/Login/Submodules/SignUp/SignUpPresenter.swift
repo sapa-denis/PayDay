@@ -7,6 +7,9 @@
 //
 
 import Features
+import Entities
+
+typealias Gender = User.Gender
 
 final class SignUpPresenter {
     
@@ -31,7 +34,7 @@ final class SignUpPresenter {
                      email: String,
                      phone: String,
                      password: String,
-                     gender: String,
+                     gender: Gender,
                      dateOfBirth: String) {
         if registrationUseCase.isExecuting() {
             registrationUseCase.cancelAllOperations()
@@ -43,7 +46,7 @@ final class SignUpPresenter {
                      email: email,
                      phone: phone,
                      password: password,
-                     gender: gender,
+                     gender: gender.rawValue,
                      dateOfBirth: dateOfBirth)
             .success { [weak self] userId in
                 UserSessionController.shared.authorizationStatus = .authorized(userId: userId)

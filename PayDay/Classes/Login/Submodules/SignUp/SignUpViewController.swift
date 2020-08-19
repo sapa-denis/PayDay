@@ -28,12 +28,23 @@ class SignUpViewController: UITableViewController {
     @IBOutlet private weak var dayTextField: UITextField!
     @IBOutlet private weak var monthTextField: UITextField!
     @IBOutlet private weak var yearTextField: UITextField!
+    
+    @IBOutlet private weak var signUpButton: UIButton!
 
     // MARK: - Properties
     var presenter: SignUpPresenter!
+    private var keyboardHandler: KeyboardHandler?
     
+    private var gender: Gender?
+    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.keyboardDismissMode = .onDrag
+        tableView.addKeyboardDismissTapGesture()
+        
+        setupView()
     }
 }
 
@@ -55,11 +66,13 @@ extension SignUpViewController {
     @IBAction private func onMaleRadioButtonTouchUp() {
         maleRadioButtonImageView.isHighlighted = true
         femaleRadioButtonImageView.isHighlighted = false
+        gender = .male
     }
     
     @IBAction private func onFemaleRadioButtonTouchUp() {
         maleRadioButtonImageView.isHighlighted = false
         femaleRadioButtonImageView.isHighlighted = true
+        gender = .female
     }
     
     @IBAction private func onRegisterButtonTouchUp(_ sender: UIButton) {
@@ -67,8 +80,7 @@ extension SignUpViewController {
     }
     
     @IBAction private func onSwitchToLoginButtonTouchUp(_ sender: UIButton) {
-        UIApplication.shared.sendAction(#selector(SwitchToLoginChainActionsHandler
-                                                  .onSwitchToLoginAction),
+        UIApplication.shared.sendAction(#selector(SwitchToLoginChainActionsHandler.onSwitchToLoginAction),
                                         to: nil,
                                         from: self,
                                         for: nil)
@@ -78,14 +90,40 @@ extension SignUpViewController {
 // MARK: - Private methods
 extension SignUpViewController {
     
+    private func setupView() {
+        firstNameTextField.apply(style: .regular)
+        lastNameTextField.apply(style: .regular)
+        phoneNumberTextField.apply(style: .regular)
+        emailTextField.apply(style: .regular)
+        passwordTextField.apply(style: .regular)
+        passwordConfirmationTextField.apply(style: .regular)
+        dayTextField.apply(style: .regular)
+        monthTextField.apply(style: .regular)
+        yearTextField.apply(style: .regular)
+        
+        signUpButton.layer.cornerRadius = Constants.cornerRadius
+    }
+    
     private func registerAction() {
-//        presenter.loginAction(with: <#T##String#>,
-//                              lastName: <#T##String#>,
-//                              email: <#T##String#>,
-//                              phone: <#T##String#>,
-//                              password: <#T##String#>,
-//                              gender: <#T##String#>,
-//                              dateOfBirth: <#T##String#>)
+        guard let firstName = firstNameTextField.text,
+            let lastName = lastNameTextField.text,
+            let email = emailTextField.text,
+            let phone = phoneNumberTextField.text,
+            let password = passwordTextField.text,
+            let gender = gender,
+            let day = dayTextField.text,
+            let month = monthTextField.text,
+            let year = yearTextField.text else {
+                return
+        }
+        
+        presenter.loginAction(with: firstName,
+                              lastName: lastName,
+                              email: email,
+                              phone: phone,
+                              password: password,
+                              gender: gender,
+                              dateOfBirth: "\(day)-\(month)-\(year)")
     }
 }
 
@@ -118,5 +156,9 @@ extension SignUpViewController: UITextFieldDelegate {
         }
         
         return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
     }
 }

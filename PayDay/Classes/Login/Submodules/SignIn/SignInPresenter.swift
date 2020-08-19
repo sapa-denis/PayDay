@@ -13,14 +13,12 @@ final class SignInPresenter {
 
     // MARK: - Properties
     private weak var view: SignInView!
-    private weak var router: SignInPresentation!
     private let loginUseCase: LoginUseCase = LoginUseCase(quality: .userInitiated,
                                                           priority: .veryHigh)
     
     // MARK: - Init / Deinit methods
-    init(with view: SignInView, router: SignInPresentation) {
+    init(with view: SignInView) {
         self.view = view
-        self.router = router
     }
     
     deinit {

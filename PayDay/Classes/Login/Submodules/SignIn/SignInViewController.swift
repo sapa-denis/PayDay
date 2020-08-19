@@ -70,8 +70,8 @@ extension SignInViewController: SignInView {
 extension SignInViewController {
     
     private func setupView() {
-        applyStyle(for: emailTextField)
-        applyStyle(for: passwordTextField)
+        emailTextField.apply(style: .regular)
+        passwordTextField.apply(style: .regular)
         
         loginButton.layer.cornerRadius = Constants.cornerRadius
     }
@@ -83,21 +83,5 @@ extension SignInViewController {
         }
         
         return email.isEmail && password.count >= 6
-    }
-    
-    private func applyStyle(for textField: UITextField) {
-        let placeholder: String = textField.placeholder ?? ""
-        let attributes: [NSAttributedString.Key: Any] = [
-                        .foregroundColor: UIColor.placeholder,
-                        .font: UIFont.general
-        ]
-        
-        textField.attributedPlaceholder = NSAttributedString(string: placeholder,
-                                                             attributes: attributes)
-        textField.textColor = .black
-        textField.font = .general
-        textField.layer.borderColor = UIColor.border.cgColor
-        textField.layer.borderWidth = Constants.borderWidth
-        textField.layer.cornerRadius = Constants.cornerRadius
     }
 }

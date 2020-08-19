@@ -18,7 +18,7 @@ final class SignInModule {
     init() {
         view = UIStoryboard.init(name: "Login", bundle: .main)
             .instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
-        presenter = SignInPresenter(with: view, router: view)
+        presenter = SignInPresenter(with: view)
         view.presenter = presenter
     }
     

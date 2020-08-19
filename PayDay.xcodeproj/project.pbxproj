@@ -116,6 +116,7 @@
 		8762E55024EC4EFE001E7E7B /* SwitchToRegistrationChainActionsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8762E54F24EC4EFE001E7E7B /* SwitchToRegistrationChainActionsHandler.swift */; };
 		8762E55324EC5427001E7E7B /* RegistrationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8762E55224EC5427001E7E7B /* RegistrationUseCase.swift */; };
 		8762E55524EC6578001E7E7B /* SuccessLoginChainActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8762E55424EC6578001E7E7B /* SuccessLoginChainActionHandler.swift */; };
+		8762E55724ED46DE001E7E7B /* UITextField+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8762E55624ED46DE001E7E7B /* UITextField+Style.swift */; };
 		87726CE624E9575600594193 /* DashboardModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87726CE524E9575600594193 /* DashboardModule.swift */; };
 		87726CE824E9576200594193 /* DashboardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87726CE724E9576200594193 /* DashboardPresenter.swift */; };
 		87726CEA24E9577800594193 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87726CE924E9577800594193 /* DashboardViewController.swift */; };
@@ -124,6 +125,8 @@
 		87726CF224EAFFC000594193 /* DashboardSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87726CF124EAFFC000594193 /* DashboardSectionHeader.swift */; };
 		87726CF424EAFFCF00594193 /* DashboardSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87726CF324EAFFCF00594193 /* DashboardSectionHeader.xib */; };
 		87726CF724EB035900594193 /* CategoryDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87726CF624EB035900594193 /* CategoryDisplayable.swift */; };
+		87945A8B24ED690A0002EE6D /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87945A8A24ED690A0002EE6D /* KeyboardHandler.swift */; };
+		87945A8D24ED6A430002EE6D /* UIScrollView+EndEditing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87945A8C24ED6A430002EE6D /* UIScrollView+EndEditing.swift */; };
 		E5C9EB133D63A16A109706CA /* Pods_Networking_NetworkingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3AC639B23304F22362751C /* Pods_Networking_NetworkingTests.framework */; };
 		E8CC1D2974D16AEBCED95B2F /* Pods_PayDay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 724A721BF64EC7A0A65B556A /* Pods_PayDay.framework */; };
 /* End PBXBuildFile section */
@@ -392,6 +395,7 @@
 		8762E54F24EC4EFE001E7E7B /* SwitchToRegistrationChainActionsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchToRegistrationChainActionsHandler.swift; sourceTree = "<group>"; };
 		8762E55224EC5427001E7E7B /* RegistrationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationUseCase.swift; sourceTree = "<group>"; };
 		8762E55424EC6578001E7E7B /* SuccessLoginChainActionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessLoginChainActionHandler.swift; sourceTree = "<group>"; };
+		8762E55624ED46DE001E7E7B /* UITextField+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Style.swift"; sourceTree = "<group>"; };
 		87726CE524E9575600594193 /* DashboardModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardModule.swift; sourceTree = "<group>"; };
 		87726CE724E9576200594193 /* DashboardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardPresenter.swift; sourceTree = "<group>"; };
 		87726CE924E9577800594193 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
@@ -400,6 +404,8 @@
 		87726CF124EAFFC000594193 /* DashboardSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardSectionHeader.swift; sourceTree = "<group>"; };
 		87726CF324EAFFCF00594193 /* DashboardSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardSectionHeader.xib; sourceTree = "<group>"; };
 		87726CF624EB035900594193 /* CategoryDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDisplayable.swift; sourceTree = "<group>"; };
+		87945A8A24ED690A0002EE6D /* KeyboardHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
+		87945A8C24ED6A430002EE6D /* UIScrollView+EndEditing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+EndEditing.swift"; sourceTree = "<group>"; };
 		89D07C566BC992ADDD1302F0 /* Pods_Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A270CA01BB0B2D4998457E8 /* Pods-Core-CoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Core-CoreTests.debug.xcconfig"; path = "Target Support Files/Pods-Core-CoreTests/Pods-Core-CoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9F3AC639B23304F22362751C /* Pods_Networking_NetworkingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Networking_NetworkingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -724,6 +730,8 @@
 				870C8C9C24E3E12500DE5EFC /* UIView+Snapshot.swift */,
 				870C8CBF24E6BA8100DE5EFC /* UITableView+Reusable.swift */,
 				870C8CC624E6C72400DE5EFC /* UITableView+Updates.swift */,
+				8762E55624ED46DE001E7E7B /* UITextField+Style.swift */,
+				87945A8C24ED6A430002EE6D /* UIScrollView+EndEditing.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -735,6 +743,7 @@
 				870C8C8B24E3148700DE5EFC /* UserSessionController.swift */,
 				870C8C8D24E31A1E00DE5EFC /* UserDefaultsAccessor.swift */,
 				870C8CC824E6C79E00DE5EFC /* Typealiases.swift */,
+				87945A8A24ED690A0002EE6D /* KeyboardHandler.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1767,6 +1776,7 @@
 				8762E54B24EC1C79001E7E7B /* LoginViewController.swift in Sources */,
 				870C8CC024E6BA8100DE5EFC /* UITableView+Reusable.swift in Sources */,
 				870C8C8A24E300EC00DE5EFC /* String+Email.swift in Sources */,
+				87945A8B24ED690A0002EE6D /* KeyboardHandler.swift in Sources */,
 				8752F0A724DAAC48007041EE /* ViewController.swift in Sources */,
 				870C8C8524E2FBB900DE5EFC /* UIFont.swift in Sources */,
 				870C8CC924E6C79F00DE5EFC /* Typealiases.swift in Sources */,
@@ -1791,6 +1801,7 @@
 				870C8CC324E6BBE300DE5EFC /* TransactionDisplayable.swift in Sources */,
 				87726CEF24EAFA7A00594193 /* DashboardTableViewCell.swift in Sources */,
 				870C8CA524E3EBCC00DE5EFC /* TransactionListPresenter.swift in Sources */,
+				87945A8D24ED6A430002EE6D /* UIScrollView+EndEditing.swift in Sources */,
 				870C8CA124E3EB8F00DE5EFC /* TransactionListModule.swift in Sources */,
 				87726CF224EAFFC000594193 /* DashboardSectionHeader.swift in Sources */,
 				8762E54524EC1152001E7E7B /* SignUpViewController.swift in Sources */,
@@ -1798,6 +1809,7 @@
 				870C8CC524E6C6BE00DE5EFC /* CollectionContentUpdating.swift in Sources */,
 				870C8C8824E2FCD600DE5EFC /* Constants.swift in Sources */,
 				8762E54924EC1C69001E7E7B /* LoginPresenter.swift in Sources */,
+				8762E55724ED46DE001E7E7B /* UITextField+Style.swift in Sources */,
 				870C8CBE24E6BA0A00DE5EFC /* CellReusable.swift in Sources */,
 				8762E54124EC10FD001E7E7B /* SignUpModule.swift in Sources */,
 			);

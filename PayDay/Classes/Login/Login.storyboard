@@ -713,6 +713,7 @@
                         <outlet property="passwordConfirmationTextField" destination="WTa-0u-KSZ" id="mlR-oP-WP4"/>
                         <outlet property="passwordTextField" destination="juQ-0H-UJk" id="BmH-Lk-4Mb"/>
                         <outlet property="phoneNumberTextField" destination="v8l-8T-7sZ" id="YD9-ss-rfv"/>
+                        <outlet property="signUpButton" destination="0t9-7m-hyN" id="aGk-Cd-E37"/>
                         <outlet property="yearTextField" destination="R0d-h1-e8a" id="A1M-fx-rdV"/>
                     </connections>
                 </tableViewController>
