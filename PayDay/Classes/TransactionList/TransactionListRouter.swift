@@ -9,13 +9,13 @@
 
 
 protocol TransactionListPresentation: AnyObject {
-    func openDashboard()
+    func openDashboard(for accountId: Int)
 }
 
 extension TransactionListViewController: TransactionListPresentation {
     
-    func openDashboard() {
-        navigationController?.pushViewController(DashboardModule().viewController(),
+    func openDashboard(for accountId: Int) {
+        navigationController?.pushViewController(DashboardModule(accountId: accountId).viewController(),
                                                  animated: true)
     }
 }

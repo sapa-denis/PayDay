@@ -14,10 +14,10 @@ final class DashboardModule {
     private let presenter: DashboardPresenter
     
     // MARK: - Init / Deinit methods
-    init() {
+    init(accountId: Int) {
         view = UIStoryboard.init(name: "Dashboard", bundle: .main)
             .instantiateViewController(withIdentifier: "DashboardViewController") as! DashboardViewController
-        presenter = DashboardPresenter(with: view)
+        presenter = DashboardPresenter(with: view, accountId: accountId)
         view.presenter = presenter
     }
     

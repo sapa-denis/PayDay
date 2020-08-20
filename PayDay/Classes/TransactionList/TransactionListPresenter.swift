@@ -54,6 +54,14 @@ class TransactionListPresenter {
             .perform()
     }
     
+    func onDashboardTouchAction() {
+        router.openDashboard(for: currentAccountId)
+    }
+}
+
+// MARK: - Data providing methods
+extension TransactionListPresenter {
+    
     func numberOfSections() -> Int {
         guard let collectionContent = collectionContent else {
             return 0

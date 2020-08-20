@@ -67,7 +67,7 @@ extension TransactionListViewController: TransactionListView {
 extension TransactionListViewController {
     
     @objc private func onDashboardButtonTouchUp() {
-        openDashboard()
+        presenter.onDashboardTouchAction()
     }
     
     @objc private func refreshContent(_ refreshControl: UIRefreshControl) {

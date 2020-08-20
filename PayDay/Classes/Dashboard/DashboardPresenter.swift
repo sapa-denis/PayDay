@@ -16,36 +16,35 @@ final class DashboardPresenter: NSObject, NSFetchedResultsControllerDelegate {
     // MARK: - Properties
     private weak var view: DashboardView!
     
+    private let accountId: Int
     private var resultController: NSFetchedResultsController<NSFetchRequestResult>!
     private let transactionListUseCase: TransactionListUseCase = .init(quality: .userInteractive,
                                                                        priority: .high)
     private var collectionUpdates: [ContentUpdate] = []
     
     // MARK: - Init / Deinit methods
-    init(with view: DashboardView) {
+    init(with view: DashboardView, accountId: Int) {
         self.view = view
+        self.accountId = accountId
         
         super.init()
         
-        fetchMonthlyStatistic()
+        fetchMonthlyReport()
+        retrieveMonthlyReport()
     }
     
     // MARK: - Public Methods
     func retrieveMonthlyReport() {
-        func retrieveTransactions() {
-            if transactionListUseCase.isExecuting() {
-                transactionListUseCase.cancelAllOperations()
-            }
-            
-            transactionListUseCase
-                .prepare(accountId: currentAccountId)
-                .always { [weak self] in
-                    self?.fetchMonthlyStatistic()
-                }
-                .perform()
+        if transactionListUseCase.isExecuting() {
+            transactionListUseCase.cancelAllOperations()
         }
         
-        
+        transactionListUseCase
+            .prepare(accountId: accountId)
+            .always { [weak self] in
+                self?.fetchMonthlyReport()
+        }
+        .perform()
     }
 }
 
@@ -106,7 +105,7 @@ extension DashboardPresenter {
 
 extension DashboardPresenter {
     
-    private func fetchMonthlyStatistic() {
+    private func fetchMonthlyReport() {
         let context = NSPersistentContainer.container.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Transaction")
         request.resultType = .dictionaryResultType
