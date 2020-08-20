@@ -14,11 +14,27 @@ public final class Transaction: NSManagedObject, Decodable {
     
     // MARK: - Properties
     @NSManaged public private(set) var identifier: Int64
-    @NSManaged public private(set) var amount: NSDecimalNumber
     @NSManaged public private(set) var vendor: String
     @NSManaged public private(set) var category: String
     @NSManaged public private(set) var date: NSDate
     @NSManaged public private(set) var account: Account?
+    
+    @NSManaged private var primitiveAmount: NSDecimalNumber
+    public private(set) var amount: Decimal {
+        get {
+            defer {
+                didAccessValue(forKey: "gender")
+            }
+            willAccessValue(forKey: "gender")
+            
+            return primitiveAmount as Decimal
+        }
+        set {
+            willChangeValue(forKey: "gender")
+            primitiveAmount = newValue as NSDecimalNumber
+            didChangeValue(forKey: "gender")
+        }
+    }
     
     @objc public var dateWithFormat: String? {
         let calendar = Calendar.current
@@ -28,7 +44,7 @@ public final class Transaction: NSManagedObject, Decodable {
             return "Yesterday" 
         } else {
             let formatter = DateFormatter()
-            formatter.dateStyle = .medium
+            formatter.dateFormat = "MMMM dd, yyyy"
             return formatter.string(from: date as Date)
         }
     }
@@ -69,7 +85,7 @@ public final class Transaction: NSManagedObject, Decodable {
             identifier <>= try container.decode(Int64.self, forKey: .identifier)
             
             let amountString = try container.decode(String.self, forKey: .amount)
-            amount <>= (Decimal(string: amountString) ?? 0) as NSDecimalNumber
+            amount <>= (Decimal(string: amountString) ?? 0)
             
             vendor <>= try container.decode(String.self, forKey: .vendor)
             category <>= try container.decode(String.self, forKey: .category)

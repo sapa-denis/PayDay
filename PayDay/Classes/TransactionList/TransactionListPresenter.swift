@@ -41,6 +41,19 @@ class TransactionListPresenter {
     }
     
     // MARK: - Public methods
+    func retrieveTransactions() {
+        if transactionListUseCase.isExecuting() {
+            transactionListUseCase.cancelAllOperations()
+        }
+        
+        transactionListUseCase
+            .prepare(accountId: currentAccountId)
+            .always { [weak self] in
+                self?.view.retreivingTransactionsDidEnd()
+            }
+            .perform()
+    }
+    
     func numberOfSections() -> Int {
         guard let collectionContent = collectionContent else {
             return 0
@@ -95,7 +108,7 @@ extension TransactionListPresenter {
         let predicate = NSPredicate(format: "%K = %d AND %K = %@",
                                     #keyPath(Account.customer.identifier), userId,
                                     #keyPath(Account.type),
-                                    "Current" )
+                                    "Current")
         
         currentAccountListener.prepare(predicate: predicate, sortDescriptors: [])
             .success { [weak self] change in
@@ -150,15 +163,5 @@ extension TransactionListPresenter {
                 }
         }
         .performOnCurrentThread()
-    }
-    
-    private func retrieveTransactions() {
-        if transactionListUseCase.isExecuting() {
-            transactionListUseCase.cancelAllOperations()
-        }
-        
-        transactionListUseCase
-            .prepare(accountId: currentAccountId)
-            .perform()
     }
 }

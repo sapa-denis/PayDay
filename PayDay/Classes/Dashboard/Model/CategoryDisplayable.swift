@@ -9,6 +9,18 @@
 import Foundation
 
 struct CategoryDisplayable {
+    
+    // MARK: - Properties
     let name: String
-    let amount: String
+    var formattedAmount: String? {
+        amount.usStringMoney
+    }
+    
+    private let amount: Decimal
+    
+    // MARL: - Init / Deinitmethods
+    init(name: String, amount: Decimal) {
+        self.name = name
+        self.amount = amount
+    }
 }

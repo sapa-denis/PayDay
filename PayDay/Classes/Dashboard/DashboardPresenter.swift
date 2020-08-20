@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 import Entities
+import Features
 
 final class DashboardPresenter: NSObject, NSFetchedResultsControllerDelegate {
     
@@ -16,8 +17,11 @@ final class DashboardPresenter: NSObject, NSFetchedResultsControllerDelegate {
     private weak var view: DashboardView!
     
     private var resultController: NSFetchedResultsController<NSFetchRequestResult>!
+    private let transactionListUseCase: TransactionListUseCase = .init(quality: .userInteractive,
+                                                                       priority: .high)
     private var collectionUpdates: [ContentUpdate] = []
     
+    // MARK: - Init / Deinit methods
     init(with view: DashboardView) {
         self.view = view
         
@@ -26,6 +30,28 @@ final class DashboardPresenter: NSObject, NSFetchedResultsControllerDelegate {
         fetchMonthlyStatistic()
     }
     
+    // MARK: - Public Methods
+    func retrieveMonthlyReport() {
+        func retrieveTransactions() {
+            if transactionListUseCase.isExecuting() {
+                transactionListUseCase.cancelAllOperations()
+            }
+            
+            transactionListUseCase
+                .prepare(accountId: currentAccountId)
+                .always { [weak self] in
+                    self?.fetchMonthlyStatistic()
+                }
+                .perform()
+        }
+        
+        
+    }
+}
+
+// MARK: - Data providing methods
+extension DashboardPresenter {
+
     func numberOfSections() -> Int {
         guard let resultController = resultController else {
             return 0
@@ -50,16 +76,15 @@ final class DashboardPresenter: NSObject, NSFetchedResultsControllerDelegate {
                 return (nil, nil)
         }
         
-        let monthlyAmount = sectionData.reduce(0) { (result, data) -> Double in
-            guard let totalAmount = data["totalAmount"] as? Double else {
+        let monthlyAmount = sectionData.reduce(0) { (result, data) -> Decimal in
+            guard let totalAmount = data["totalAmount"] as? Decimal else {
                 return 0
             }
             
             return result + totalAmount
         }
         
-        return (sectionInfo.name, String(describing: monthlyAmount))
-
+        return (sectionInfo.name, monthlyAmount.usStringMoney)
     }
     
     func object(in section: Int, at index: Int) -> CategoryDisplayable {
@@ -71,11 +96,11 @@ final class DashboardPresenter: NSObject, NSFetchedResultsControllerDelegate {
             fatalError("")
         }
         
-        guard let amount = categoryInfo["totalAmount"] as? Double  else {
+        guard let amount = categoryInfo["totalAmount"] as? Decimal  else {
             fatalError("")
         }
         
-        return CategoryDisplayable(name: categoryName, amount: String(describing: amount))
+        return CategoryDisplayable(name: categoryName, amount: amount)
     }
 }
 
@@ -87,7 +112,7 @@ extension DashboardPresenter {
         request.resultType = .dictionaryResultType
         
         let totalAmountExpression = NSExpressionDescription()
-        totalAmountExpression.expressionResultType = .doubleAttributeType
+        totalAmountExpression.expressionResultType = .decimalAttributeType
         totalAmountExpression.expression = NSExpression(forFunction: "sum:",
                                                         arguments: [NSExpression(forKeyPath: "amount")])
         totalAmountExpression.name = "totalAmount"
@@ -114,6 +139,7 @@ extension DashboardPresenter {
         
         try? resultController.performFetch()
         
+        view.retreivingContentDidEnd()
         view.reload()
     }
 }

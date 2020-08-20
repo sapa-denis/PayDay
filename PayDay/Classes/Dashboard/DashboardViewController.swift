@@ -11,6 +11,7 @@ import UIKit
 protocol DashboardView: AnyObject {
     func reload()
     func update(with updates: [ContentUpdate])
+    func retreivingContentDidEnd()
 }
 
 class DashboardViewController: UIViewController {
@@ -21,15 +22,19 @@ class DashboardViewController: UIViewController {
     // MARK: - Properties
     var presenter: DashboardPresenter!
     
+    private var isRefreshing: Bool = false
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Monthly Dashboard"
-        
         self.tableView.register(DashboardSectionHeader.nib,
                                 forHeaderFooterViewReuseIdentifier: DashboardSectionHeader.reuseIdentifier)
-        reload()
+        
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshContent), for: .valueChanged)
+        tableView.refreshControl = refreshControl
     }
 }
 extension DashboardViewController: DashboardView {
@@ -50,6 +55,25 @@ extension DashboardViewController: DashboardView {
         tableView.beginUpdates()
         tableView.perform(updates: updates)
         tableView.endUpdates()
+    }
+    
+    func retreivingContentDidEnd() {
+        isRefreshing = false
+        tableView?.refreshControl?.endRefreshing()
+    }
+}
+
+// MARK: - Actions
+extension DashboardViewController {
+    
+    @objc private func refreshContent(_ refreshControl: UIRefreshControl) {
+        guard !isRefreshing else {
+            tableView?.refreshControl?.endRefreshing()
+            return
+        }
+        
+        isRefreshing = true
+        presenter.retrieveMonthlyReport()
     }
 }
 

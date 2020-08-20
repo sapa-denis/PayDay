@@ -25,6 +25,6 @@ class DashboardTableViewCell: UITableViewCell {
     // MARK: - Public methods
     func configure(with category: CategoryDisplayable) {
         descriptionLabel.text = category.name
-        amountLabel.text = category.amount
+        amountLabel.text = category.formattedAmount
     }
 }

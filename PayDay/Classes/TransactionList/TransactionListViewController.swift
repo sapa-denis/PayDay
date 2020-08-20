@@ -11,6 +11,7 @@ import UIKit
 protocol TransactionListView: AnyObject {
     func reload()
     func update(with updates: [ContentUpdate])
+    func retreivingTransactionsDidEnd()
 }
 
 class TransactionListViewController: UIViewController {
@@ -21,20 +22,17 @@ class TransactionListViewController: UIViewController {
     // MARK: - Properties
     var presenter: TransactionListPresenter!
     
+    private var isRefreshing: Bool = false
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         title = "Transactions"
         
-        if let navigationBar = navigationController?.navigationBar {            
-            navigationBar.setBackgroundImage(UIImage(), for: .default)
-            navigationBar.shadowImage = UIImage()
-            navigationBar.tintColor = UIColor(named: "placeholder")
-            let dashboardItem = UIBarButtonItem(image: UIImage(named: "dashboard"),
-                                                style: .plain,
-                                                target: self,
-                                                action: #selector(onDashboardButtonTouchUp))
-            navigationItem.setRightBarButton(dashboardItem, animated: false)
-        }
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshContent), for: .valueChanged)
+        tableView.refreshControl = refreshControl
+        
+        setupView()
     }
 }
 
@@ -58,6 +56,11 @@ extension TransactionListViewController: TransactionListView {
         tableView.perform(updates: updates)
         tableView.endUpdates()
     }
+    
+    func retreivingTransactionsDidEnd() {
+        isRefreshing = false
+        tableView?.refreshControl?.endRefreshing()
+    }
 }
 
 // MARK: - Actions
@@ -65,6 +68,32 @@ extension TransactionListViewController {
     
     @objc private func onDashboardButtonTouchUp() {
         openDashboard()
+    }
+    
+    @objc private func refreshContent(_ refreshControl: UIRefreshControl) {
+        guard !isRefreshing else {
+            tableView?.refreshControl?.endRefreshing()
+            return
+        }
+        
+        isRefreshing = true
+        presenter.retrieveTransactions()
+    }
+}
+
+extension TransactionListViewController {
+    
+    private func setupView() {
+        if let navigationBar = navigationController?.navigationBar {
+            navigationBar.setBackgroundImage(UIImage(), for: .default)
+            navigationBar.shadowImage = UIImage()
+            navigationBar.tintColor = UIColor(named: "placeholder")
+            let dashboardItem = UIBarButtonItem(image: UIImage(named: "dashboard"),
+                                                style: .plain,
+                                                target: self,
+                                                action: #selector(onDashboardButtonTouchUp))
+            navigationItem.setRightBarButton(dashboardItem, animated: false)
+        }
     }
 }
 

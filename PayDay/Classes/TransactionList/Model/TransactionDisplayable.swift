@@ -24,7 +24,7 @@ extension Transaction: TransactionDisplayable {
     }
     
     var amountFormatted: String {
-        amount.description
+        amount.usStringMoney ?? ""
     }
     
     var vendorFormatted: String {

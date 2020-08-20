@@ -127,6 +127,7 @@
 		87726CF724EB035900594193 /* CategoryDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87726CF624EB035900594193 /* CategoryDisplayable.swift */; };
 		87945A8B24ED690A0002EE6D /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87945A8A24ED690A0002EE6D /* KeyboardHandler.swift */; };
 		87945A8D24ED6A430002EE6D /* UIScrollView+EndEditing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87945A8C24ED6A430002EE6D /* UIScrollView+EndEditing.swift */; };
+		87945A8F24EE80AF0002EE6D /* Decimal+MoneyFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87945A8E24EE80AF0002EE6D /* Decimal+MoneyFormat.swift */; };
 		E5C9EB133D63A16A109706CA /* Pods_Networking_NetworkingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3AC639B23304F22362751C /* Pods_Networking_NetworkingTests.framework */; };
 		E8CC1D2974D16AEBCED95B2F /* Pods_PayDay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 724A721BF64EC7A0A65B556A /* Pods_PayDay.framework */; };
 /* End PBXBuildFile section */
@@ -406,6 +407,7 @@
 		87726CF624EB035900594193 /* CategoryDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDisplayable.swift; sourceTree = "<group>"; };
 		87945A8A24ED690A0002EE6D /* KeyboardHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
 		87945A8C24ED6A430002EE6D /* UIScrollView+EndEditing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+EndEditing.swift"; sourceTree = "<group>"; };
+		87945A8E24EE80AF0002EE6D /* Decimal+MoneyFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+MoneyFormat.swift"; sourceTree = "<group>"; };
 		89D07C566BC992ADDD1302F0 /* Pods_Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A270CA01BB0B2D4998457E8 /* Pods-Core-CoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Core-CoreTests.debug.xcconfig"; path = "Target Support Files/Pods-Core-CoreTests/Pods-Core-CoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9F3AC639B23304F22362751C /* Pods_Networking_NetworkingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Networking_NetworkingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -717,6 +719,7 @@
 			children = (
 				870C8C7F24E2CD8D00DE5EFC /* UIKit */,
 				870C8C8924E300EC00DE5EFC /* String+Email.swift */,
+				87945A8E24EE80AF0002EE6D /* Decimal+MoneyFormat.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1800,6 +1803,7 @@
 				870C8C9924E3DDD500DE5EFC /* LoginRouter.swift in Sources */,
 				870C8CC324E6BBE300DE5EFC /* TransactionDisplayable.swift in Sources */,
 				87726CEF24EAFA7A00594193 /* DashboardTableViewCell.swift in Sources */,
+				87945A8F24EE80AF0002EE6D /* Decimal+MoneyFormat.swift in Sources */,
 				870C8CA524E3EBCC00DE5EFC /* TransactionListPresenter.swift in Sources */,
 				87945A8D24ED6A430002EE6D /* UIScrollView+EndEditing.swift in Sources */,
 				870C8CA124E3EB8F00DE5EFC /* TransactionListModule.swift in Sources */,
