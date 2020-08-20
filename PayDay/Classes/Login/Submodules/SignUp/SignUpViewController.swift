@@ -33,7 +33,6 @@ class SignUpViewController: UITableViewController {
 
     // MARK: - Properties
     var presenter: SignUpPresenter!
-    private var keyboardHandler: KeyboardHandler?
     
     private var gender: Gender?
     

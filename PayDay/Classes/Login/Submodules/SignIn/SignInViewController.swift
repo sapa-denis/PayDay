@@ -18,14 +18,20 @@ final class SignInViewController: UIViewController {
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
     @IBOutlet private weak var loginButton: UIButton!
+    @IBOutlet private weak var scrollView: UIScrollView!
     
     // MARK: - Properties
     var presenter: SignInPresenter!
+    
+    private var keyboardHandler: KeyboardHandler?
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        keyboardHandler = KeyboardHandler(scrollView: scrollView, offset: 36)
+        scrollView.addKeyboardDismissTapGesture()
+        
         setupView()
     }
 }
@@ -34,15 +40,7 @@ final class SignInViewController: UIViewController {
 extension SignInViewController {
     
     @IBAction private func onLoginButtonTouchUp(_ sender: UIButton) {
-        guard validateFields(),
-            let email = emailTextField.text,
-            let password = passwordTextField.text else {
-                return
-        }
-        
-        presenter
-            .loginAction(email: email,
-                         password: password)
+        loginAction()
     }
     
     @IBAction private func onSwitchToRegistrationButtonTouchUp(_ sender: UIButton) {
@@ -83,5 +81,36 @@ extension SignInViewController {
         }
         
         return email.isEmail && password.count >= 6
+    }
+    
+    private func loginAction() {
+        guard validateFields(),
+            let email = emailTextField.text,
+            let password = passwordTextField.text else {
+                return
+        }
+        
+        presenter
+            .loginAction(email: email,
+                         password: password)
+    }
+}
+
+// MARK: - UITextFieldDelegate
+extension SignInViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        switch textField {
+        case emailTextField:
+            passwordTextField.becomeFirstResponder()
+        case passwordTextField:
+            loginAction()
+        default:
+            break
+        }
+        
+        return true
     }
 }
