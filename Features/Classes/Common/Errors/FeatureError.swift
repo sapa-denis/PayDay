@@ -15,7 +15,7 @@ enum FeatureError {
 
 // MARK: - Serialization errors
 extension FeatureError {
-    
+
     enum Serialization {
         case decodingIncompleteContent(_ key: Any)
     }
@@ -23,7 +23,7 @@ extension FeatureError {
 
 // MARK: - CoreData errors
 extension FeatureError {
-    
+
     enum CoreData {
         case missingEntity(_ type: Any.Type, _ key: Any)
     }
@@ -31,7 +31,7 @@ extension FeatureError {
 
 // MARK: - LocalizedError
 extension FeatureError: LocalizedError {
-    
+
     var errorDescription: String? {
         switch self {
         case .serialization(let type):
@@ -47,7 +47,7 @@ extension FeatureError: LocalizedError {
 }
 
 extension FeatureError.Serialization: LocalizedError {
-    
+
     var errorDescription: String? {
         switch self {
         case .decodingIncompleteContent(let key):
@@ -57,7 +57,7 @@ extension FeatureError.Serialization: LocalizedError {
 }
 
 extension FeatureError.CoreData: LocalizedError {
-    
+
     var errorDescription: String? {
         switch self {
         case .missingEntity(let type, let key):

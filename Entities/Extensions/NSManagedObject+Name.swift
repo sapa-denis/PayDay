@@ -9,15 +9,14 @@
 import CoreData
 
 extension NSManagedObject {
-    
+
     // MARK: - Static Properties
     static var entityName: String { return className  }
 }
 
 extension NSObject {
-    
+
     public class var className: String {
         return String(describing: self)
     }
 }
-

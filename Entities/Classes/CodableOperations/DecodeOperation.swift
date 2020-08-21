@@ -9,11 +9,11 @@
 import Core
 
 final public class DecodeOperation<Entity: Decodable>: CoreOperation<Data, Entity> {
-    
+
     // MARK: - Properties
     private let jsonDecoder: JSONDecoder
     private let keyPath: String?
-    
+
     // MARK: - Init / Deinit methods
     public init(in queue: OperationQueue,
                 decoder: JSONDecoder = JSONDecoder(),
@@ -22,11 +22,11 @@ final public class DecodeOperation<Entity: Decodable>: CoreOperation<Data, Entit
         keyPath = path
         super.init(in: queue)
     }
-    
+
     // MARK: - Life Cycle
     override public func main() {
         guard canProceed() else { return }
-        
+
         output = input.flatMap(decode)
         finished()
     }
@@ -42,11 +42,11 @@ final public class DecodeOperation<Entity: Decodable>: CoreOperation<Data, Entit
 }
 
 extension JSONDecoder {
-    
+
     enum DecodeError: Error {
         case emptyData
     }
-    
+
     public func decode<T: Decodable>(_ type: T.Type, from data: Data, keyPath: String) throws -> T {
         let jsonObject = try JSONSerialization.jsonObject(with: data)
         if let nestedJson = (jsonObject as AnyObject).value(forKeyPath: keyPath) as? [Any] {

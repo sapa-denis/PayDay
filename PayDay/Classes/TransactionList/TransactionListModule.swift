@@ -13,15 +13,20 @@ class TransactionListModule {
     // MARK: - Properties
     private let view: TransactionListViewController
     private let presenter: TransactionListPresenter
-    
+
     // MARK: - Init / Deinit methods
     init() {
-        view = UIStoryboard.init(name: "TransactionList", bundle: .main)
-            .instantiateViewController(withIdentifier: "TransactionListViewController") as! TransactionListViewController
+        guard let view = UIStoryboard.init(name: "TransactionList", bundle: .main)
+            .instantiateViewController(withIdentifier: "TransactionListViewController")
+            as? TransactionListViewController else {
+                fatalError("Can't find TransactionListViewController view controller in TransactionList storyboard")
+        }
+
+        self.view = view
         presenter = TransactionListPresenter(with: view, router: view)
         view.presenter = presenter
     }
-    
+
     // MARK: - Public methods
     func viewController() -> UIViewController {
         return view

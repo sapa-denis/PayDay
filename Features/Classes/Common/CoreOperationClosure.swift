@@ -16,7 +16,7 @@ public final class CoreOperationClosure<InputType, OutputType>: CoreOperation<In
 
     // MARK: - Init / Deinit methods
     public required init(in queue: OperationQueue,
-                            closure: @escaping (_: Result<InputType, Error>) -> Result<OutputType, Error>) {
+                         closure: @escaping (_: Result<InputType, Error>) -> Result<OutputType, Error>) {
 
         execution = closure
         super.init(in: queue)

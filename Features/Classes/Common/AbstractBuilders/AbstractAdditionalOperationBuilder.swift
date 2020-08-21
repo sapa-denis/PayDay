@@ -11,10 +11,11 @@ import Core
 class AbstractAdditionalOperationBuilder<InputType, OutputType>: ResponseAdapterBuildable {
     typealias Input = InputType
     typealias Output = OutputType
-    
+
     typealias OperationCompletion = (Result<InputType, Error>) -> Result<OutputType, Error>
-    
-    func build(in queue: OperationQueue, closure: @escaping OperationCompletion) -> CoreOperation<InputType, OutputType> {
+
+    func build(in queue: OperationQueue,
+               closure: @escaping OperationCompletion) -> CoreOperation<InputType, OutputType> {
         preconditionFailure("You can not use object of type AbstractResponseAdapterBuildable directly.")
     }
 }

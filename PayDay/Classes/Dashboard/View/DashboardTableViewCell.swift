@@ -14,11 +14,11 @@ class DashboardTableViewCell: UITableViewCell {
     @IBOutlet private weak var descriptionLabel: UILabel!
     @IBOutlet private weak var amountLabel: UILabel!
     @IBOutlet private weak var iconView: UIView!
-    
+
     // MARK: - Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+
         iconView.layer.cornerRadius = Constants.cornerRadius
     }
 

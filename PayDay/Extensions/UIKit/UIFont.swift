@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIFont {
-    
+
     static var general: UIFont {
         return UIFont.systemFont(ofSize: 14.0)
     }

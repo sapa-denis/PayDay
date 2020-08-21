@@ -9,11 +9,11 @@
 import Foundation
 
 extension String {
-    
+
     var isEmail: Bool {
         return checkRegEx(for: self, regEx: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,20}")
     }
-    
+
     private func checkRegEx(for string: String, regEx: String) -> Bool {
         let test = NSPredicate(format: "SELF MATCHES %@", regEx)
         return test.evaluate(with: string)

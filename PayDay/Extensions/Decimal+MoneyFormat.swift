@@ -15,7 +15,7 @@ extension Decimal {
 }
 
 extension NumberFormatter {
-    
+
     static func usFormatWithSeparator() -> NumberFormatter {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency

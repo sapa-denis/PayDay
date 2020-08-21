@@ -9,7 +9,7 @@
 import UIKit
 
 class DashboardSectionHeader: UITableViewHeaderFooterView {
-    
+
     // MARK: - Static propertiess
     static let reuseIdentifier: String = String(describing: self)
     static var nib: UINib {
@@ -19,7 +19,7 @@ class DashboardSectionHeader: UITableViewHeaderFooterView {
     // MARK: - Outlets
     @IBOutlet private weak var monthLabel: UILabel!
     @IBOutlet private weak var totalAmountLabel: UILabel!
-    
+
     func configure(with month: String?, amount: String?) {
         monthLabel.text = month
         totalAmountLabel.text = amount

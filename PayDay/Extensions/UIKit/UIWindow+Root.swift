@@ -9,11 +9,13 @@
 import UIKit
 
 public extension UIWindow {
-    
-    func replaceRootViewControllerWith(_ replacementController: UIViewController, animated: Bool = true, completion: (() -> Void)? = nil) {
+
+    func replaceRootViewControllerWith(_ replacementController: UIViewController,
+                                       animated: Bool = true,
+                                       completion: (() -> Void)? = nil) {
         let snapshotImageView = UIImageView(image: self.snapshot())
         self.addSubview(snapshotImageView)
-        
+
         let dismissCompletion = { () -> Void in // dismiss all modal view controllers
             self.rootViewController = replacementController
             self.bringSubviewToFront(snapshotImageView)

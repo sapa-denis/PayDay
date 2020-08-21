@@ -18,21 +18,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         _ = NSPersistentContainer.container
-        
+
         window = UIWindow(frame: UIScreen.main.bounds)
-        
+
         let authorizationStatus = UserSessionController.shared.authorizationStatus
         switch authorizationStatus {
         case .authorized:
-            let navigationController = UINavigationController(rootViewController: TransactionListModule().viewController())
+            let viewController = TransactionListModule().viewController()
+            let navigationController = UINavigationController(rootViewController: viewController)
             window?.rootViewController = navigationController
         case .notAuthorized:
             window?.rootViewController = LoginModule().viewController()
-            
+
         }
         window?.makeKeyAndVisible()
-        
+
         return true
     }
 }
-

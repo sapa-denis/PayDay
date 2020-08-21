@@ -9,12 +9,12 @@
 import Foundation
 
 public enum PayDayRequest: RequestConvertible {
-    
+
     case registrate(info: CustomerInfo)
     case authenticate(email: String, password: String)
     case accounts(userId: Int)
     case transactions(accountId: Int)
-    
+
     public func uri() -> String {
         switch self {
         case .registrate:
@@ -27,7 +27,7 @@ public enum PayDayRequest: RequestConvertible {
             return .transactionsEndpoint
         }
     }
-    
+
     public func httpMethod() -> HTTPMethod {
         switch self {
         case .authenticate,
@@ -38,7 +38,7 @@ public enum PayDayRequest: RequestConvertible {
             return .get
         }
     }
-    
+
     public func query() -> [URLQueryItem]? {
         switch self {
         case .accounts(let userId):
@@ -50,7 +50,7 @@ public enum PayDayRequest: RequestConvertible {
             return nil
         }
     }
-    
+
     public func encode(with encoder: JSONEncoder) throws -> Data? {
         switch self {
         case .registrate(let info):
@@ -67,7 +67,7 @@ public enum PayDayRequest: RequestConvertible {
 }
 
 extension PayDayRequest {
-    
+
     private func encodeAuthenticationParams(with encoder: JSONEncoder,
                                             email: String,
                                             password: String) throws -> Data? {
@@ -78,49 +78,11 @@ extension PayDayRequest {
 
 // MARK: - External declaration
 extension PayDayRequest {
-    
+
     private struct AuthenticationBody: Encodable {
-        
+
         let email: String
         let password: String
-    }
-    
-    public struct CustomerInfo: Encodable {
-        
-        let firstName: String
-        let lastName: String
-        let gender: String
-        let email: String
-        let password: String
-        let dateOfBirth: String
-        let phone: String
-        
-        public init(firstName: String,
-                    lastName: String,
-                    gender: String,
-                    email: String,
-                    password: String,
-                    dateOfBirth: String,
-                    phone: String) {
-            self.firstName = firstName
-            self.lastName = lastName
-            self.gender = gender
-            self.email = email
-            self.password = password
-            self.dateOfBirth = dateOfBirth
-            self.phone = phone
-        }
-     
-        enum CodingKeys: String, CodingKey {
-            case firstName = "First Name"
-            case lastName = "Last Name"
-            case email
-            case phone
-            case password
-            case gender
-            case dateOfBirth = "dob"
-        }
-        
     }
 }
 

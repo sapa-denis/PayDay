@@ -21,7 +21,7 @@ public final class User: NSManagedObject, Decodable {
     @NSManaged public private(set) var dob: String
     @NSManaged public private(set) var phone: String
     @NSManaged public var accountList: Set<Account>?
-    
+
     @NSManaged private var primitiveGender: String
     public private(set) var gender: Gender {
         get {
@@ -29,7 +29,7 @@ public final class User: NSManagedObject, Decodable {
                 didAccessValue(forKey: "gender")
             }
             willAccessValue(forKey: "gender")
-            
+
             return Gender(rawValue: primitiveGender) ?? .male
         }
         set {
@@ -38,35 +38,35 @@ public final class User: NSManagedObject, Decodable {
             didChangeValue(forKey: "gender")
         }
     }
-    
+
     // MARK: - Init / Deinit Methods
     required convenience public init(from decoder: Decoder) throws {
         guard let managedObjectContext = decoder.userInfo[CodingUserInfoKey.context] as? NSManagedObjectContext,
             let entity = NSEntityDescription.entity(forEntityName: User.entityName, in: managedObjectContext) else {
                 fatalError("Failed to decode \(User.self)")
         }
-        
+
         self.init(entity: entity, insertInto: managedObjectContext)
-        
+
         guard let container = try? decoder.container(keyedBy: CodingKeys.self),
             let identifier = try? container.decode(Int64.self, forKey: .identifier) else {
                 managedObjectContext.delete(self)
                 return
         }
-        
+
         let object: User = (try? managedObjectContext.first(withPrimaryKey: identifier)) ?? self
-        
+
         do {
             try object.decode(container: container, in: managedObjectContext)
         } catch {
             managedObjectContext.delete(object)
         }
-        
+
         if object != self {
             managedObjectContext.delete(self)
         }
     }
-    
+
     // MARK: - Private Methods
     private func decode(container: KeyedDecodingContainer<CodingKeys>, in context: NSManagedObjectContext) throws {
         try context.performAndWait {
@@ -84,7 +84,7 @@ public final class User: NSManagedObject, Decodable {
 
 // MARK: - Entity
 extension User: Entity {
-    
+
     public static var primaryKey: String {
         return #keyPath(identifier)
     }
@@ -92,7 +92,7 @@ extension User: Entity {
 
 // MARK: - External declaration
 extension User {
-    
+
     public enum Gender: String, Decodable {
         case male
         case female
@@ -101,7 +101,7 @@ extension User {
 
 // MARK: - CodingKeys
 extension User {
-    
+
     enum CodingKeys: String, CodingKey {
         case identifier = "id"
         case firstName = "First Name"

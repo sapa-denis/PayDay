@@ -9,33 +9,35 @@
 import Foundation
 
 extension CoreOperation {
-    
+
     // MARK: - Public methods
-    public func then<U>(_ op: CoreOperation<OutputType, U>) -> CoreOperation<OutputType, U> {
-        op.addDependency(self)
+    public func then<U>(_ operation: CoreOperation<OutputType, U>) -> CoreOperation<OutputType, U> {
+        operation.addDependency(self)
         completed = { [unowned self] in
-            op.input = self.output
+            operation.input = self.output
         }
-    
-        return op
+
+        return operation
     }
-    
-    public func then<T, U>(_ op: CoreOperation<T, U>) -> CoreOperation<T, U> {
-        op.addDependency(self)
-        return op
+
+    public func then<T, U>(_ operation: CoreOperation<T, U>) -> CoreOperation<T, U> {
+        operation.addDependency(self)
+        return operation
     }
 }
 
 extension Operation {
-    
+
     func cancelWithAllDependencies() {
         dependencies.forEach { $0.cancelWithAllDependencies() }
         cancel()
     }
-    
-    func applyQualityOfServiceForAllDependencies(with quality: QualityOfService, queuePriority priority: Operation.QueuePriority) {
+
+    func applyQualityOfServiceForAllDependencies(with quality: QualityOfService,
+                                                 queuePriority priority: Operation.QueuePriority) {
         qualityOfService = quality
         queuePriority = priority
-        dependencies.forEach { $0.applyQualityOfServiceForAllDependencies(with: quality, queuePriority: priority) }
+        dependencies.forEach { $0.applyQualityOfServiceForAllDependencies(with: quality,
+                                                                          queuePriority: priority) }
     }
 }

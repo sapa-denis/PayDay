@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 typealias ContentUpdate = (type: ResultChanges, atIndexPath: IndexPath?, newIndexPath: IndexPath?)
 
 protocol CollectionContentUpdating {

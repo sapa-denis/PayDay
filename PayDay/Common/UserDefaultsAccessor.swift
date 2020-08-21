@@ -9,11 +9,11 @@
 import Foundation
 
 final class UserDefaultsAccessor {
-    
+
     static let shared: UserDefaultsAccessor = {
         UserDefaultsAccessor()
     }()
-    
+
     var userId: Int {
         get {
             UserDefaults.standard.integer(forKey: .userIdKey)
@@ -22,7 +22,7 @@ final class UserDefaultsAccessor {
             UserDefaults.standard.set(newValue, forKey: .userIdKey)
         }
     }
-    
+
     func removeUserId() {
         UserDefaults.standard.removeObject(forKey: .userIdKey)
     }

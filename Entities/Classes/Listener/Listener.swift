@@ -10,17 +10,17 @@ import CoreData
 import Core
 
 public final class Listener<Entity: NSManagedObject>: UseCase<CollectionChange<Entity>> {
-    
+
     // MARK: - Properties
     private var listen: ListenEntityOperation<Entity>?
-    
+
     // MARK: - Public methods
     public func prepare(predicate: NSPredicate?,
                         sortDescriptors: [NSSortDescriptor],
                         fetchBatch: FetchSize? = nil,
                         sectionNameKeyPath: String? = nil) -> Self {
         cancelAllOperations()
-        
+
         let listenEntityOperation = ListenEntityOperation<Entity>(
             in: OperationQueue.additional,
             context: NSPersistentContainer.container.viewContext,
@@ -29,16 +29,16 @@ public final class Listener<Entity: NSManagedObject>: UseCase<CollectionChange<E
             fetchSize: fetchBatch,
             sectionNameKeyPath: sectionNameKeyPath
         )
-        
+
         prepareExecution(for: listenEntityOperation)
         listen = listenEntityOperation
-        
+
         return self
     }
-    
+
     public override func cancelAllOperations() {
         super.cancelAllOperations()
-        
+
         listen?.finished()
         listen?.outputUpdated = nil
     }

@@ -12,20 +12,20 @@ private let concurentNetworkingQueue = DispatchQueue(label: "concurent.networkin
 private let concurentAdditionalQueue = DispatchQueue(label: "concurent.additional.queue", attributes: .concurrent)
 
 extension OperationQueue {
-    
+
     public static let networking: OperationQueue = {
         let queue = OperationQueue()
         queue.name = String(describing: concurentNetworkingQueue.label)
         queue.underlyingQueue = concurentNetworkingQueue
-        
+
         return queue
     }()
-    
+
     public static let additional: OperationQueue = {
         let queue = OperationQueue()
         queue.name = String(describing: concurentAdditionalQueue.label)
         queue.underlyingQueue = concurentAdditionalQueue
-        
+
         return queue
     }()
 }

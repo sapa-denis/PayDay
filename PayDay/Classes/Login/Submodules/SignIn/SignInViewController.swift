@@ -13,16 +13,16 @@ protocol SignInView: AnyObject {
 }
 
 final class SignInViewController: UIViewController {
-    
+
     // MARK: - Outlets
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
     @IBOutlet private weak var loginButton: UIButton!
     @IBOutlet private weak var scrollView: UIScrollView!
-    
+
     // MARK: - Properties
     var presenter: SignInPresenter!
-    
+
     private var keyboardHandler: KeyboardHandler?
 
     // MARK: - Lifecycle
@@ -31,18 +31,18 @@ final class SignInViewController: UIViewController {
 
         keyboardHandler = KeyboardHandler(scrollView: scrollView, offset: 36)
         scrollView.addKeyboardDismissTapGesture()
-        
+
         setupView()
     }
 }
 
 // MARK: - Actions
 extension SignInViewController {
-    
+
     @IBAction private func onLoginButtonTouchUp(_ sender: UIButton) {
         loginAction()
     }
-    
+
     @IBAction private func onSwitchToRegistrationButtonTouchUp(_ sender: UIButton) {
         UIApplication.shared.sendAction(#selector(SwitchToRegistrationChainActionsHandler
                                                   .onSwitchToRegistrationAction),
@@ -54,7 +54,7 @@ extension SignInViewController {
 
 // MARK: - SignInView
 extension SignInViewController: SignInView {
-    
+
     func onSuccessfulRegistration() {
         UIApplication.shared.sendAction(#selector(SuccessLoginChainActionHandler
             .onSuccessLogin),
@@ -66,30 +66,30 @@ extension SignInViewController: SignInView {
 
 // MARK: - Private methods
 extension SignInViewController {
-    
+
     private func setupView() {
         emailTextField.apply(style: .regular)
         passwordTextField.apply(style: .regular)
-        
+
         loginButton.layer.cornerRadius = Constants.cornerRadius
     }
-    
+
     private func validateFields() -> Bool {
         guard let email = emailTextField.text,
             let password = passwordTextField.text else {
                 return false
         }
-        
+
         return email.isEmail && password.count >= 6
     }
-    
+
     private func loginAction() {
         guard validateFields(),
             let email = emailTextField.text,
             let password = passwordTextField.text else {
                 return
         }
-        
+
         presenter
             .loginAction(email: email,
                          password: password)
@@ -98,10 +98,10 @@ extension SignInViewController {
 
 // MARK: - UITextFieldDelegate
 extension SignInViewController: UITextFieldDelegate {
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        
+
         switch textField {
         case emailTextField:
             passwordTextField.becomeFirstResponder()
@@ -110,7 +110,7 @@ extension SignInViewController: UITextFieldDelegate {
         default:
             break
         }
-        
+
         return true
     }
 }

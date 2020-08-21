@@ -9,7 +9,7 @@
 import Networking
 
 struct NetworkRequesterBuilder: NetworkRequesterBuildable {
-    
+
     func build(request: RequestConvertible?) -> NetworkExecutable {
         NetworkOperation(in: .networking, session: .main, request: request)
     }

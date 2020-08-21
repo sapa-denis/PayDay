@@ -9,43 +9,42 @@
 import UIKit
 
 protocol LoginView: AnyObject {
-    
+
 }
 
 class LoginViewController: UIViewController {
 
     // MARK: - Properties
     var presenter: LoginPresenter!
-    
+
     private var pageViewController: UIPageViewController!
     private var pages: [UIViewController] = []
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setupContainerView()
     }
 }
 
 // MARK: - LoginView
 extension LoginViewController: LoginView {
-    
+
 }
 
 // MARK: - SwitchToLoginChainActionsHandler
 extension LoginViewController: SwitchToLoginChainActionsHandler {
-    
+
     func onSwitchToLoginAction() {
         let viewController: UIViewController
-        
+
         if pages.count > 1 {
             viewController = pages[1]
         } else {
             viewController = SignInModule().viewController()
             pages.append(viewController)
         }
-        
-        
+
         pageViewController.setViewControllers([viewController],
                                               direction: .forward,
                                               animated: true)
@@ -54,10 +53,10 @@ extension LoginViewController: SwitchToLoginChainActionsHandler {
 
 // MARK: - SwitchToLoginChainActionsHandler
 extension LoginViewController: SwitchToRegistrationChainActionsHandler {
-    
+
     func onSwitchToRegistrationAction() {
         let viewController: UIViewController = pages[0]
-        
+
         pageViewController.setViewControllers([viewController],
                                               direction: .reverse,
                                               animated: true)
@@ -66,7 +65,7 @@ extension LoginViewController: SwitchToRegistrationChainActionsHandler {
 
 // MARK: - SuccessLoginChainActionHandler
 extension LoginViewController: SuccessLoginChainActionHandler {
-    
+
     func onSuccessLogin() {
         openTransactions()
     }
@@ -74,33 +73,32 @@ extension LoginViewController: SuccessLoginChainActionHandler {
 
 // MARK: - Private methods
 extension LoginViewController {
-    
+
     private func setupContainerView() {
         let pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
         pageViewController.dataSource = self
-//        pageViewController.delegate = self
         guard let pageView = pageViewController.view else {
             return
         }
-        
+
         view.addSubview(pageView)
         pageView.translatesAutoresizingMaskIntoConstraints = false
-        
+
         NSLayoutConstraint.activate([pageView.topAnchor.constraint(equalTo: view.topAnchor),
                                      pageView.leftAnchor.constraint(equalTo: view.leftAnchor),
                                      pageView.rightAnchor.constraint(equalTo: view.rightAnchor),
                                      pageView.bottomAnchor.constraint(equalTo: view.bottomAnchor)])
-        
+
         self.pageViewController = pageViewController
         addChild(pageViewController)
         pageViewController.willMove(toParent: self)
         setFirstViewController()
     }
-    
+
     private func setFirstViewController() {
         let initialViewController = SignUpModule().viewController()
         pages.append(initialViewController)
-        
+
         pageViewController.setViewControllers([initialViewController],
                                               direction: .forward,
                                               animated: false)
@@ -109,7 +107,7 @@ extension LoginViewController {
 
 // MARK: - UIPageViewControllerDataSource
 extension LoginViewController: UIPageViewControllerDataSource {
-    
+
     func pageViewController(_ pageViewController: UIPageViewController,
                             viewControllerBefore viewController: UIViewController) -> UIViewController? {
         switch viewController {
@@ -119,7 +117,7 @@ extension LoginViewController: UIPageViewControllerDataSource {
             return nil
         }
     }
-    
+
     func pageViewController(_ pageViewController: UIPageViewController,
                             viewControllerAfter viewController: UIViewController) -> UIViewController? {
         switch viewController {
@@ -129,7 +127,7 @@ extension LoginViewController: UIPageViewControllerDataSource {
             } else {
                 let viewController = SignInModule().viewController()
                 pages.append(viewController)
-                
+
                 return viewController
             }
         default:
@@ -137,13 +135,3 @@ extension LoginViewController: UIPageViewControllerDataSource {
         }
     }
 }
-
-//extension LoginViewController: UIPageViewControllerDelegate {
-//
-//    func pageViewController(_ pageViewController: UIPageViewController,
-//                            didFinishAnimating finished: Bool,
-//                            previousViewControllers: [UIViewController],
-//                            transitionCompleted completed: Bool) {
-//
-//    }
-//}

@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 
 extension UITableView {
-    
+
     final func register<T: UITableViewCell>(cellType: T.Type) {
         register(cellType.self, forCellReuseIdentifier: cellType.reuseIdentifier)
     }
-    
+
     final func dequeueReusableCell<T: UITableViewCell>(at indexPath: IndexPath, cellType: T.Type = T.self) -> T {
         guard let cell = dequeueReusableCell(withIdentifier: cellType.reuseIdentifier, for: indexPath) as? T else {
             fatalError(
@@ -24,7 +24,7 @@ extension UITableView {
                     + "and that you registered the cell beforehand"
             )
         }
-        
+
         return cell
     }
 }

@@ -16,17 +16,17 @@ protocol TransactionDisplayable {
 }
 
 extension Transaction: TransactionDisplayable {
-    
+
     var dateFormatted: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         return dateFormatter.string(from: date as Date)
     }
-    
+
     var amountFormatted: String {
         amount.usStringMoney ?? ""
     }
-    
+
     var vendorFormatted: String {
         vendor
     }

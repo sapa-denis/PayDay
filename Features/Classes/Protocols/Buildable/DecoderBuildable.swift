@@ -10,6 +10,6 @@ import Core
 
 protocol DecoderBuildable: AnyObject where Entity: Decodable {
     associatedtype Entity
-    
+
     func build(with decoder: JSONDecoder, path: String?) -> CoreOperation<Data, Entity>
 }

@@ -11,7 +11,7 @@ import Core
 protocol ResponseAdapterBuildable: AnyObject {
     associatedtype Input
     associatedtype Output
-    
+
     func build(in queue: OperationQueue,
                closure: @escaping (_: Result<Input, Error>) -> Result<Output, Error>)
         -> CoreOperation<Input, Output>

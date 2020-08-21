@@ -11,7 +11,7 @@ import Core
 class AbstractDecoderBuilder<DecodableEntity>: DecoderBuildable where DecodableEntity: Decodable {
 
     typealias Entity = DecodableEntity
-    
+
     // MARK: - Public method
     func build(with decoder: JSONDecoder, path: String? = nil) -> CoreOperation<Data, DecodableEntity> {
         preconditionFailure("You can not use object of type AbstractDecoderBuilder directly.")

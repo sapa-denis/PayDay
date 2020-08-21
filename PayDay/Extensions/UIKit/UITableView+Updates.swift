@@ -38,7 +38,7 @@ private extension UITableView {
 
           insertRows(at: [indexPath], with: .left)
      }
-    
+
     func perform(delete: ContentUpdate) {
          guard let indexPath = delete.atIndexPath else {
              return
@@ -46,7 +46,7 @@ private extension UITableView {
 
           deleteRows(at: [indexPath], with: .left)
      }
-    
+
     func perform(move: ContentUpdate) {
         guard let indexPath = move.atIndexPath,
             let toIndexPath = move.newIndexPath else {
@@ -55,7 +55,7 @@ private extension UITableView {
 
          moveRow(at: indexPath, to: toIndexPath)
     }
-    
+
     func perform(update: ContentUpdate) {
         guard let indexPath = update.atIndexPath else {
             return

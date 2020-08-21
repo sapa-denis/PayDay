@@ -22,7 +22,7 @@ public func ??= <T: Equatable>(lhs: inout T, rhs: T?) {
     guard let rhs: T = rhs else {
         return
     }
-    
+
     if lhs != rhs {
         lhs = rhs
     }

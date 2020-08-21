@@ -9,19 +9,19 @@
 import UIKit
 
 extension UIColor {
-    
+
     static var main: UIColor {
         UIColor.init(named: "main")!
     }
-    
+
     static var placeholder: UIColor {
         UIColor.init(named: "placeholder")!
     }
-    
+
     static var background: UIColor {
         UIColor.init(named: "background")!
     }
-    
+
     static var border: UIColor {
         UIColor.init(named: "border")!
     }

@@ -74,8 +74,8 @@
 		870C8CC524E6C6BE00DE5EFC /* CollectionContentUpdating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8CC424E6C6BE00DE5EFC /* CollectionContentUpdating.swift */; };
 		870C8CC724E6C72400DE5EFC /* UITableView+Updates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8CC624E6C72400DE5EFC /* UITableView+Updates.swift */; };
 		870C8CC924E6C79F00DE5EFC /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8CC824E6C79E00DE5EFC /* Typealiases.swift */; };
+		87177AFE24EFB9F600683E03 /* CustomerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87177AFD24EFB9F600683E03 /* CustomerInfo.swift */; };
 		8752F0A324DAAC48007041EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F0A224DAAC48007041EE /* AppDelegate.swift */; };
-		8752F0A724DAAC48007041EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F0A624DAAC48007041EE /* ViewController.swift */; };
 		8752F0AA24DAAC48007041EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8752F0A824DAAC48007041EE /* Main.storyboard */; };
 		8752F0AF24DAAC49007041EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8752F0AE24DAAC49007041EE /* Assets.xcassets */; };
 		8752F0B224DAAC49007041EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8752F0B024DAAC49007041EE /* LaunchScreen.storyboard */; };
@@ -348,9 +348,9 @@
 		870C8CC424E6C6BE00DE5EFC /* CollectionContentUpdating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionContentUpdating.swift; sourceTree = "<group>"; };
 		870C8CC624E6C72400DE5EFC /* UITableView+Updates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Updates.swift"; sourceTree = "<group>"; };
 		870C8CC824E6C79E00DE5EFC /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
+		87177AFD24EFB9F600683E03 /* CustomerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerInfo.swift; sourceTree = "<group>"; };
 		8752F09F24DAAC48007041EE /* PayDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8752F0A224DAAC48007041EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8752F0A624DAAC48007041EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8752F0A924DAAC48007041EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8752F0AC24DAAC48007041EE /* PayDay.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PayDay.xcdatamodel; sourceTree = "<group>"; };
 		8752F0AE24DAAC49007041EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -898,7 +898,6 @@
 				870C8CBC24E6B9F400DE5EFC /* Protocols */,
 				870C8C7E24E2CD7E00DE5EFC /* Extensions */,
 				8752F0A224DAAC48007041EE /* AppDelegate.swift */,
-				8752F0A624DAAC48007041EE /* ViewController.swift */,
 				8752F0A824DAAC48007041EE /* Main.storyboard */,
 				8752F15624DBF496007041EE /* Resources */,
 				8752F15724DBF4AF007041EE /* SupportingFiles */,
@@ -1009,6 +1008,7 @@
 			children = (
 				8752F14724DABEF7007041EE /* NetworkError.swift */,
 				8752F14924DABF95007041EE /* Constants.swift */,
+				87177AFD24EFB9F600683E03 /* CustomerInfo.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1303,6 +1303,7 @@
 				8752F09C24DAAC48007041EE /* Frameworks */,
 				8752F09D24DAAC48007041EE /* Resources */,
 				8752F10B24DAB04F007041EE /* Embed Frameworks */,
+				87177AFC24EEC8E700683E03 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1641,6 +1642,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		87177AFC24EEC8E700683E03 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 		BBF4C5D4D38B6B7343D2E807 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1780,7 +1798,6 @@
 				870C8CC024E6BA8100DE5EFC /* UITableView+Reusable.swift in Sources */,
 				870C8C8A24E300EC00DE5EFC /* String+Email.swift in Sources */,
 				87945A8B24ED690A0002EE6D /* KeyboardHandler.swift in Sources */,
-				8752F0A724DAAC48007041EE /* ViewController.swift in Sources */,
 				870C8C8524E2FBB900DE5EFC /* UIFont.swift in Sources */,
 				870C8CC924E6C79F00DE5EFC /* Typealiases.swift in Sources */,
 				870C8C9B24E3E0E100DE5EFC /* UIWindow+Root.swift in Sources */,
@@ -1854,6 +1871,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8752F16B24DC473C007041EE /* RequestCovertible.swift in Sources */,
+				87177AFE24EFB9F600683E03 /* CustomerInfo.swift in Sources */,
 				8752F14824DABEF7007041EE /* NetworkError.swift in Sources */,
 				8752F16D24DC4795007041EE /* HTTPMethod.swift in Sources */,
 				8752F14B24DABFC6007041EE /* NetworkOperation.swift in Sources */,

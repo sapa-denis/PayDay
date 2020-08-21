@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIScrollView {
-    
+
     func addKeyboardDismissTapGesture() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(endEditing(_:)))
         self.addGestureRecognizer(tapGesture)

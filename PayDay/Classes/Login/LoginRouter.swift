@@ -13,7 +13,7 @@ protocol LoginPresentation: AnyObject {
 }
 
 extension LoginViewController: LoginPresentation {
-    
+
     func openTransactions() {
         let window = UIApplication.shared.keyWindow
         let navigationController = UINavigationController(rootViewController: TransactionListModule().viewController())

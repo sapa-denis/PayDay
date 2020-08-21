@@ -9,19 +9,24 @@
 import UIKit
 
 final class SignUpModule {
-    
+
     // MARK: - Properties
     private let view: SignUpViewController
     private let presenter: SignUpPresenter
-    
+
     // MARK: - Init / Deinit methods
     init() {
-        view = UIStoryboard.init(name: "Login", bundle: .main)
-            .instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
+        guard let view = UIStoryboard.init(name: "Login", bundle: .main)
+            .instantiateViewController(withIdentifier: "SignUpViewController")
+            as? SignUpViewController else {
+                fatalError("Can't find SignUpViewController view controller in Login storyboard")
+        }
+
+        self.view = view
         presenter = SignUpPresenter(with: view)
         view.presenter = presenter
     }
-    
+
     // MARK: - Public methods
     func viewController() -> UIViewController {
         return view

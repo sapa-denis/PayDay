@@ -21,7 +21,7 @@ public protocol RequestConvertible {
 }
 
 extension RequestConvertible {
-    
+
     public func absoluteURL() throws -> URL {
         guard let uriString = try? uri(),
             var uriComponents = URLComponents(string: uriString) else {
@@ -29,45 +29,45 @@ extension RequestConvertible {
         }
 
         uriComponents.queryItems = (uriComponents.queryItems ?? []) + (query() ?? [])
-        
+
         let host = try domain()
         guard let url = uriComponents.url(relativeTo: host) else {
             throw RequestConvertibleError.invalidAbsoluteURL
         }
-        
+
         return url
     }
-    
+
     public func headers() -> HTTPHeaders? {
         return nil
     }
-    
+
     public func domain() throws -> URL {
         guard let host = URL(string: "http://localhost:3000") else {
             fatalError("Can't get API Host during making RequestConvertible request")
         }
-        
+
         return host
     }
-    
+
     public func asURLRequest() throws -> URLRequest {
         return try encodedRequest()
     }
-    
+
     // MARK: - Private methods
     private func json(_ encoder: JSONEncoder) throws -> Data? {
         guard let data = try encode(with: encoder) else { return nil }
         return data
     }
-    
+
     private func encodedRequest(encoder: JSONEncoder = JSONEncoder()) throws -> URLRequest {
         let request = URLRequest(url: try absoluteURL())
-        
+
         var encodedRequest = try JSONEncoder().encode(request, with: try json(encoder))
         encodedRequest.httpMethod = httpMethod().rawValue
 
         headers()?.forEach { encodedRequest.addValue($0.value, forHTTPHeaderField: $0.key) }
-        
+
         return encodedRequest
     }
 }

@@ -9,19 +9,24 @@
 import UIKit
 
 final class LoginModule {
-    
+
     // MARK: - Properties
     private let view: LoginViewController
     private let presenter: LoginPresenter
-    
+
     // MARK: - Init / Deinit methods
     init() {
-        view = UIStoryboard.init(name: "Login", bundle: .main)
-            .instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        guard let view = UIStoryboard.init(name: "Login", bundle: .main)
+            .instantiateViewController(withIdentifier: "LoginViewController")
+            as? LoginViewController else {
+              fatalError("Can't find LoginViewController view controller in Login storyboard")
+        }
+
+        self.view = view
         presenter = LoginPresenter(with: view)
         view.presenter = presenter
     }
-    
+
     // MARK: - Public methods
     func viewController() -> UIViewController {
         return view

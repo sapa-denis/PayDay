@@ -13,7 +13,7 @@ protocol CellReusable: class {
 }
 
 extension CellReusable {
-    
+
     static var reuseIdentifier: String {
         return String(describing: self)
     }

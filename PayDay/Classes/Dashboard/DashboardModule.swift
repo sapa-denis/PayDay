@@ -12,15 +12,20 @@ final class DashboardModule {
     // MARK: - Properties
     private let view: DashboardViewController
     private let presenter: DashboardPresenter
-    
+
     // MARK: - Init / Deinit methods
     init(accountId: Int) {
-        view = UIStoryboard.init(name: "Dashboard", bundle: .main)
-            .instantiateViewController(withIdentifier: "DashboardViewController") as! DashboardViewController
+        guard let view = UIStoryboard.init(name: "Dashboard", bundle: .main)
+            .instantiateViewController(withIdentifier: "DashboardViewController")
+            as? DashboardViewController else {
+                fatalError("Can't find DashboardViewController view controller in Dashboard storyboard")
+        }
+
+        self.view = view
         presenter = DashboardPresenter(with: view, accountId: accountId)
         view.presenter = presenter
     }
-    
+
     // MARK: - Public methods
     func viewController() -> UIViewController {
         return view

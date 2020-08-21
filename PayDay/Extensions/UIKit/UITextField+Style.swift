@@ -9,7 +9,7 @@
 import UIKit
 
 extension UITextField {
-    
+
     func apply(style: TextFieldsStyle) {
         style.apply(for: self)
     }
@@ -17,7 +17,7 @@ extension UITextField {
 
 enum TextFieldsStyle {
     case regular
-    
+
     func apply(for textField: UITextField) {
         switch self {
         case .regular:
@@ -29,18 +29,14 @@ enum TextFieldsStyle {
 
             textField.attributedPlaceholder = NSAttributedString(string: placeholder,
                                                                  attributes: attributes)
-            
+
             textField.textColor = .black
             textField.font = .general
             textField.borderStyle = .roundedRect
-            
+
             textField.layer.borderColor = UIColor.border.cgColor
             textField.layer.borderWidth = Constants.borderWidth
             textField.layer.cornerRadius = Constants.cornerRadius
         }
     }
 }
-
-
-
-

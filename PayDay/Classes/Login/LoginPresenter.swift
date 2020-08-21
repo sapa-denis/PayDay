@@ -9,10 +9,10 @@
 import Foundation
 
 final class LoginPresenter {
-    
+
     // MARK: - Properties
     private weak var view: LoginView!
-    
+
     // MARK: - Init/Deinit methods
     init(with view: LoginView) {
         self.view = view
