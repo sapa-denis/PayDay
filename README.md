@@ -16,7 +16,8 @@ But I cant use it in this project, because deployment target is iOS 12.
 4. I always use `Charles` and `Postman` to check requests/responses.  
 5. For API first of all I would add `token` in requests `header`. It will improve security system.
 - better to receive dateOfBirth as timestamp value and `first name`/`last name` with snack case:
-`<{
+```
+{
   "first_name": "Nadiah",
   "last_name": "Spoel",
   "gender": "female",
@@ -25,7 +26,8 @@ But I cant use it in this project, because deployment target is iOS 12.
   "dob": 1594462210,
   "phone": "1049520521",
   "id": 5
-}>`
+}
+```
 
 # Need to implement
 - Tests
