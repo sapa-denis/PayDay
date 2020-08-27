@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TransactionTableViewCell: UITableViewCell {
+final class TransactionTableViewCell: UITableViewCell {
 
     // MARK: - Outlets
     @IBOutlet private weak var dateLabel: UILabel!

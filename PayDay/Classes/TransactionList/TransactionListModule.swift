@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TransactionListModule {
+final class TransactionListModule {
 
     // MARK: - Properties
     private let view: TransactionListViewController

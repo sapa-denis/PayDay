@@ -8,7 +8,7 @@
 
 import UIKit
 
-class KeyboardHandler {
+final class KeyboardHandler {
 
     let scrollView: UIScrollView
     let offset: CGFloat

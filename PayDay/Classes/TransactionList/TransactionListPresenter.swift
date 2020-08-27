@@ -10,7 +10,7 @@ import Foundation
 import Features
 import Entities
 
-class TransactionListPresenter {
+final class TransactionListPresenter {
 
     // MARK: - Properties
     private weak var view: TransactionListView!

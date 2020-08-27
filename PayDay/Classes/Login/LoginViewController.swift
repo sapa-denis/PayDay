@@ -12,7 +12,7 @@ protocol LoginView: AnyObject {
 
 }
 
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController {
 
     // MARK: - Properties
     var presenter: LoginPresenter!

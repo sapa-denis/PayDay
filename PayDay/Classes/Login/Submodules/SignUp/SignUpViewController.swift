@@ -12,7 +12,7 @@ protocol SignUpView: AnyObject {
     func onSuccessfulRegistration()
 }
 
-class SignUpViewController: UITableViewController {
+final class SignUpViewController: UITableViewController {
 
     // MARK: - Outlest
     @IBOutlet private weak var firstNameTextField: UITextField!

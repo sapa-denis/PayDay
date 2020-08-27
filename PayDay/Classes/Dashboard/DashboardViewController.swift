@@ -14,7 +14,7 @@ protocol DashboardView: AnyObject {
     func retreivingContentDidEnd()
 }
 
-class DashboardViewController: UIViewController {
+final class DashboardViewController: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet private weak var tableView: UITableView!

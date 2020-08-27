@@ -14,7 +14,7 @@ protocol TransactionListView: AnyObject {
     func retreivingTransactionsDidEnd()
 }
 
-class TransactionListViewController: UIViewController {
+final class TransactionListViewController: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet private weak var tableView: UITableView!
