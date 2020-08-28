@@ -43,8 +43,10 @@ extension RequestConvertible {
     }
 
     public func domain() throws -> URL {
-        guard let host = URL(string: "http://localhost:3000") else {
-            fatalError("Can't get API Host during making RequestConvertible request")
+        let infoDictionary = Bundle.main.infoDictionary
+        guard let URLString = infoDictionary?[.baseURL] as? String,
+            let host = URL(string: URLString) else {
+                fatalError("Can't get API Host during making RequestConvertible request")
         }
 
         return host
@@ -76,4 +78,8 @@ extension RequestConvertible {
 public enum RequestConvertibleError: Error {
     case invalidAbsoluteURL
     case invalidURI
+}
+
+private extension String {
+    static let baseURL: String = "BaseURL"
 }
