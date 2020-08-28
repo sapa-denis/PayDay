@@ -36,17 +36,10 @@ extension LoginViewController: LoginView {
 extension LoginViewController: SignUpViewActionsDelegate {
 
     func onSwitchToLoginAction() {
-        let viewController: UIViewController
-
-        if pages.count > 1 {
-            viewController = pages[1]
-        } else {
-            viewController = SignInModule(with: self).viewController()
-            pages.append(viewController)
-        }
+        let viewController: UIViewController = pages[0]
 
         pageViewController.setViewControllers([viewController],
-                                              direction: .forward,
+                                              direction: .reverse,
                                               animated: true)
     }
 }
@@ -55,10 +48,16 @@ extension LoginViewController: SignUpViewActionsDelegate {
 extension LoginViewController: SignInViewActionsDelegate {
 
     func onSwitchToRegistrationAction() {
-        let viewController: UIViewController = pages[0]
+        let viewController: UIViewController
+
+        if pages.count > 1 {
+            viewController = pages[1]
+        } else {
+            viewController = appendSignUpViewController()
+        }
 
         pageViewController.setViewControllers([viewController],
-                                              direction: .reverse,
+                                              direction: .forward,
                                               animated: true)
     }
 }
@@ -96,12 +95,19 @@ extension LoginViewController {
     }
 
     private func setFirstViewController() {
-        let initialViewController = SignUpModule(with: self).viewController()
+        let initialViewController = SignInModule(with: self).viewController()
         pages.append(initialViewController)
 
         pageViewController.setViewControllers([initialViewController],
                                               direction: .forward,
                                               animated: false)
+    }
+
+    private func appendSignUpViewController() -> UIViewController {
+        let viewController = SignUpModule(with: self).viewController()
+        pages.append(viewController)
+
+        return viewController
     }
 }
 
@@ -111,7 +117,7 @@ extension LoginViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController,
                             viewControllerBefore viewController: UIViewController) -> UIViewController? {
         switch viewController {
-        case is SignInViewController:
+        case is SignUpViewController:
             return pages[0]
         default:
             return nil
@@ -121,14 +127,11 @@ extension LoginViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController,
                             viewControllerAfter viewController: UIViewController) -> UIViewController? {
         switch viewController {
-        case is SignUpViewController:
+        case is SignInViewController:
             if pages.count > 1 {
                 return pages[1]
             } else {
-                let viewController = SignInModule(with: self).viewController()
-                pages.append(viewController)
-
-                return viewController
+                return appendSignUpViewController()
             }
         default:
             return nil
