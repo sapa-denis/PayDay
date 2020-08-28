@@ -126,10 +126,10 @@ extension DashboardPresenter {
         let calendar = Calendar.current
         let startDate = calendar.date(byAdding: .month, value: -3, to: date)
         let components = calendar.dateComponents([.year, .month], from: startDate!)
-        let foo = calendar.date(from: components)
+        let startDateToFetch = calendar.date(from: components)
 
         let predicate = NSPredicate(format: "%K >= %lf", argumentArray: [#keyPath(Transaction.date),
-                                                                        foo!])
+                                                                        startDateToFetch!])
 
         request.predicate = predicate
         request.propertiesToGroupBy = ["category", "executionPeriod"]
