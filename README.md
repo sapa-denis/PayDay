@@ -9,7 +9,7 @@ All other parts was written manually without any third-party libraries
 * SwiftLint for code style
 
 ## Questions
-1. I spent at least 84h to implement all parts of architecture. I would add validation in SingIn / SignUp modules
+1. I spent about 5-6 days to implement all parts of architecture. I would add validation in SingIn / SignUp modules
 2. The moust important feature in latest Swift version is Combine.
 But I cant use it in this project, because deployment target is iOS 12.
 3. To track down a performance issue in production I would use Firebase system. I have experience in integration and work with this framework.
