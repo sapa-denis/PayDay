@@ -6,8 +6,6 @@
 //  Copyright © 2020 Sapa Denys. All rights reserved.
 //
 
-import Foundation
-
 private let concurentNetworkingQueue = DispatchQueue(label: "concurent.networking.queue", attributes: .concurrent)
 private let concurentAdditionalQueue = DispatchQueue(label: "concurent.additional.queue", attributes: .concurrent)
 

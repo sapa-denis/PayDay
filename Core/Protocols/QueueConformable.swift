@@ -6,8 +6,6 @@
 //  Copyright © 2020 Sapa Denys. All rights reserved.
 //
 
-import Foundation
-
 public protocol QueueConformable: class {
     var queue: OperationQueue { get }
 }

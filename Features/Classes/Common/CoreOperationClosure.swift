@@ -6,7 +6,6 @@
 //  Copyright © 2020 Sapa Denys. All rights reserved.
 //
 
-import Foundation
 import Core
 
 public final class CoreOperationClosure<InputType, OutputType>: CoreOperation<InputType, OutputType> {

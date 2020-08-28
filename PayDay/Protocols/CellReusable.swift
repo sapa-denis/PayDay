@@ -6,8 +6,6 @@
 //  Copyright © 2020 Sapa Denys. All rights reserved.
 //
 
-import Foundation
-
 protocol CellReusable: class {
     static var reuseIdentifier: String { get }
 }

@@ -6,7 +6,6 @@
 //  Copyright © 2020 Sapa Denys. All rights reserved.
 //
 
-import Foundation
 import Entities
 
 final class UserSessionController {

@@ -6,8 +6,6 @@
 //  Copyright © 2020 Sapa Denys. All rights reserved.
 //
 
-import Foundation
-
 extension OperationQueue {
 
     // MARK: - Private methods
