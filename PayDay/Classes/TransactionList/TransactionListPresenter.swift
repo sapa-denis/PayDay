@@ -16,28 +16,42 @@ final class TransactionListPresenter {
     private weak var view: TransactionListView!
     private weak var router: TransactionListPresentation!
 
-    private let accountListUseCase: AccountListUseCase = .init(quality: .userInitiated,
-                                                               priority: .veryHigh)
-    private let transactionListUseCase: TransactionListUseCase = .init(quality: .userInteractive,
-                                                                       priority: .high)
-    private let currentAccountListener: Listener<Account> = .init()
-    private let transactionListListener: Listener<Transaction> = .init()
+    private let accountListUseCase: AccountListUseCase
+    private let transactionListUseCase: TransactionListUseCase
+    private let currentAccountListener: Listener<Account>
+    private let transactionListListener: Listener<Transaction>
 
     private let userId: Int
     private var currentAccountId: Int!
     private var collectionContent: CollectionChange<Transaction>?
 
     // MARK: - Init/Deinit methods
-    init(with view: TransactionListView, router: TransactionListPresentation) {
+    init(with view: TransactionListView,
+         router: TransactionListPresentation,
+         accountListUseCase: AccountListUseCase = .init(quality: .userInitiated,
+                                                                    priority: .veryHigh),
+         transactionListUseCase: TransactionListUseCase = .init(quality: .userInteractive,
+                                                                            priority: .high),
+         currentAccountListener: Listener<Account> = .init(),
+         transactionListListener: Listener<Transaction> = .init()) {
         self.view = view
         self.router = router
         userId = UserSessionController.shared.userIdentifier
+
+        self.accountListUseCase = accountListUseCase
+        self.transactionListUseCase = transactionListUseCase
+        self.currentAccountListener = currentAccountListener
+        self.transactionListListener = transactionListListener
 
         fetchAccountList()
     }
 
     deinit {
         accountListUseCase.cancelAllOperations()
+        transactionListUseCase.cancelAllOperations()
+
+        currentAccountListener.cancelAllOperations()
+        transactionListListener.cancelAllOperations()
     }
 
     // MARK: - Public methods

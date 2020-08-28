@@ -17,12 +17,14 @@ final class SignUpPresenter {
     // MARK: - Properties
     private weak var view: SignUpView!
 
-    private let registrationUseCase: RegistrationUseCase = RegistrationUseCase(quality: .userInitiated,
-                                                                               priority: .veryHigh)
+    private let registrationUseCase: RegistrationUseCase
 
     // MARK: - Init/Deinit methods
-    init(with view: SignUpView) {
+    init(with view: SignUpView,
+         registrationUseCase: RegistrationUseCase = .init(quality: .userInitiated,
+                                                          priority: .veryHigh)) {
         self.view = view
+        self.registrationUseCase = registrationUseCase
     }
 
     deinit {

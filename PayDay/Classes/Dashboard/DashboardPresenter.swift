@@ -18,19 +18,26 @@ final class DashboardPresenter: NSObject, NSFetchedResultsControllerDelegate {
 
     private let accountId: Int
     private var resultController: NSFetchedResultsController<NSFetchRequestResult>!
-    private let transactionListUseCase: TransactionListUseCase = .init(quality: .userInteractive,
-                                                                       priority: .high)
+    private let transactionListUseCase: TransactionListUseCase
     private var collectionUpdates: [ContentUpdate] = []
 
     // MARK: - Init / Deinit methods
-    init(with view: DashboardView, accountId: Int) {
+    init(with view: DashboardView,
+         accountId: Int,
+         transactionListUseCase: TransactionListUseCase = .init(quality: .userInteractive,
+                                                                priority: .high)) {
         self.view = view
         self.accountId = accountId
+        self.transactionListUseCase = transactionListUseCase
 
         super.init()
 
         fetchMonthlyReport()
         retrieveMonthlyReport()
+    }
+
+    deinit {
+        transactionListUseCase.cancelAllOperations()
     }
 
     // MARK: - Public Methods
