@@ -33,7 +33,7 @@ extension LoginViewController: LoginView {
 }
 
 // MARK: - SwitchToLoginChainActionsHandler
-extension LoginViewController: SwitchToLoginChainActionsHandler {
+extension LoginViewController: SignUpViewActionsDelegate {
 
     func onSwitchToLoginAction() {
         let viewController: UIViewController
@@ -41,7 +41,7 @@ extension LoginViewController: SwitchToLoginChainActionsHandler {
         if pages.count > 1 {
             viewController = pages[1]
         } else {
-            viewController = SignInModule().viewController()
+            viewController = SignInModule(with: self).viewController()
             pages.append(viewController)
         }
 
@@ -52,7 +52,7 @@ extension LoginViewController: SwitchToLoginChainActionsHandler {
 }
 
 // MARK: - SwitchToLoginChainActionsHandler
-extension LoginViewController: SwitchToRegistrationChainActionsHandler {
+extension LoginViewController: SignInViewActionsDelegate {
 
     func onSwitchToRegistrationAction() {
         let viewController: UIViewController = pages[0]
@@ -64,7 +64,7 @@ extension LoginViewController: SwitchToRegistrationChainActionsHandler {
 }
 
 // MARK: - SuccessLoginChainActionHandler
-extension LoginViewController: SuccessLoginChainActionHandler {
+extension LoginViewController {
 
     func onSuccessLogin() {
         openTransactions()
@@ -96,7 +96,7 @@ extension LoginViewController {
     }
 
     private func setFirstViewController() {
-        let initialViewController = SignUpModule().viewController()
+        let initialViewController = SignUpModule(with: self).viewController()
         pages.append(initialViewController)
 
         pageViewController.setViewControllers([initialViewController],
@@ -125,7 +125,7 @@ extension LoginViewController: UIPageViewControllerDataSource {
             if pages.count > 1 {
                 return pages[1]
             } else {
-                let viewController = SignInModule().viewController()
+                let viewController = SignInModule(with: self).viewController()
                 pages.append(viewController)
 
                 return viewController

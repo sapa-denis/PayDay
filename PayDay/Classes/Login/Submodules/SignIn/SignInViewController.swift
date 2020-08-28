@@ -22,6 +22,7 @@ final class SignInViewController: UIViewController {
 
     // MARK: - Properties
     var presenter: SignInPresenter!
+    weak var delegate: SignInViewActionsDelegate?
 
     private var keyboardHandler: KeyboardHandler?
 
@@ -44,11 +45,11 @@ extension SignInViewController {
     }
 
     @IBAction private func onSwitchToRegistrationButtonTouchUp(_ sender: UIButton) {
-        UIApplication.shared.sendAction(#selector(SwitchToRegistrationChainActionsHandler
-                                                  .onSwitchToRegistrationAction),
-                                        to: nil,
-                                        from: self,
-                                        for: nil)
+        guard let delegate = delegate else {
+            return
+        }
+
+        delegate.onSwitchToRegistrationAction()
     }
 }
 
@@ -56,11 +57,11 @@ extension SignInViewController {
 extension SignInViewController: SignInView {
 
     func onSuccessfulRegistration() {
-        UIApplication.shared.sendAction(#selector(SuccessLoginChainActionHandler
-            .onSuccessLogin),
-                                        to: nil,
-                                        from: self,
-                                        for: nil)
+        guard let delegate = delegate else {
+            return
+        }
+
+        delegate.onSuccessLogin()
     }
 }
 

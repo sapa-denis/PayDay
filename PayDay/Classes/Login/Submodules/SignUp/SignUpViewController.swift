@@ -33,6 +33,7 @@ final class SignUpViewController: UITableViewController {
 
     // MARK: - Properties
     var presenter: SignUpPresenter!
+    weak var delegate: SignUpViewActionsDelegate?
 
     private var gender: Gender?
 
@@ -51,11 +52,11 @@ final class SignUpViewController: UITableViewController {
 extension SignUpViewController: SignUpView {
 
     func onSuccessfulRegistration() {
-        UIApplication.shared.sendAction(#selector(SuccessLoginChainActionHandler
-            .onSuccessLogin),
-                                        to: nil,
-                                        from: self,
-                                        for: nil)
+        guard let delegate = delegate else {
+            return
+        }
+
+        delegate.onSuccessLogin()
     }
 }
 
@@ -79,10 +80,11 @@ extension SignUpViewController {
     }
 
     @IBAction private func onSwitchToLoginButtonTouchUp(_ sender: UIButton) {
-        UIApplication.shared.sendAction(#selector(SwitchToLoginChainActionsHandler.onSwitchToLoginAction),
-                                        to: nil,
-                                        from: self,
-                                        for: nil)
+        guard let delegate = delegate else {
+            return
+        }
+
+        delegate.onSwitchToLoginAction()
     }
 }
 

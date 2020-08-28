@@ -15,7 +15,7 @@ final class SignUpModule {
     private let presenter: SignUpPresenter
 
     // MARK: - Init / Deinit methods
-    init() {
+    init(with delegate: SignUpViewActionsDelegate?) {
         guard let view = UIStoryboard.init(name: "Login", bundle: .main)
             .instantiateViewController(withIdentifier: "SignUpViewController")
             as? SignUpViewController else {
@@ -25,6 +25,7 @@ final class SignUpModule {
         self.view = view
         presenter = SignUpPresenter(with: view)
         view.presenter = presenter
+        view.delegate = delegate
     }
 
     // MARK: - Public methods
