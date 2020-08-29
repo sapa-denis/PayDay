@@ -10,10 +10,11 @@ import CoreData
 import Entities
 import Features
 
-final class DashboardPresenter: NSObject, NSFetchedResultsControllerDelegate {
+final class DashboardPresenter: NSObject {
 
     // MARK: - Properties
     private weak var view: DashboardView!
+    private let repository: DashboardRepository
 
     private let accountId: Int
     private var resultController: NSFetchedResultsController<NSFetchRequestResult>!
@@ -23,9 +24,11 @@ final class DashboardPresenter: NSObject, NSFetchedResultsControllerDelegate {
     // MARK: - Init / Deinit methods
     init(with view: DashboardView,
          accountId: Int,
+         repository: DashboardRepository = .init(),
          transactionListUseCase: TransactionListUseCase = .init(quality: .userInteractive,
                                                                 priority: .high)) {
         self.view = view
+        self.repository = repository
         self.accountId = accountId
         self.transactionListUseCase = transactionListUseCase
 

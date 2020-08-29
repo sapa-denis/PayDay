@@ -75,6 +75,7 @@
 		870C8CC724E6C72400DE5EFC /* UITableView+Updates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8CC624E6C72400DE5EFC /* UITableView+Updates.swift */; };
 		870C8CC924E6C79F00DE5EFC /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870C8CC824E6C79E00DE5EFC /* Typealiases.swift */; };
 		87177AFE24EFB9F600683E03 /* CustomerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87177AFD24EFB9F600683E03 /* CustomerInfo.swift */; };
+		8744366D24F94C1000800AC9 /* DashboardRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8744366C24F94C1000800AC9 /* DashboardRepository.swift */; };
 		8752F0A324DAAC48007041EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752F0A224DAAC48007041EE /* AppDelegate.swift */; };
 		8752F0AA24DAAC48007041EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8752F0A824DAAC48007041EE /* Main.storyboard */; };
 		8752F0AF24DAAC49007041EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8752F0AE24DAAC49007041EE /* Assets.xcassets */; };
@@ -349,6 +350,7 @@
 		870C8CC624E6C72400DE5EFC /* UITableView+Updates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Updates.swift"; sourceTree = "<group>"; };
 		870C8CC824E6C79E00DE5EFC /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
 		87177AFD24EFB9F600683E03 /* CustomerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerInfo.swift; sourceTree = "<group>"; };
+		8744366C24F94C1000800AC9 /* DashboardRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRepository.swift; sourceTree = "<group>"; };
 		8752F09F24DAAC48007041EE /* PayDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8752F0A224DAAC48007041EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8752F0A924DAAC48007041EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -1118,6 +1120,7 @@
 				87726CEB24E9578D00594193 /* Dashboard.storyboard */,
 				87726CE524E9575600594193 /* DashboardModule.swift */,
 				87726CE724E9576200594193 /* DashboardPresenter.swift */,
+				8744366C24F94C1000800AC9 /* DashboardRepository.swift */,
 				87726CE924E9577800594193 /* DashboardViewController.swift */,
 				87726CED24EAFA1200594193 /* View */,
 			);
@@ -1798,6 +1801,7 @@
 				870C8CC024E6BA8100DE5EFC /* UITableView+Reusable.swift in Sources */,
 				870C8C8A24E300EC00DE5EFC /* String+Email.swift in Sources */,
 				87945A8B24ED690A0002EE6D /* KeyboardHandler.swift in Sources */,
+				8744366D24F94C1000800AC9 /* DashboardRepository.swift in Sources */,
 				870C8C8524E2FBB900DE5EFC /* UIFont.swift in Sources */,
 				870C8CC924E6C79F00DE5EFC /* Typealiases.swift in Sources */,
 				870C8C9B24E3E0E100DE5EFC /* UIWindow+Root.swift in Sources */,
