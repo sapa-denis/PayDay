@@ -8,7 +8,7 @@
 
 import CoreData
 
-extension NSManagedObject {
+public extension NSManagedObject {
 
     // MARK: - Static Properties
     static var entityName: String { return className  }

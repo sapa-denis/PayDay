@@ -6,21 +6,16 @@
 //  Copyright © 2020 Sapa Denys. All rights reserved.
 //
 
-import Foundation
+import Features
 
-struct CategoryDisplayable {
+protocol CategoryDisplayable {
+    var name: String { get }
+    var formattedAmount: String? { get }
+}
 
-    // MARK: - Properties
-    let name: String
+extension DashboardRepository.CategoryInfo: CategoryDisplayable {
+
     var formattedAmount: String? {
         amount.usStringMoney
-    }
-
-    private let amount: Decimal
-
-    // MARL: - Init / Deinitmethods
-    init(name: String, amount: Decimal) {
-        self.name = name
-        self.amount = amount
     }
 }
