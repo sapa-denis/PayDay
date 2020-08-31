@@ -23,7 +23,8 @@ final class TransactionListModule {
         }
 
         self.view = view
-        presenter = TransactionListPresenter(with: view, router: view)
+        let router = TransactionListRouter(with: view)
+        presenter = TransactionListPresenter(with: view, router: router)
         view.presenter = presenter
     }
 

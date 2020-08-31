@@ -23,7 +23,8 @@ final class LoginModule {
         }
 
         self.view = view
-        presenter = LoginPresenter(with: view)
+        let router = LoginRouter()
+        presenter = LoginPresenter(with: view, router: router)
         view.presenter = presenter
     }
 

@@ -6,14 +6,27 @@
 //  Copyright © 2020 Sapa Denys. All rights reserved.
 //
 
+import UIKit
+
 protocol TransactionListPresentation: AnyObject {
     func openDashboard(for accountId: Int)
 }
 
-extension TransactionListViewController: TransactionListPresentation {
+final class TransactionListRouter: TransactionListPresentation {
 
+    // MARK: - Properties
+    private weak var viewController: UIViewController!
+
+    // MARK: - Init / Deinit methods
+    init(with viewController: UIViewController) {
+        self.viewController = viewController
+    }
+
+    // MARK: - TransactionListPresentation
     func openDashboard(for accountId: Int) {
-        navigationController?.pushViewController(DashboardModule(accountId: accountId).viewController(),
-                                                 animated: true)
+        viewController
+            .navigationController?
+            .pushViewController(DashboardModule(accountId: accountId).viewController(),
+                                animated: true)
     }
 }

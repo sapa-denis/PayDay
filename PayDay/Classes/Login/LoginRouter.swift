@@ -12,8 +12,12 @@ protocol LoginPresentation: AnyObject {
     func openTransactions()
 }
 
-extension LoginViewController: LoginPresentation {
+final class LoginRouter: LoginPresentation {
 
+    // MARK: - Properties
+    private weak var viewController: UIViewController!
+
+    // MARK: - LoginPresentation
     func openTransactions() {
         let window = UIApplication.shared.keyWindow
         let navigationController = UINavigationController(rootViewController: TransactionListModule().viewController())

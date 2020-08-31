@@ -10,9 +10,16 @@ final class LoginPresenter {
 
     // MARK: - Properties
     private weak var view: LoginView!
+    private var router: LoginRouter
 
     // MARK: - Init/Deinit methods
-    init(with view: LoginView) {
+    init(with view: LoginView, router: LoginRouter) {
         self.view = view
+        self.router = router
+    }
+
+    // MARK: - Public methods
+    func onSuccessLoginAction() {
+        router.openTransactions()
     }
 }

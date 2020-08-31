@@ -66,7 +66,7 @@ extension LoginViewController: SignInViewActionsDelegate {
 extension LoginViewController {
 
     func onSuccessLogin() {
-        openTransactions()
+        presenter.onSuccessLoginAction()
     }
 }
 

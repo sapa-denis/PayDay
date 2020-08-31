@@ -13,7 +13,7 @@ final class TransactionListPresenter {
 
     // MARK: - Properties
     private weak var view: TransactionListView!
-    private weak var router: TransactionListPresentation!
+    private var router: TransactionListPresentation
 
     private let accountListUseCase: AccountListUseCase
     private let transactionListUseCase: TransactionListUseCase
