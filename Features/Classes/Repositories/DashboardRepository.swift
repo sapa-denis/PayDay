@@ -123,7 +123,7 @@ extension DashboardRepository {
 
 // MARK: - KeyPath
 private extension String {
-    
+
     static let amount: String = "amount"
     static let totalAmount: String = "totalAmount"
 }
