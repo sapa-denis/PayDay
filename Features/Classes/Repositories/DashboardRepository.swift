@@ -12,6 +12,9 @@ import CoreData
 public final class DashboardRepository {
 
     // MARK: - Properties
+    private var startPeriodDate: Date
+    private var endPeriodDate: Date
+
     private var categoryInfosGruppedBySections: [Int: [CategoryInfo]] = [:]
     private lazy var resultController: NSFetchedResultsController<NSFetchRequestResult> = {
         NSFetchedResultsController(fetchRequest: fetchRequest(),
@@ -21,7 +24,10 @@ public final class DashboardRepository {
     }()
 
     // MARK: - Init / Deinit methods
-    public init() {
+    public init(startPeriodDate: Date = .init(),
+                endPeriodDate: Date = .init()) {
+        self.startPeriodDate = startPeriodDate
+        self.endPeriodDate = endPeriodDate
     }
 
     // MARK: - Public methods
@@ -30,6 +36,17 @@ public final class DashboardRepository {
         try resultController.performFetch()
     }
 
+    public func updateExecutionPeriod(startPeriodDate: Date, endPeriodDate: Date) {
+        self.startPeriodDate = startPeriodDate
+        self.endPeriodDate = endPeriodDate
+
+        resultController = NSFetchedResultsController(fetchRequest: fetchRequest(),
+                                                      managedObjectContext: NSPersistentContainer.container.viewContext,
+                                                      sectionNameKeyPath: #keyPath(Transaction.executionPeriod),
+                                                      cacheName: nil)
+    }
+
+    // MARK: - Data providing methods
     public func numberOfSections() -> Int {
         return resultController.sections?.count ?? 0
     }
@@ -88,14 +105,11 @@ extension DashboardRepository {
                                                         arguments: [NSExpression(forKeyPath: .amount)])
         totalAmountExpression.name = .totalAmount
 
-        let date = Date()
-        let calendar = Calendar.current
-        let startDate = calendar.date(byAdding: .month, value: -3, to: date)
-        let components = calendar.dateComponents([.year, .month], from: startDate!)
-        let startDateToFetch = calendar.date(from: components)
-
-        let predicate = NSPredicate(format: "%K >= %lf", argumentArray: [#keyPath(Transaction.date),
-                                                                        startDateToFetch!])
+        let predicate = NSPredicate(format: "%K <= %lf AND %K >= %lf",
+                                    argumentArray: [#keyPath(Transaction.date),
+                                                    endPeriodDate,
+                                                    #keyPath(Transaction.date),
+                                                    startPeriodDate])
 
         request.predicate = predicate
         request.propertiesToGroupBy = [#keyPath(Transaction.category),
