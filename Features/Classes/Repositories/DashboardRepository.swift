@@ -16,7 +16,7 @@ public final class DashboardRepository {
     private lazy var resultController: NSFetchedResultsController<NSFetchRequestResult> = {
         NSFetchedResultsController(fetchRequest: fetchRequest(),
                                    managedObjectContext: NSPersistentContainer.container.viewContext,
-                                   sectionNameKeyPath: "executionPeriod",
+                                   sectionNameKeyPath: #keyPath(Transaction.executionPeriod),
                                    cacheName: nil)
     }()
 
@@ -56,8 +56,8 @@ public final class DashboardRepository {
         } else {
             let newSectionInfo = resultController.sections?[section].objects?.compactMap { info -> CategoryInfo? in
                 guard let categoryInfo = info as? [String: Any],
-                    let categoryName = categoryInfo["category"] as? String,
-                    let amount = categoryInfo["totalAmount"] as? Decimal else {
+                    let categoryName = categoryInfo[#keyPath(Transaction.category)] as? String,
+                    let amount = categoryInfo[String.totalAmount] as? Decimal else {
                         return nil
                 }
 
@@ -85,8 +85,8 @@ extension DashboardRepository {
         let totalAmountExpression = NSExpressionDescription()
         totalAmountExpression.expressionResultType = .decimalAttributeType
         totalAmountExpression.expression = NSExpression(forFunction: "sum:",
-                                                        arguments: [NSExpression(forKeyPath: "amount")])
-        totalAmountExpression.name = "totalAmount"
+                                                        arguments: [NSExpression(forKeyPath: .amount)])
+        totalAmountExpression.name = .totalAmount
 
         let date = Date()
         let calendar = Calendar.current
@@ -98,8 +98,11 @@ extension DashboardRepository {
                                                                         startDateToFetch!])
 
         request.predicate = predicate
-        request.propertiesToGroupBy = ["category", "executionPeriod"]
-        request.propertiesToFetch = ["category", "executionPeriod", totalAmountExpression]
+        request.propertiesToGroupBy = [#keyPath(Transaction.category),
+                                       #keyPath(Transaction.executionPeriod)]
+        request.propertiesToFetch = [#keyPath(Transaction.category),
+                                     #keyPath(Transaction.executionPeriod),
+                                     totalAmountExpression]
         request.sortDescriptors = [NSSortDescriptor(key: #keyPath(Transaction.date),
                                                     ascending: false)]
 
@@ -107,6 +110,7 @@ extension DashboardRepository {
     }
 }
 
+// MARK: - External declaration
 extension DashboardRepository {
 
     public struct CategoryInfo {
@@ -115,4 +119,11 @@ extension DashboardRepository {
         public let name: String
         public let amount: Decimal
     }
+}
+
+// MARK: - KeyPath
+private extension String {
+    
+    static let amount: String = "amount"
+    static let totalAmount: String = "totalAmount"
 }
