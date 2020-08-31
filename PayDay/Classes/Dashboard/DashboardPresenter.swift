@@ -33,6 +33,7 @@ final class DashboardPresenter: NSObject {
 
         super.init()
 
+        updatePeriod()
         fetchMonthlyReport()
         retrieveMonthlyReport()
     }
@@ -84,7 +85,21 @@ extension DashboardPresenter {
     }
 }
 
+// MARK: - Private methods
 extension DashboardPresenter {
+
+    private func updatePeriod() {
+        let date = Date()
+        let calendar = Calendar.current
+        let startDate = calendar.date(byAdding: .month, value: -3, to: date)
+        let components = calendar.dateComponents([.year, .month], from: startDate!)
+
+        guard let startDateToFetch = calendar.date(from: components) else {
+            return
+        }
+
+        repository.updateExecutionPeriod(startPeriodDate: startDateToFetch, endPeriodDate: date)
+    }
 
     private func fetchMonthlyReport() {
         try? repository.executeRequest()
