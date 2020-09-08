@@ -23,16 +23,16 @@ public final class Transaction: NSManagedObject, Decodable {
     public private(set) var amount: Decimal {
         get {
             defer {
-                didAccessValue(forKey: "gender")
+                didAccessValue(forKey: "amount")
             }
-            willAccessValue(forKey: "gender")
+            willAccessValue(forKey: "amount")
 
             return primitiveAmount as Decimal
         }
         set {
-            willChangeValue(forKey: "gender")
+            willChangeValue(forKey: "amount")
             primitiveAmount = newValue as NSDecimalNumber
-            didChangeValue(forKey: "gender")
+            didChangeValue(forKey: "amount")
         }
     }
 

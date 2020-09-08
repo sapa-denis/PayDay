@@ -31,7 +31,13 @@ open class UseCase<OutputType> {
     private func configure<T>(chain: CoreOperation<T, OutputType>) {
         operationChain = chain
         operationCompletion = setupCompletion(for: chain)
-        chain.completed = operationCompletion
+        chain.completed = { [weak self] in
+            guard let self = self else {
+                return
+            }
+
+            self.operationCompletion()
+        }
         chain.outputUpdated = { [weak self] data in
             guard let self = self else {
                 return

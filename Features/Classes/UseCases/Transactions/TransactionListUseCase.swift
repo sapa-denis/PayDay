@@ -27,6 +27,10 @@ public final class TransactionListUseCase: UseCase<Void> {
         super.init(quality: quality, priority: priority)
     }
 
+    deinit {
+        print("Deinit TransactionListUseCase")
+    }
+
     // MARK: - Public methods
     public func prepare(accountId: Int) -> Self {
         let request = PayDayRequest.transactions(accountId: accountId)
@@ -38,7 +42,7 @@ public final class TransactionListUseCase: UseCase<Void> {
 
         let decodeOperation = container.responseDecodeBuilder.build(with: jsonDecoder)
 
-        let bindTransactionsWithAccount = CoreOperationClosure<[Transaction], Void>(in: .additional) { input in
+        let bindTransactionsWithAccount = container.responseBindingOperation.build(in: .additional) { input in
             switch input {
             case .success(let transactions):
                 let transactionsInContext = transactions.compactMap { transaction -> Transaction? in
@@ -94,12 +98,14 @@ extension TransactionListUseCase {
         static var base: DependencyContainer {
             return DependencyContainer(networkRequestBuilder: NetworkRequesterBuilder(),
                                        responseDecodeBuilder: ResponseDecodingBuilder(),
+                                       responseBindingOperation: ResponseBindingOperationBuilder(),
                                        responseAdapterBuilder: ResponseAdapterBuilder())
         }
 
         let networkRequestBuilder: NetworkRequesterBuildable
         let responseDecodeBuilder: AbstractDecoderBuilder<[Transaction]>
-        let responseAdapterBuilder: AbstractAdditionalOperationBuilder<[Transaction], Void>
+        let responseBindingOperation: AbstractAdditionalOperationBuilder<[Transaction], Void>
+        let responseAdapterBuilder: AbstractAdditionalOperationBuilder<Void, Void>
     }
 
     final class ResponseDecodingBuilder: AbstractDecoderBuilder<[Transaction]> {
@@ -109,10 +115,18 @@ extension TransactionListUseCase {
         }
     }
 
-    final class ResponseAdapterBuilder: AbstractAdditionalOperationBuilder<[Transaction], Void> {
+    final class ResponseBindingOperationBuilder: AbstractAdditionalOperationBuilder<[Transaction], Void> {
 
         override func build(in queue: OperationQueue,
                             closure: @escaping OperationCompletion) -> CoreOperationClosure<[Transaction], Void> {
+            CoreOperationClosure(in: queue, closure: closure)
+        }
+    }
+
+    final class ResponseAdapterBuilder: AbstractAdditionalOperationBuilder<Void, Void> {
+
+        override func build(in queue: OperationQueue,
+                            closure: @escaping OperationCompletion) -> CoreOperationClosure<Void, Void> {
             CoreOperationClosure(in: queue, closure: closure)
         }
     }

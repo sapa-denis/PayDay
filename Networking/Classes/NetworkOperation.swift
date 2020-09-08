@@ -25,6 +25,10 @@ public final class NetworkOperation: CoreOperation<RequestConvertible, Data> {
         }
     }
 
+    deinit {
+        print("Deinit NetworkOperation")
+    }
+
     // MARK: - Life Cycle
     public override func main() {
         guard canProceed() else { return }
@@ -40,7 +44,7 @@ public final class NetworkOperation: CoreOperation<RequestConvertible, Data> {
 
     private func execute(urlRequest: RequestConvertible) {
 
-        dataTask = session.request(urlRequest) { responseData, response, error in
+        dataTask = session.request(urlRequest) { [unowned self] responseData, response, error in
 
             defer {
                 self.finished()
