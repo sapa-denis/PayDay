@@ -6,7 +6,7 @@ Additional objects includes:
 - `Listener` on the other hand, this object is needed to receive data models from DB.
 `UseCase` + `Listener` represents unidirectional data flow.
 
-![Solution Architecture Diagram](https://www.dropbox.com/s/ijf0ln3anczqwae/PayDay.png?dl=0)
+![Solution Architecture Diagram](https://take.ms/p77Y33)
 
 ## Flow Diagrams
 
