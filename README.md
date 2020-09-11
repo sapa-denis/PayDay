@@ -6,7 +6,7 @@ Additional objects includes:
 - `Listener` on the other hand, this object is needed to receive data models from DB.
 `UseCase` + `Listener` represents unidirectional data flow.
 
-![Solution Architecture Diagram](https://take.ms/p77Y33)
+![Solution Architecture Diagram](https://api.monosnap.com/file/download?id=HExPFBSrYge0mY3LvodQxD1RY9yUHx)
 
 ## Flow Diagrams
 
