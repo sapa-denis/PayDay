@@ -11,16 +11,16 @@ Additional objects includes:
 ## Flow Diagrams
 
 #### Sign In
-![Sign In](https://www.dropbox.com/s/ca9tqj0ssr0qz6u/Sign%20In.png?dl=0)
+![Sign In](https://api.monosnap.com/file/download?id=EIaPKjKuo9egrbZRRmr5GKX2xujIKS)
 
 #### Sign Up
-![Sign Up](https://www.dropbox.com/s/vmsf4llfdnvm84u/Sign%20up.png?dl=0)
+![Sign Up](https://api.monosnap.com/file/download?id=iLNMLn6lic4awfY2p8Bwt8IJdxBsOO)
 
 #### Transaction List
-![Transaction List](https://www.dropbox.com/s/pe5obicy2j8swut/Transaction%20List.png?dl=0)
+![Transaction List](https://api.monosnap.com/file/download?id=X0zrNcgv5NtFkqOcKO7EGjrRpj6RGx)
 
 #### Monthly dashboard
-![Monthly dashboard](https://www.dropbox.com/s/twcg6ddfovckle5/Monthly%20Dashboard.png?dl=0)
+![Monthly dashboard](https://api.monosnap.com/file/download?id=wWDCnY0XqmKYWMYj5bxC9wOyiN4Ovh)
 
 ## Tech stack
 * Swift5
