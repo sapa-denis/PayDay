@@ -35,6 +35,13 @@ All other parts was written manually without any third-party libraries
 2. The moust important feature in latest Swift version is Combine.
 But I cant use it in this project, because deployment target is iOS 12.
 3. To track down a performance issue in production I would use Firebase system. I have experience in integration and work with this framework.
+Also to avoid performance issues we can use several tools:
+- common Xcode debug tool. Breakpoints can be parameterised with condition param. + You can add some action into breakpoint.
+- Debug view hierarchy to see view layouts
+- Debug Memory graph to check object relations and find retain cycles.
+
+Xcode Instruments can help us to check memory leaks, battery and network usage etc. So if previous basic debug tools didn't help, I use Xcode Instruments for deep debugging.
+
 4. I always use `Charles` and `Postman` to check requests/responses.  
 5. For API first of all I would add `token` in requests `header`. It will improve security system.
 - better to receive dateOfBirth as timestamp value and `first name`/`last name` with snack case:
