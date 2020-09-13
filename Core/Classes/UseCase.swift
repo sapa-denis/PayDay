@@ -32,11 +32,12 @@ open class UseCase<OutputType> {
         operationChain = chain
         operationCompletion = setupCompletion(for: chain)
         chain.completed = { [weak self] in
-            guard let self = self else {
+            guard let self = self,
+                let completion =  self.operationCompletion else {
                 return
             }
 
-            self.operationCompletion()
+            completion()
         }
 
         chain.outputUpdated = { [weak self] data in
