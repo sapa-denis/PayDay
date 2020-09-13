@@ -27,10 +27,6 @@ public final class TransactionListUseCase: UseCase<Void> {
         super.init(quality: quality, priority: priority)
     }
 
-    deinit {
-        print("Deinit TransactionListUseCase")
-    }
-
     // MARK: - Public methods
     public func prepare(accountId: Int) -> Self {
         let request = PayDayRequest.transactions(accountId: accountId)

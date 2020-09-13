@@ -11,7 +11,7 @@ extension CoreOperation {
     // MARK: - Public methods
     public func then<U>(_ operation: CoreOperation<OutputType, U>) -> CoreOperation<OutputType, U> {
         operation.addDependency(self)
-        completed = { [unowned self] in
+        completed = { [unowned self, unowned operation] in
             operation.input = self.output
         }
 

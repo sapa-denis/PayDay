@@ -25,10 +25,6 @@ public final class NetworkOperation: CoreOperation<RequestConvertible, Data> {
         }
     }
 
-    deinit {
-        print("Deinit NetworkOperation")
-    }
-
     // MARK: - Life Cycle
     public override func main() {
         guard canProceed() else { return }

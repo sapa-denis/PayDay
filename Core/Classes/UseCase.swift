@@ -19,7 +19,7 @@ open class UseCase<OutputType> {
     private var qualityOfService: QualityOfService
     private var notificationQueue: OperationQueue?
     private var queuePriority: Operation.QueuePriority
-    private weak var operationChain: (Operation & QueueConformable)?
+    private var operationChain: (Operation & QueueConformable)?
 
     // MARK: - Init / Deinit methods
     public init(quality: QualityOfService = .default, priority: Operation.QueuePriority = .normal) {
@@ -31,7 +31,13 @@ open class UseCase<OutputType> {
     private func configure<T>(chain: CoreOperation<T, OutputType>) {
         operationChain = chain
         operationCompletion = setupCompletion(for: chain)
-        chain.completed = self.operationCompletion
+        chain.completed = { [weak self] in
+            guard let self = self else {
+                return
+            }
+
+            self.operationCompletion()
+        }
 
         chain.outputUpdated = { [weak self] data in
             guard let self = self else {

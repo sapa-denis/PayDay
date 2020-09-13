@@ -21,10 +21,6 @@ public final class CoreOperationClosure<InputType, OutputType>: CoreOperation<In
         super.init(in: queue)
     }
 
-    deinit {
-        print("Deinit CoreOperationClosure")
-    }
-
     // MARK: - Life Cycle
     public override func main() {
         guard canProceed() else { return }

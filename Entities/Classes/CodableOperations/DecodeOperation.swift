@@ -23,10 +23,6 @@ final public class DecodeOperation<Entity: Decodable>: CoreOperation<Data, Entit
         super.init(in: queue)
     }
 
-    deinit {
-        print("Deinit DecodeOperation")
-    }
-
     // MARK: - Life Cycle
     override public func main() {
         guard canProceed() else { return }
