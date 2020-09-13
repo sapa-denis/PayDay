@@ -6,21 +6,21 @@ Additional objects includes:
 - `Listener` on the other hand, this object is needed to receive data models from DB.
 `UseCase` + `Listener` represents unidirectional data flow.
 
-![Solution Architecture Diagram](https://api.monosnap.com/file/download?id=HExPFBSrYge0mY3LvodQxD1RY9yUHx)
+![Solution Architecture Diagram](https://raw.githubusercontent.com/sapa-denis/PayDay/feature/diagrams/Diagrams/PayDay.png)
 
 ## Flow Diagrams
 
 #### Sign In
-![Sign In](https://api.monosnap.com/file/download?id=EIaPKjKuo9egrbZRRmr5GKX2xujIKS)
+![Sign In](https://raw.githubusercontent.com/sapa-denis/PayDay/feature/diagrams/Diagrams/Sign%20In.png)
 
 #### Sign Up
-![Sign Up](https://api.monosnap.com/file/download?id=iLNMLn6lic4awfY2p8Bwt8IJdxBsOO)
+![Sign Up](https://raw.githubusercontent.com/sapa-denis/PayDay/feature/diagrams/Diagrams/Sign%20up.png)
 
 #### Transaction List
-![Transaction List](https://api.monosnap.com/file/download?id=L3f7QP6EgEcO7ciIqXjyNfI3retP2G)
+![Transaction List](https://raw.githubusercontent.com/sapa-denis/PayDay/feature/diagrams/Diagrams/Transaction%20List.png)
 
 #### Monthly dashboard
-![Monthly dashboard](https://api.monosnap.com/file/download?id=wWDCnY0XqmKYWMYj5bxC9wOyiN4Ovh)
+![Monthly dashboard](https://raw.githubusercontent.com/sapa-denis/PayDay/feature/diagrams/Diagrams/Monthly%20Dashboard.png)
 
 ## Tech stack
 * Swift5
