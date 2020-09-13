@@ -14,6 +14,10 @@
             <rect key="frame" x="0.0" y="0.0" width="531" height="80"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3m8-Va-6RZ">
+                    <rect key="frame" x="0.0" y="0.0" width="531" height="80"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tsE-F7-Epo">
                     <rect key="frame" x="16" y="16" width="37" height="18"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
@@ -28,10 +32,14 @@
                 </label>
             </subviews>
             <constraints>
+                <constraint firstItem="3m8-Va-6RZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="6iM-iL-TS1"/>
                 <constraint firstItem="DNh-y8-ep2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Lic-vJ-Kvq"/>
                 <constraint firstItem="DNh-y8-ep2" firstAttribute="top" secondItem="tsE-F7-Epo" secondAttribute="bottom" constant="10" id="Oqt-gS-EVL"/>
                 <constraint firstItem="tsE-F7-Epo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="erx-xf-oqb"/>
+                <constraint firstAttribute="bottom" secondItem="3m8-Va-6RZ" secondAttribute="bottom" id="hDy-ih-Cxx"/>
+                <constraint firstAttribute="trailing" secondItem="3m8-Va-6RZ" secondAttribute="trailing" id="j2E-h2-xWh"/>
                 <constraint firstItem="tsE-F7-Epo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="l62-IS-LrQ"/>
+                <constraint firstItem="3m8-Va-6RZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="lcF-xY-ynP"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
