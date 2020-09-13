@@ -24,5 +24,4 @@ class DashboardSectionHeader: UITableViewHeaderFooterView {
         monthLabel.text = month
         totalAmountLabel.text = amount
     }
-
 }
