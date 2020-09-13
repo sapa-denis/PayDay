@@ -17,7 +17,7 @@ Additional objects includes:
 ![Sign Up](https://api.monosnap.com/file/download?id=iLNMLn6lic4awfY2p8Bwt8IJdxBsOO)
 
 #### Transaction List
-![Transaction List](https://api.monosnap.com/file/download?id=X0zrNcgv5NtFkqOcKO7EGjrRpj6RGx)
+![Transaction List](https://api.monosnap.com/file/download?id=L3f7QP6EgEcO7ciIqXjyNfI3retP2G)
 
 #### Monthly dashboard
 ![Monthly dashboard](https://api.monosnap.com/file/download?id=wWDCnY0XqmKYWMYj5bxC9wOyiN4Ovh)
