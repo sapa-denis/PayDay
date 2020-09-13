@@ -9,7 +9,7 @@
 import Entities
 import Features
 
-final class DashboardPresenter: NSObject {
+final class DashboardPresenter {
 
     // MARK: - Properties
     private weak var view: DashboardView!
@@ -30,8 +30,6 @@ final class DashboardPresenter: NSObject {
         self.repository = repository
         self.accountId = accountId
         self.transactionListUseCase = transactionListUseCase
-
-        super.init()
 
         updatePeriod()
         fetchMonthlyReport()
